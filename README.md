@@ -1,5 +1,6 @@
 # java_IS216.M21_18
 Đồ án: Hệ thống tìm việc làm
+
 ### Danh sách các thành viên ###
   1. Vũ Thị Phương Linh - 20521541
   2. Nguyễn Anh Kiệt - 20521498
@@ -21,4 +22,3 @@
 • Những ứng viên đã hoàn thành phỏng vấn có thể đánh giá cho buổi phỏng vấn của công ty. Khi tìm kiếm công việc, những công ty có lượt đánh giá cao sẽ hiện lên đầu (hiển thị theo độ uy tín giảm dần).
 • Tại một thời điểm, ứng viên không thể đăng ký phỏng vấn tại nhiều công ty.
 • Đối với ứng viên cũng sẽ có thuộc tính độ uy tín. Khi đến ngày phỏng vấn mà không tham gia thì sẽ bị trừ uy tín. Nếu điểm uy tín thấp thì sẽ bị hạn chế đăng ký (ví dụ mỗi tháng chỉ được đăng ký một buổi phỏng vấn và sẽ phải đóng phí cầm chân nếu muốn đăng ký thêm). Ngoài ra, người đăng ký chỉ được hủy lịch phỏng vấn trễ nhất trước 1 ngày để hệ thống cập nhật lại và nhường cơ hội cho các ứng viên khác đăng ký.
-
