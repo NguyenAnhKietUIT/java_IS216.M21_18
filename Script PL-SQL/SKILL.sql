@@ -1,3 +1,4 @@
+--Tao bang SKILL va khoa chinh
 create table SKILL (
 	skillNo NUMBER NOT NULL,
   	skillName VARCHAR2(50) NOT NULL UNIQUE
@@ -9,13 +10,8 @@ CREATE SEQUENCE seq_skillid
 MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
---Tao bang RECRUIT va khoa chinh
-create table RECRUIT (
-	departmentNo NUMBER NOT NULL,
-  	positionNo NUMBER NOT NULL
-);
-ALTER TABLE RECRUIT ADD CONSTRAINT PK_RECRUIT PRIMARY KEY (departmentNo, positionNo);
 
+--12. Bang SKILL
 INSERT INTO SKILL VALUES (seq_skillid.nextval,'Ngoai ngu');
 INSERT INTO SKILL VALUES (seq_skillid.nextval,'Tin hoc van phong');
 INSERT INTO SKILL VALUES (seq_skillid.nextval,'Reporting');

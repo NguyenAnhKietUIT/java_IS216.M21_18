@@ -1,3 +1,4 @@
+--Tao bang APPLICANT va khoa chinh
 CREATE TABLE APPLICANT
 (
 	applicantNo NUMBER NOT NULL,
@@ -20,6 +21,7 @@ MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
 
+--11. Bang APPLICANT
 INSERT INTO APPLICANT VALUES (seq_applicantid.nextval,'Nguyen Hoai Linh', '079202009176', TO_DATE('23/04/2002','dd/mm/yyyy'), 1, '68/23 Dong Den', '070786884','linhhoainguyen2002@gmail.com',11);
 INSERT INTO APPLICANT VALUES (seq_applicantid.nextval,'Nguyen Anh Kiet', '079202005713', TO_DATE('21/07/2002','dd/mm/yyyy'), 1, '76/3 Nguyen Trai', '0787264822','nguyenanhkiet2002@gmail.com',12);
 INSERT INTO APPLICANT VALUES (seq_applicantid.nextval,'Nguyen Thanh Phat', '079202067492', TO_DATE('7/9/2001','dd/mm/yyyy'), 1, '11/6/8 Truong Cong Dinh', '0387518022','thanhphatnguyen2001@gmail.com',13);

@@ -1,3 +1,4 @@
+--Tao bang REQUIRE va khoa chinh
 create table REQUIRE (
 	positionNo NUMBER NOT NULL,
   	requirementNo NUMBER NOT NULL,
@@ -13,6 +14,7 @@ create table REQUIRE (
 );
 ALTER TABLE REQUIRE ADD CONSTRAINT PK_REQUIRE PRIMARY KEY (positionNo, requirementNo);
 
+--8. Bang REQUIRE
 INSERT INTO REQUIRE VALUES (1, 3, 2, NULL);
 INSERT INTO REQUIRE VALUES (2, 1, 5, 4);
 INSERT INTO REQUIRE VALUES (5, 4, 6, NULL);

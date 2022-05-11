@@ -1,3 +1,4 @@
+--Tao bang INTERVIEWER va khoa chinh
 CREATE TABLE INTERVIEWER
 (
 	interviewerNo NUMBER NOT NULL,
@@ -15,6 +16,7 @@ MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
 
+--9. Bang INTERVIEWER
 INSERT INTO INTERVIEWER VALUES (seq_interviewid.nextval,'Tran Van A', '0378009008' , 'tranvana@gmai.com.vn', 1,6);
 INSERT INTO INTERVIEWER VALUES (seq_interviewid.nextval,'Tran Van B', '0378989238', 'tranvanb@gmai.com.vn', 2,7);
 INSERT INTO INTERVIEWER VALUES (seq_interviewid.nextval,'Nguyen Minh C', '0378011108', 'nguyenminhc@gmai.com.vn', 3,8);

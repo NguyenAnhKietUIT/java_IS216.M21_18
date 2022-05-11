@@ -1,3 +1,4 @@
+--Tao bang COMPANY va khoa chinh
 CREATE TABLE COMPANY
 (
 	companyNo NUMBER NOT NULL,
@@ -14,6 +15,7 @@ MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
 
+--2. Bang COMPANY
 INSERT INTO COMPANY VALUES (seq_companyid.nextval,'SamSung', 'Quan 1', '2839157310','samsung@gmai.com.vn', TO_DATE('30/01/2007','dd/mm/yyyy'),1);
 INSERT INTO COMPANY VALUES (seq_companyid.nextval,'Intel', 'Phu Nhuan', '8437363000','Intel@gmai.com.vn', TO_DATE('21/02/2006','dd/mm/yyyy'),2);
 INSERT INTO COMPANY VALUES (seq_companyid.nextval,'Cocacola', 'Hai Phong', '0500233891','Cocacola@gmai.com.vn', TO_DATE('14/6/1996','dd/mm/yyyy'),3);

@@ -1,16 +1,20 @@
+--Tao bang REGISTER va khoa chinh
 CREATE TABLE REGISTER
 (
 	interviewScheduleNo NUMBER NOT NULL,
 	applicantNo NUMBER NOT NULL,
 	positionNo NUMBER NOT NULL,
 	status NUMBER,
-	CHECK (status BETWEEN 0 AND 2)
+	CHECK (status BETWEEN 0 AND 4)
 		-- 0: Da dang ky
 		-- 1: Da huy dang ky
 		-- 2: Da hoan thanh
+		-- 3: Khong tham gia
+		-- 4: Da duoc nhan vao lam
 );
 ALTER TABLE REGISTER ADD CONSTRAINT PK_REGISTER PRIMARY KEY (interviewScheduleNo, applicantNo, positionNo);
 
+--14. Bang REGISTER
 INSERT INTO REGISTER VALUES (1, 1, 2, 0);
 INSERT INTO REGISTER VALUES (1, 3, 3, 1);
 INSERT INTO REGISTER VALUES (1, 5, 1, 0);
