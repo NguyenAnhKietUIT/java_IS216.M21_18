@@ -1,7 +1,7 @@
+--Tao bang POSITION va khoa chinh
 create table POSITION(
 	positionNo NUMBER NOT NULL,
-  	positionName VARCHAR2(30) NOT NULL UNIQUE,
-  	numberOfPersonnel NUMBER
+  	positionName VARCHAR2(30) NOT NULL UNIQUE
 );
 ALTER TABLE POSITION ADD CONSTRAINT PK_POSITION PRIMARY KEY (positionNo);
 
@@ -10,8 +10,9 @@ MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
 
-INSERT INTO POSITION VALUES (seq_positionid.nextval,'Quan ly phong nhan su', 1);
-INSERT INTO POSITION VALUES (seq_positionid.nextval,'Quan ly phong ke toan', 1);
-INSERT INTO POSITION VALUES (seq_positionid.nextval,'Truong ban bao ve', 1);
-INSERT INTO POSITION VALUES (seq_positionid.nextval,'Editor', 3);
-INSERT INTO POSITION VALUES (seq_positionid.nextval,'Nhan vien ve sinh', 5);
+--5. Bang POSITION
+INSERT INTO POSITION VALUES (seq_positionid.nextval,'Quan ly phong nhan su');
+INSERT INTO POSITION VALUES (seq_positionid.nextval,'Quan ly phong ke toan');
+INSERT INTO POSITION VALUES (seq_positionid.nextval,'Truong ban bao ve');
+INSERT INTO POSITION VALUES (seq_positionid.nextval,'Editor');
+INSERT INTO POSITION VALUES (seq_positionid.nextval,'Nhan vien ve sinh');

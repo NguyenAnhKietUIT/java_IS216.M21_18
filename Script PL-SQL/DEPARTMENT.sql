@@ -1,3 +1,4 @@
+--Tao bang DEPARTMENT va khoa chinh
 CREATE TABLE DEPARTMENT
 (
 	departmentNo NUMBER NOT NULL,
@@ -11,6 +12,7 @@ MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
 
+--3. Bang DEPARTMENT
 INSERT INTO DEPARTMENT VALUES (seq_departmentid.nextval,'Phong nhan su', NULL);
 INSERT INTO DEPARTMENT VALUES (seq_departmentid.nextval,'Phong ke toan', NUll);
 INSERT INTO DEPARTMENT VALUES (seq_departmentid.nextval,'Quan ly du an', NUll);

@@ -1,8 +1,9 @@
+-- Tao bang ACCOUNT
 CREATE TABLE ACCOUNT (
 	accountID	NUMBER NOT NULL,
 	userName	VARCHAR2(20) NOT NULL UNIQUE,
 	password	VARCHAR2(50) NOT NULL,
-	role	 	VARCHAR2(20) NOT NULL
+	role	 	VARCHAR2(20) NOT NULL        
 );
 ALTER TABLE ACCOUNT ADD CONSTRAINT PK_ACC PRIMARY KEY (AccountID);
 
@@ -11,6 +12,7 @@ MINVALUE 1
 START WITH 1
 INCREMENT BY 1;
 
+--1. Bang ACCOUNT
 INSERT INTO ACCOUNT VALUES(seq_accountid.nextval,'samsung','s123','Cong ty');
 INSERT INTO ACCOUNT VALUES(seq_accountid.nextval,'intel','i123','Cong ty');
 INSERT INTO ACCOUNT VALUES(seq_accountid.nextval,'cocacola','c123','Cong ty');
