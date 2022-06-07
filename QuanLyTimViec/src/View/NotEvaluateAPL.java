@@ -10,19 +10,22 @@ import javax.swing.JOptionPane;
  *
  * @author acer
  */
-public class NotEvaluate extends javax.swing.JDialog {
+public class NotEvaluateAPL extends javax.swing.JDialog {
 
     /**
-     * Creates new form NotEvaluate
+     * Creates new form NotEvaluateAPL
      */
     private int APPLICANTNO, INTERVIEWSCHEDULENO;
-    
-    public NotEvaluate(java.awt.Frame parent, boolean modal, int maApp, int maITS) {
+
+    /**
+     * Creates new form NotEvaluateAPL
+     */
+    public NotEvaluateAPL(java.awt.Frame parent, boolean modal, int maApp, int maITS) {
         super(parent, modal);
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
-        
+
         APPLICANTNO = maApp;
         INTERVIEWSCHEDULENO = maITS;
 
@@ -167,9 +170,9 @@ public class NotEvaluate extends javax.swing.JDialog {
             EvaluateDao dao = new EvaluateDao();
             int mark_apl = Integer.parseInt(txtMARK.getText());
             String comment_apl = txaCOMMENT.getText();
-            Evaluate e = new Evaluate(mark_apl, comment_apl);
+            Evaluate ev = new Evaluate(mark_apl, comment_apl);
 
-            if (dao.insertEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, e)) {
+            if (dao.insertEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, ev)) {
                 MessageDialog.showMessageDialog(this, "Thêm thành công!", "Thông báo");
                 this.dispose();
             } else {

@@ -9,20 +9,23 @@ import javax.swing.JOptionPane;
  *
  * @author acer
  */
-public class HaveEvaluate extends javax.swing.JDialog {
+public class HaveEvaluateCO extends javax.swing.JDialog {
 
     /**
-     * Creates new form HaveEvaluate
+     * Creates new form HaveEvaluateAPL
      */
-    private int APPLICANTNO, INTERVIEWSCHEDULENO;
+    private int COMPANYNO, INTERVIEWSCHEDULENO;
 
-    public HaveEvaluate(java.awt.Frame parent, boolean modal, int maApp, int maITS) {
+    /**
+     * Creates new form HaveEvaluateAPL
+     */
+    public HaveEvaluateCO(java.awt.Frame parent, boolean modal, int maCom, int maITS) {
         super(parent, modal);
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
 
-        APPLICANTNO = maApp;
+        COMPANYNO = maCom;
         INTERVIEWSCHEDULENO = maITS;
 
         HienThi();
@@ -40,7 +43,7 @@ public class HaveEvaluate extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         lblINTERVIEWSCHEDULE = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblAPPLICANTNO = new javax.swing.JLabel();
+        lblCOMPANY = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtMARK = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -59,10 +62,10 @@ public class HaveEvaluate extends javax.swing.JDialog {
         lblINTERVIEWSCHEDULE.setText("jLabel6");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Mã ứng viên:");
+        jLabel2.setText("Mã công ty:");
 
-        lblAPPLICANTNO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblAPPLICANTNO.setText("jLabel5");
+        lblCOMPANY.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCOMPANY.setText("jLabel5");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Điểm đánh giá:");
@@ -113,7 +116,7 @@ public class HaveEvaluate extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(txtMARK)
-                    .addComponent(lblAPPLICANTNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCOMPANY, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblINTERVIEWSCHEDULE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -139,7 +142,7 @@ public class HaveEvaluate extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(lblAPPLICANTNO))
+                    .addComponent(lblCOMPANY))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -160,16 +163,16 @@ public class HaveEvaluate extends javax.swing.JDialog {
 
     private void btnAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltActionPerformed
         // TODO add your handling code here:
-        int mark_apl = Integer.parseInt(txtMARK.getText());
-        String comment_apl = txaCOMMENT.getText();
+        int mark_co = Integer.parseInt(txtMARK.getText());
+        String comment_co = txaCOMMENT.getText();
         EvaluateDao dao = new EvaluateDao();
 
         try {
-            Evaluate e = new Evaluate(mark_apl, comment_apl);
+            Evaluate ev = new Evaluate(mark_co, comment_co);
 
             int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn sửa đánh giá?", "Hỏi");
             if (choose == JOptionPane.YES_OPTION) {
-                if (dao.updateEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, e)) {
+                if (dao.updateEvaluateCO(COMPANYNO, INTERVIEWSCHEDULENO, ev)) {
                     MessageDialog.showMessageDialog(this, "Sửa thành công!", "Thông báo");
                 } else {
                     MessageDialog.showConfirmDialog(this, "Sửa thất bại!", "Thông báo");
@@ -186,7 +189,7 @@ public class HaveEvaluate extends javax.swing.JDialog {
         try {
             int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa đánh giá?", "Hỏi");
             if (choose == JOptionPane.YES_OPTION) {
-                if (dao.deleteEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO)) {
+                if (dao.deleteEvaluateCO(COMPANYNO, INTERVIEWSCHEDULENO)) {
                     MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
                     this.dispose();
                 } else {
@@ -211,7 +214,7 @@ public class HaveEvaluate extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblAPPLICANTNO;
+    private javax.swing.JLabel lblCOMPANY;
     private javax.swing.JLabel lblINTERVIEWSCHEDULE;
     private javax.swing.JTextArea txaCOMMENT;
     private javax.swing.JTextField txtMARK;
@@ -219,16 +222,16 @@ public class HaveEvaluate extends javax.swing.JDialog {
 
     private void HienThi() {
         EvaluateDao dao = new EvaluateDao();
-        Evaluate e = new Evaluate();
+        Evaluate ev = new Evaluate();
         try {
-            e = dao.getInformation(APPLICANTNO, INTERVIEWSCHEDULENO);
+            ev = dao.getInformationCO(COMPANYNO, INTERVIEWSCHEDULENO);
         } catch (Exception ex) {
             MessageDialog.showErrorDialog(this, ex.getMessage(), "Lỗi");
         }
         lblINTERVIEWSCHEDULE.setText(String.valueOf(INTERVIEWSCHEDULENO));
-        lblAPPLICANTNO.setText(String.valueOf(APPLICANTNO));
-        txtMARK.setText(String.valueOf(e.getMARK()));
-        txaCOMMENT.setText(e.getCOMMENT());
+        lblCOMPANY.setText(String.valueOf(COMPANYNO));
+        txtMARK.setText(String.valueOf(ev.getMARK()));
+        txaCOMMENT.setText(ev.getCOMMENT());
     }
 
 }

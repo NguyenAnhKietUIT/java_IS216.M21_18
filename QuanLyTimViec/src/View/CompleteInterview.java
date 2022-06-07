@@ -169,11 +169,11 @@ public class CompleteInterview extends javax.swing.JFrame {
         // TODO add your handling code here:
         EvaluateDao dao = new EvaluateDao();
         try {
-            if (dao.isEvaluate(maApp, maITS)) {
-                HaveEvaluate dialog = new HaveEvaluate(new javax.swing.JFrame(), true, maApp, maITS);
+            if (dao.isEvaluateAPL(maApp, maITS)) {
+                HaveEvaluateAPL dialog = new HaveEvaluateAPL(new javax.swing.JFrame(), true, maApp, maITS);
                 dialog.setVisible(true);
             } else {
-                NotEvaluate dialog = new NotEvaluate(new javax.swing.JFrame(), true, maApp, maITS);
+                NotEvaluateAPL dialog = new NotEvaluateAPL(new javax.swing.JFrame(), true, maApp, maITS);
                 dialog.setVisible(true);
             }
         } catch (Exception e) {

@@ -35,7 +35,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtMARK" alignment="0" max="32767" attributes="0"/>
-                  <Component id="lblAPPLICANTNO" alignment="0" max="32767" attributes="0"/>
+                  <Component id="lblCOMPANY" alignment="0" max="32767" attributes="0"/>
                   <Component id="lblINTERVIEWSCHEDULE" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -67,7 +67,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblAPPLICANTNO" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblCOMPANY" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -111,10 +111,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="M&#xe3; &#x1ee9;ng vi&#xea;n:"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; c&#xf4;ng ty:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblAPPLICANTNO">
+    <Component class="javax.swing.JLabel" name="lblCOMPANY">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>

@@ -10,24 +10,29 @@ import javax.swing.JOptionPane;
  *
  * @author acer
  */
-public class NotEvaluate extends javax.swing.JDialog {
+public class NotEvaluateCO extends javax.swing.JDialog {
 
     /**
-     * Creates new form NotEvaluate
+     * Creates new form NotEvaluateAPL
      */
-    private int APPLICANTNO, INTERVIEWSCHEDULENO;
+    private int COMPANYNO, INTERVIEWSCHEDULENO;
+
+    /**
+     * Creates new form NotEvaluateAPL
+     */
+
     
-    public NotEvaluate(java.awt.Frame parent, boolean modal, int maApp, int maITS) {
+    public NotEvaluateCO(java.awt.Frame parent, boolean modal, int maCom, int maITS) {
         super(parent, modal);
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
         
-        APPLICANTNO = maApp;
+        COMPANYNO = maCom;
         INTERVIEWSCHEDULENO = maITS;
 
         lblINTERVIEWSCHEDULE.setText(String.valueOf(INTERVIEWSCHEDULENO));
-        lblAPPLICANTNO.setText(String.valueOf(APPLICANTNO));
+        lblCOMPANYNO.setText(String.valueOf(COMPANYNO));
     }
 
     /**
@@ -43,7 +48,7 @@ public class NotEvaluate extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         lblINTERVIEWSCHEDULE = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblAPPLICANTNO = new javax.swing.JLabel();
+        lblCOMPANYNO = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtMARK = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -63,10 +68,10 @@ public class NotEvaluate extends javax.swing.JDialog {
         lblINTERVIEWSCHEDULE.setText("jLabel6");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Mã ứng viên:");
+        jLabel2.setText("Mã công ty:");
 
-        lblAPPLICANTNO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblAPPLICANTNO.setText("jLabel5");
+        lblCOMPANYNO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCOMPANYNO.setText("jLabel5");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Điểm đánh giá:");
@@ -107,7 +112,7 @@ public class NotEvaluate extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                             .addComponent(txtMARK)
-                            .addComponent(lblAPPLICANTNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCOMPANYNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblINTERVIEWSCHEDULE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -131,7 +136,7 @@ public class NotEvaluate extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(lblAPPLICANTNO))
+                    .addComponent(lblCOMPANYNO))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -167,9 +172,9 @@ public class NotEvaluate extends javax.swing.JDialog {
             EvaluateDao dao = new EvaluateDao();
             int mark_apl = Integer.parseInt(txtMARK.getText());
             String comment_apl = txaCOMMENT.getText();
-            Evaluate e = new Evaluate(mark_apl, comment_apl);
+            Evaluate ev = new Evaluate(mark_apl, comment_apl);
 
-            if (dao.insertEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, e)) {
+            if (dao.insertEvaluateCO(COMPANYNO, INTERVIEWSCHEDULENO, ev)) {
                 MessageDialog.showMessageDialog(this, "Thêm thành công!", "Thông báo");
                 this.dispose();
             } else {
@@ -191,7 +196,7 @@ public class NotEvaluate extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblAPPLICANTNO;
+    private javax.swing.JLabel lblCOMPANYNO;
     private javax.swing.JLabel lblINTERVIEWSCHEDULE;
     private javax.swing.JTextArea txaCOMMENT;
     private javax.swing.JTextField txtMARK;

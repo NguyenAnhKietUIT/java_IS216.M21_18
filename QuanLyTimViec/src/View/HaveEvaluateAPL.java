@@ -9,14 +9,17 @@ import javax.swing.JOptionPane;
  *
  * @author acer
  */
-public class HaveEvaluate extends javax.swing.JDialog {
+public class HaveEvaluateAPL extends javax.swing.JDialog {
 
     /**
-     * Creates new form HaveEvaluate
+     * Creates new form HaveEvaluateAPL
      */
     private int APPLICANTNO, INTERVIEWSCHEDULENO;
 
-    public HaveEvaluate(java.awt.Frame parent, boolean modal, int maApp, int maITS) {
+    /**
+     * Creates new form HaveEvaluateAPL
+     */
+    public HaveEvaluateAPL(java.awt.Frame parent, boolean modal, int maApp, int maITS) {
         super(parent, modal);
         initComponents();
         setResizable(false);
@@ -165,11 +168,11 @@ public class HaveEvaluate extends javax.swing.JDialog {
         EvaluateDao dao = new EvaluateDao();
 
         try {
-            Evaluate e = new Evaluate(mark_apl, comment_apl);
+            Evaluate ev = new Evaluate(mark_apl, comment_apl);
 
             int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn sửa đánh giá?", "Hỏi");
             if (choose == JOptionPane.YES_OPTION) {
-                if (dao.updateEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, e)) {
+                if (dao.updateEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, ev)) {
                     MessageDialog.showMessageDialog(this, "Sửa thành công!", "Thông báo");
                 } else {
                     MessageDialog.showConfirmDialog(this, "Sửa thất bại!", "Thông báo");
@@ -221,7 +224,7 @@ public class HaveEvaluate extends javax.swing.JDialog {
         EvaluateDao dao = new EvaluateDao();
         Evaluate e = new Evaluate();
         try {
-            e = dao.getInformation(APPLICANTNO, INTERVIEWSCHEDULENO);
+            e = dao.getInformationAPL(APPLICANTNO, INTERVIEWSCHEDULENO);
         } catch (Exception ex) {
             MessageDialog.showErrorDialog(this, ex.getMessage(), "Lỗi");
         }
