@@ -29,6 +29,28 @@ public class CompanyDao {
         }
     }
     
+    public String getCompanyNameByCompanyNo(int id) throws Exception {
+        String sql = "SELECT COMPANYNAME "
+                + " FROM COMPANY"
+                + " WHERE COMPANYNO = ?";
+        
+        String companyname = null;
+        
+        try (
+                 Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
+
+            pstmt.setInt(1, id);
+
+            try ( ResultSet rs = pstmt.executeQuery();) {
+
+                while (rs.next()) {
+                    companyname = rs.getString("COMPANYNAME");
+                }
+                return companyname;
+            }
+        }
+    }
+    
     public boolean insert(Company c) throws Exception {
         String sql = "BEGIN"
                 + " proc_insert_comp(?, ?, ?, ?, ?, ?);"

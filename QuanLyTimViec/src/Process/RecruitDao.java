@@ -12,10 +12,14 @@ import java.util.List;
 public class RecruitDao {
 
     public List<Recruit> findAll() throws Exception {
-        String sql = "SELECT C.COMPANYNAME, D.DEPARTMENTNAME, P.POSITIONNAME, R.NUMBEROFPERSONNEL "
+        String sql = "SELECT C.COMPANYNAME, D.DEPARTMENTNAME, P.POSITIONNAME, "
+                + " R.NUMBEROFPERSONNEL, ROUND(AVG( MARK_CO ),2) EV_MARK "
                 + " FROM RECRUIT R JOIN COMPANY C ON R.COMPANYNO = C.COMPANYNO "
                 + " JOIN DEPARTMENT D ON R.DEPARTMENTNO = D.DEPARTMENTNO "
-                + " JOIN POSITION P ON P.POSITIONNO = R.POSITIONNO";
+                + " JOIN POSITION P ON P.POSITIONNO = R.POSITIONNO"
+                + " JOIN EVALUATE_CO E ON E.COMPANYNO = C.COMPANYNO"
+                + " GROUP BY C.COMPANYNAME, D.DEPARTMENTNAME, P.POSITIONNAME, "
+                + " R.NUMBEROFPERSONNEL";
 
         try (
                  Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
@@ -33,6 +37,7 @@ public class RecruitDao {
                     p.setPOSITIONNAME(rs.getString("POSITIONNAME"));
 
                     Recruit r = new Recruit();
+                    r.setMARK(rs.getDouble("EV_MARK"));
                     r.setNUMBEROFPERSONNEL(rs.getInt("NUMBEROFPERSONNEL"));
                     r.setC(c);
                     r.setD(d);

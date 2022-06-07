@@ -3,6 +3,7 @@ package View;
 import Process.MessageDialog;
 import Process.Recruit;
 import Process.RecruitDao;
+import java.util.Comparator;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -43,7 +44,7 @@ public class SearchJob extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTKCV = new javax.swing.JTable();
-        txtCOMPANYNAME = new javax.swing.JTextField();
+        txtFIND = new javax.swing.JTextField();
         btnFind = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -60,7 +61,7 @@ public class SearchJob extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Công ty", "Phòng ban", "Vị trí", "Số lượng cần tuyển"
+                "Công ty", "Phòng ban", "Vị trí", "Số lượng cần tuyển", "Đánh giá"
             }
         ));
         tblTKCV.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,10 +71,10 @@ public class SearchJob extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblTKCV);
 
-        txtCOMPANYNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtCOMPANYNAME.addActionListener(new java.awt.event.ActionListener() {
+        txtFIND.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtFIND.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCOMPANYNAMEActionPerformed(evt);
+                txtFINDActionPerformed(evt);
             }
         });
 
@@ -117,29 +118,30 @@ public class SearchJob extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtCOMPANYNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(206, 206, 206)
+                .addComponent(txtFIND, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFind)
-                .addGap(18, 18, 18)
-                .addComponent(btnRefresh)
-                .addGap(145, 145, 145))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(jButton1)
-                        .addGap(157, 157, 157)
-                        .addComponent(jButton3))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(245, 245, 245)
-                        .addComponent(jLabel1)))
-                .addContainerGap(154, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jButton1)
+                .addGap(103, 103, 103)
+                .addComponent(btnRefresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,16 +150,16 @@ public class SearchJob extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCOMPANYNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFind)
-                    .addComponent(btnRefresh))
+                    .addComponent(txtFIND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFind))
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton3))
-                .addGap(24, 24, 24))
+                    .addComponent(jButton3)
+                    .addComponent(btnRefresh))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,17 +186,18 @@ public class SearchJob extends javax.swing.JFrame {
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
         // TODO add your handling code here:
-        LoadDataByCompanyName();
+        FindData();
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
         // TODO add your handling code here:
+        txtFIND.setText("");
         LoadData();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
-    private void txtCOMPANYNAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCOMPANYNAMEActionPerformed
+    private void txtFINDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFINDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCOMPANYNAMEActionPerformed
+    }//GEN-LAST:event_txtFINDActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -257,42 +260,61 @@ public class SearchJob extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblTKCV;
-    private javax.swing.JTextField txtCOMPANYNAME;
+    private javax.swing.JTextField txtFIND;
     // End of variables declaration//GEN-END:variables
 
     private void LoadData() {
         try {
             RecruitDao dao = new RecruitDao();
             List<Recruit> list = dao.findAll();
+            sortbyMark(list);
             model.setRowCount(0);
             for (Recruit x : list) {
                 model.addRow(new Object[]{
                     x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
-                    x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
+                    x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL(),
+                    x.getMARK()});
             }
             model.fireTableDataChanged();
             tblTKCV.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Loi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }
 
-    private void LoadDataByCompanyName() {
+    private void FindData() {
         try {
             RecruitDao dao = new RecruitDao();
             List<Recruit> list = dao.findAll();
+            sortbyMark(list);
             model.setRowCount(0);
             for (Recruit x : list) {
-                if (x.getC().getCOMPANYNAME().equals(txtCOMPANYNAME.getText())) {
+                if (x.getC().getCOMPANYNAME().equals(txtFIND.getText())
+                        || x.getP().getPOSITIONNAME().equals(txtFIND.getText())) {
                     model.addRow(new Object[]{
                         x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
-                        x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
+                        x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL(),
+                        x.getMARK()});
                 }
             }
             model.fireTableDataChanged();
             tblTKCV.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Loi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
+    }
+
+    private void sortbyMark(List<Recruit> list) {
+        list.sort((Recruit o1, Recruit o2) -> {
+            double mark1 = o1.getMARK();
+            double mark2 = o2.getMARK();
+            if (mark1 > mark2) {
+                return -1;
+            } else if (mark1 > mark2) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
     }
 }

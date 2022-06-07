@@ -9,15 +9,17 @@ public class Recruit {
     private Department d;
     private Position p;
     private int NUMBEROFPERSONNEL;
+    private double MARK;
 
     public Recruit() {
     }
 
-    public Recruit(Company c, Department d, Position p, int NUMBEROFPERSONNEL) {
+    public Recruit(Company c, Department d, Position p, int NUMBEROFPERSONNEL, double MARK) {
         this.c = c;
         this.d = d;
         this.p = p;
         this.NUMBEROFPERSONNEL = NUMBEROFPERSONNEL;
+        this.MARK = MARK;
     }
 
     public Company getC() {
@@ -50,5 +52,13 @@ public class Recruit {
 
     public void setNUMBEROFPERSONNEL(int NUMBEROFPERSONNEL) {
         this.NUMBEROFPERSONNEL = NUMBEROFPERSONNEL;
+    }
+
+    public double getMARK() {
+        return MARK;
+    }
+
+    public void setMARK(double MARK) {
+        this.MARK = MARK;
     }
 }

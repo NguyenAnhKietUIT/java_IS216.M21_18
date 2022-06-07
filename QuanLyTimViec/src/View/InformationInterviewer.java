@@ -1,5 +1,6 @@
 package View;
 
+import Process.CompanyDao;
 import Process.DataValidator;
 import Process.Interviewer;
 import Process.InterviewerDao;
@@ -15,9 +16,6 @@ public class InformationInterviewer extends javax.swing.JFrame {
     /**
      * Creates new form InformationInterviewer
      */
-    private Interviewer i;
-    private InterviewerDao dao;
-    
     public InformationInterviewer() {
         initComponents();
         setLocationRelativeTo(null);
@@ -45,7 +43,7 @@ public class InformationInterviewer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtGMAIL = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        lblCOMPANYNO = new javax.swing.JLabel();
+        lblCOMPANYNAME = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btnUndo1 = new javax.swing.JButton();
 
@@ -77,10 +75,10 @@ public class InformationInterviewer extends javax.swing.JFrame {
         txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Mã công ty:");
+        jLabel8.setText("Tên công ty:");
 
-        lblCOMPANYNO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblCOMPANYNO.setText("jLabel9");
+        lblCOMPANYNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCOMPANYNAME.setText("jLabel9");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,7 +97,7 @@ public class InformationInterviewer extends javax.swing.JFrame {
                     .addComponent(lblINTERVIEWERNAME, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPHONENUMBER)
                     .addComponent(txtGMAIL, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                    .addComponent(lblCOMPANYNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblCOMPANYNAME, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblINTERVIEWERNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -125,7 +123,7 @@ public class InformationInterviewer extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(lblCOMPANYNO))
+                    .addComponent(lblCOMPANYNAME))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -207,13 +205,15 @@ public class InformationInterviewer extends javax.swing.JFrame {
         int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn cập nhật thông tin?", "Hỏi");
         if (choose == JOptionPane.YES_OPTION) {
             try {
+                Interviewer i = new Interviewer();
+                InterviewerDao dao = new InterviewerDao();
                 i = new Interviewer();
                 dao = new InterviewerDao();
-                
+
                 i.setINTERVIEWERNAME(lblINTERVIEWERNAME.getText());
                 i.setPHONENUMBER(txtPHONENUMBER.getText());
                 i.setGMAIL(txtGMAIL.getText());
-                i.setCOMPANYNO(Integer.parseInt(lblCOMPANYNO.getText()));
+                i.setCOMPANYNO(Integer.parseInt(lblCOMPANYNAME.getText()));
 
                 if (dao.update(i)) {
                     MessageDialog.showMessageDialog(this, "Cập nhật thành công!", "Thông báo");
@@ -278,7 +278,7 @@ public class InformationInterviewer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblCOMPANYNO;
+    private javax.swing.JLabel lblCOMPANYNAME;
     private javax.swing.JLabel lblINTERVIEWERNAME;
     private javax.swing.JLabel lblINTERVIEWERNO;
     private javax.swing.JTextField txtGMAIL;
@@ -287,18 +287,21 @@ public class InformationInterviewer extends javax.swing.JFrame {
 
     private void InThongTin() {
         Interviewer i = new Interviewer();
-        InterviewerDao dao = new InterviewerDao();
-        
+        InterviewerDao idao = new InterviewerDao();
+        CompanyDao cdao = new CompanyDao();
+        String companyName = null;
+
         try {
-            i = dao.getInformationByAccountID();
+            i = idao.getInformationByAccountID();
+            companyName = cdao.getCompanyNameByCompanyNo(i.getCOMPANYNO());
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
-        
+
         lblINTERVIEWERNO.setText(String.valueOf(i.getINTERVIEWERNO()));
         lblINTERVIEWERNAME.setText(i.getINTERVIEWERNAME());
         txtPHONENUMBER.setText(i.getPHONENUMBER());
         txtGMAIL.setText(i.getGMAIL());
-        lblCOMPANYNO.setText(String.valueOf(i.getCOMPANYNO()));
+        lblCOMPANYNAME.setText(String.valueOf(companyName));
     }
 }
