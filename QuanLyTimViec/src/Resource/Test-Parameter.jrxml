@@ -171,10 +171,9 @@ where e.applicantNo = $P{MaUngVien}]]>
 					<chartLegend/>
 				</chart>
 				<pieDataset>
-					<dataset incrementType="Report"/>
 					<keyExpression><![CDATA[$F{MARK_APL}]]></keyExpression>
 					<valueExpression><![CDATA[$F{PERCENT}]]></valueExpression>
-					<labelExpression><![CDATA[$F{PERCENT}]]></labelExpression>
+					<labelExpression><![CDATA[(String)$F{PERCENT}]]></labelExpression>
 				</pieDataset>
 				<piePlot>
 					<plot>
