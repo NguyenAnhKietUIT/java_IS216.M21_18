@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Test Parameter" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c8ca3d2-33d7-4303-86a1-4a8ca537ff8c">
 	<property name="ireport.zoom" value="1.210000000000001"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="6"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="MaUngVien" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[select e.mark_apl, e.comment_apl, a.applicantNo, a.applicantName, phantram.percent
@@ -24,6 +24,9 @@ where e.applicantNo = $P{MaUngVien}]]>
 	<field name="APPLICANTNAME" class="java.lang.String"/>
 	<field name="PERCENT" class="java.math.BigDecimal"/>
 	<variable name="MARK_APL_1" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{MARK_APL}]]></variableExpression>
+	</variable>
+	<variable name="MARK_APL_SUM" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{MARK_APL}]]></variableExpression>
 	</variable>
 	<group name="Mark">
@@ -168,9 +171,10 @@ where e.applicantNo = $P{MaUngVien}]]>
 					<chartLegend/>
 				</chart>
 				<pieDataset>
+					<dataset incrementType="Report"/>
 					<keyExpression><![CDATA[$F{MARK_APL}]]></keyExpression>
 					<valueExpression><![CDATA[$F{PERCENT}]]></valueExpression>
-					<labelExpression><![CDATA[$F{PERCENT}+"%"]]></labelExpression>
+					<labelExpression><![CDATA[$F{PERCENT}]]></labelExpression>
 				</pieDataset>
 				<piePlot>
 					<plot>
