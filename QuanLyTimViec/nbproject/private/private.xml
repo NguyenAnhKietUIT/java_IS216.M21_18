@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Project_Java/QuanLyTimViec/src/View/ApplicantSchedule.java</file>
-            <file>file:/D:/Project_Java/QuanLyTimViec/src/View/HaveEvaluateCO.java</file>
-            <file>file:/D:/Project_Java/QuanLyTimViec/src/Process/EvaluateDao.java</file>
+            <file>file:/D:/Project_Java/QuanLyTimViec/src/View/SearchJob.java</file>
+            <file>file:/D:/Project_Java/QuanLyTimViec/src/View/CompleteInterview.java</file>
+            <file>file:/D:/Project_Java/QuanLyTimViec/src/Process/RecruitDao.java</file>
+            <file>file:/D:/Project_Java/QuanLyTimViec/src/Process/CompleteDao.java</file>
         </group>
     </open-files>
 </project-private>

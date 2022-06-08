@@ -3,7 +3,6 @@ package View;
 import Process.MessageDialog;
 import Process.Recruit;
 import Process.RecruitDao;
-import java.util.Comparator;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
