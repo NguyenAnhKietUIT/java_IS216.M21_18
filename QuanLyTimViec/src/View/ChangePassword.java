@@ -7,6 +7,7 @@ import Process.MessageDialog;
 import Process.SharedData;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -186,8 +187,22 @@ public class ChangePassword extends javax.swing.JFrame {
 
     private void btnUNDOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUNDOActionPerformed
         // TODO add your handling code here:
-        ApplicantFrame app = new ApplicantFrame();
-        app.setVisible(true);
+        JFrame frame = new JFrame();
+
+        switch (SharedData.useraccount.getROLE()) {
+            case "Công ty" -> {
+                frame = new CompanyFrame();
+            }
+            case "Nhà tuyển dụng" -> {
+                frame = new InterviewerFrame();
+            }
+            case "Ứng viên" ->
+                frame = new ApplicantFrame();
+            default ->
+                System.exit(0);
+        }
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_btnUNDOActionPerformed
 

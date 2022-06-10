@@ -305,6 +305,11 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
             Date enddate = new Date(dtENDTIME.getDate().getTime());
             int status = comboSTATUS.getSelectedIndex();
 
+            if (startdate.compareTo(enddate) > 0) {
+                JOptionPane.showMessageDialog(this, "Ngày bắt đầu không thể lớn hơn ngày kết thúc!");
+                return;
+            }
+
             is.setSTARTTIME(startdate);
             is.setENDTIME(enddate);
             is.setLOCATION(txaLOCATION.getText());

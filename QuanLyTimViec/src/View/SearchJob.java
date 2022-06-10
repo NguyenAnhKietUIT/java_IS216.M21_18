@@ -60,7 +60,7 @@ public class SearchJob extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Công ty", "Phòng ban", "Vị trí", "Số lượng cần tuyển", "Đánh giá"
+                "Công ty", "Phòng ban", "Vị trí", "Số lượng cần tuyển"
             }
         ));
         tblTKCV.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -266,13 +266,12 @@ public class SearchJob extends javax.swing.JFrame {
         try {
             RecruitDao dao = new RecruitDao();
             List<Recruit> list = dao.findAll();
-            sortbyMark(list);
+            sortByName(list);
             model.setRowCount(0);
             for (Recruit x : list) {
                 model.addRow(new Object[]{
                     x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
-                    x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL(),
-                    x.getMARK()});
+                    x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
             }
             model.fireTableDataChanged();
             tblTKCV.setModel(model);
@@ -285,15 +284,14 @@ public class SearchJob extends javax.swing.JFrame {
         try {
             RecruitDao dao = new RecruitDao();
             List<Recruit> list = dao.findAll();
-            sortbyMark(list);
+            sortByName(list);
             model.setRowCount(0);
             for (Recruit x : list) {
                 if (x.getC().getCOMPANYNAME().equals(txtFIND.getText())
                         || x.getP().getPOSITIONNAME().equals(txtFIND.getText())) {
                     model.addRow(new Object[]{
                         x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
-                        x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL(),
-                        x.getMARK()});
+                        x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
                 }
             }
             model.fireTableDataChanged();
@@ -303,17 +301,11 @@ public class SearchJob extends javax.swing.JFrame {
         }
     }
 
-    private void sortbyMark(List<Recruit> list) {
-        list.sort((Recruit o1, Recruit o2) -> {
-            double mark1 = o1.getMARK();
-            double mark2 = o2.getMARK();
-            if (mark1 > mark2) {
-                return -1;
-            } else if (mark1 > mark2) {
-                return 1;
-            } else {
-                return 0;
-            }
+    private void sortByName(List<Recruit> list) {
+        list.sort((o1, o2) -> {
+            String name1 = o1.getC().getCOMPANYNAME().trim();
+            String name2 = o2.getC().getCOMPANYNAME().trim();
+            return name1.compareTo(name2);
         });
     }
 }

@@ -1,12 +1,20 @@
 package View;
 
+import java.sql.*;
+import ConnectDB.ConnectOracle;
 import Process.Applicant;
 import Process.ApplicantDao;
 import Process.HaveSkill;
 import Process.HaveSkillDao;
 import Process.MessageDialog;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -18,13 +26,15 @@ public class SeeCandidate extends javax.swing.JDialog {
      * Creates new form SeeCandidate
      */
     private DefaultTableModel model;
-    
+    private int maUV;
+
     public SeeCandidate(java.awt.Frame parent, boolean modal, int maApp) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        
+
+        maUV = maApp;
         model = (DefaultTableModel) tblSKILL.getModel();
         InThongTin(maApp);
         LoadData(maApp);
@@ -54,6 +64,7 @@ public class SeeCandidate extends javax.swing.JDialog {
         lblPHONENUMBER = new javax.swing.JLabel();
         lblGMAIL = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -149,24 +160,40 @@ public class SeeCandidate extends javax.swing.JDialog {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel7.setText("THÔNG TIN ỨNG VIÊN");
 
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_detective_16px.png"))); // NOI18N
+        jButton4.setText("Xem bài đánh giá");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator2)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(147, 147, 147)
+                                .addComponent(jLabel7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(183, 183, 183)
+                                .addComponent(jButton4)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,16 +208,36 @@ public class SeeCandidate extends javax.swing.JDialog {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        try {
+            Connection con = ConnectOracle.openConnection();
+            String s = "src/Resource/EvaluateApplicant.jrxml";
+            JasperReport jr = JasperCompileManager.compileReport(s);
+            HashMap hs = new HashMap();
+            hs.put("MaUngVien", maUV);
+            JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
+            JasperViewer.viewReport(jp, false);
+        } catch (Exception e) {
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+        }
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -232,12 +279,18 @@ public class SeeCandidate extends javax.swing.JDialog {
             for (HaveSkill x : list) {
                 String trinhdo;
                 trinhdo = switch (x.getLEVEL_APL()) {
-                    case 1 -> "Kém";
-                    case 2 -> "Yếu";
-                    case 3 -> "Trung bình";
-                    case 4 -> "Khá";
-                    case 5 -> "Giỏi";
-                    default -> "Chuyên sâu";
+                    case 1 ->
+                        "Kém";
+                    case 2 ->
+                        "Yếu";
+                    case 3 ->
+                        "Trung bình";
+                    case 4 ->
+                        "Khá";
+                    case 5 ->
+                        "Giỏi";
+                    default ->
+                        "Chuyên sâu";
                 };
 
                 model.addRow(new Object[]{

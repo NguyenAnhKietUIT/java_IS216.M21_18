@@ -202,7 +202,7 @@ public class CompleteInterview extends javax.swing.JFrame {
 
             if (dao.confirmedToWork(maApp, maITS)) {
                 MessageDialog.showMessageDialog(this, "Xác nhận thành công!", "Thông báo");
-                SendEmail();
+                //SendEmail();
             } else {
                 MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
             }

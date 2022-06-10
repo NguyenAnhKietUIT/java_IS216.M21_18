@@ -207,13 +207,13 @@ public class InformationInterviewer extends javax.swing.JFrame {
             try {
                 Interviewer i = new Interviewer();
                 InterviewerDao dao = new InterviewerDao();
-                i = new Interviewer();
-                dao = new InterviewerDao();
+                CompanyDao cdao = new CompanyDao();
+                int companyno = cdao.getCompanyNoByCompanyName(lblCOMPANYNAME.getText());
 
                 i.setINTERVIEWERNAME(lblINTERVIEWERNAME.getText());
                 i.setPHONENUMBER(txtPHONENUMBER.getText());
                 i.setGMAIL(txtGMAIL.getText());
-                i.setCOMPANYNO(Integer.parseInt(lblCOMPANYNAME.getText()));
+                i.setCOMPANYNO(companyno);
 
                 if (dao.update(i)) {
                     MessageDialog.showMessageDialog(this, "Cập nhật thành công!", "Thông báo");
