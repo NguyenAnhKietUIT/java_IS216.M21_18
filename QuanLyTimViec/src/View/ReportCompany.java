@@ -154,7 +154,7 @@ public class ReportCompany extends javax.swing.JFrame {
             String s = "src/Resource/Group_Cty_ThamGia.jrxml";
             JasperReport jr = JasperCompileManager.compileReport(s);
             HashMap hs = new HashMap();
-            hs.put("maCongTy", companyno);
+            hs.put("maCongty", companyno);
             JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
             JasperViewer.viewReport(jp, false);
         } catch (Exception e) {

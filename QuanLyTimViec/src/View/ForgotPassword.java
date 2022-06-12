@@ -68,6 +68,10 @@ public class ForgotPassword extends javax.swing.JFrame {
         rdbCOMPANY.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rdbCOMPANY.setText("Công ty");
 
+        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
         buttonGroup1.add(rdbINTERVIEWER);
         rdbINTERVIEWER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rdbINTERVIEWER.setText("Nhà tuyển dụng");
@@ -87,6 +91,10 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_good_pincode_16px.png"))); // NOI18N
         jLabel6.setText("Xác nhận mật khẩu:");
+
+        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

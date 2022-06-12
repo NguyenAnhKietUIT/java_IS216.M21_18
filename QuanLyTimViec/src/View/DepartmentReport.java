@@ -145,8 +145,8 @@ public class DepartmentReport extends javax.swing.JFrame {
             String s = "src/Resource/PhongBan_DaThamGia.jrxml";
             JasperReport jr = JasperCompileManager.compileReport(s);
             HashMap hs = new HashMap();
-            hs.put("MaCongTy", companyno);
-            hs.put("MaPhongBan", maPhong);
+            hs.put("maCongTy", companyno);
+            hs.put("maPhongBan", maPhong);
             JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
             JasperViewer.viewReport(jp, false);
         } catch (Exception e) {

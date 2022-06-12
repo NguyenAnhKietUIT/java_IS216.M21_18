@@ -55,8 +55,14 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Xác nhận mật khẩu:");
 
+        txtNEWPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Mật khẩu hiện tại:");
+
+        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         btnChange.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_password_reset_16px.png"))); // NOI18N
@@ -125,7 +131,7 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnChange)
                     .addComponent(btnUNDO))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,9 +258,6 @@ public class ChangePassword extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChange;
     private javax.swing.JButton btnUNDO;
-    private javax.swing.JButton btnUndo;
-    private javax.swing.JButton btnUndo1;
-    private javax.swing.JButton btnUndo2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
