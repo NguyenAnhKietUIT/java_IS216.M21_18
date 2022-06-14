@@ -8,13 +8,6 @@ import Process.MessageDialog;
 import Process.SharedData;
 import java.util.List;
 import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -202,7 +195,6 @@ public class CompleteInterview extends javax.swing.JFrame {
 
             if (dao.confirmedToWork(maApp, maITS)) {
                 MessageDialog.showMessageDialog(this, "Xác nhận thành công!", "Thông báo");
-                //SendEmail();
             } else {
                 MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
             }
@@ -210,47 +202,6 @@ public class CompleteInterview extends javax.swing.JFrame {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void SendEmail() throws Exception {
-        CompanyDao cdao = new CompanyDao();
-        int companyno = cdao.takeCOMPANYNO(SharedData.useraccount.getACCOUNTID());
-        String companyname = cdao.getCompanyNameByCompanyNo(companyno);
-
-        final String username = "quanlytimvieclam@gmail.com";
-        final String password = "anhkiet.22032002";
-
-        Properties prop = new Properties();
-        prop.put("mail.smtp.host", "smtp.gmail.com");
-        prop.put("mail.smtp.port", "587");
-        prop.put("mail.smtp.auth", "true");
-        prop.put("mail.smtp.starttls.enable", "true"); //TLS
-
-        Session session = Session.getInstance(prop,
-                new javax.mail.Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-
-        try {
-
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("quanlytimvieclam@gmail.com"));
-            message.setRecipients(
-                    Message.RecipientType.TO,
-                    InternetAddress.parse(destinationmail)
-            );
-            message.setSubject("Thư xác nhận vào làm");
-            message.setText("Chúc mừng bạn đã được công ty " + companyname
-                    + " xác nhận vào làm việc. Chúc bạn sẽ gặt hái được nhiều thành công!!!");
-
-            Transport.send(message);
-
-        } catch (MessagingException e) {
-            MessageDialog.showConfirmDialog(this, "Gửi mail thất bại!", "Thông báo");
-        }
-    }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:

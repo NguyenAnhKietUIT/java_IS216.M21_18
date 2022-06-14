@@ -509,18 +509,17 @@ BEFORE UPDATE
 ON REGISTER
 FOR EACH ROW
 DECLARE
-    slg int;
+    slg int := 0;
     companyNo_v company.companyNo%TYPE;
     SlotInItvs NUMBER := 0;
     startTime_v interview_schedule.startTime%TYPE;
 BEGIN
     select i.companyNo into companyNo_v
     from interview_schedule intv join interviewer i on intv.interviewerNo = i.interviewerNo
-    where intv.interviewScheduleNo = :NEW.interviewScheduleNo;
-
+    where intv.interviewScheduleNo = :OLD.interviewScheduleNo;
     select numberofpersonnel into slg
     from recruit 
-    WHERE positionNo = :NEW.positionNO and departmentNo = :NEW.departmentNo and companyno = companyNo_v;
+    WHERE positionNo = :OLD.positionNo and departmentNo = :OLD.departmentNo and companyno = companyNo_v;
 
     ------Nhan vao lam
     if :NEW.status = 4
@@ -529,7 +528,7 @@ BEGIN
         then
             update recruit 
             set numberofpersonnel = numberofpersonnel - 1
-            where companyno = companyNo_v and departmentNo = :new.departmentNO and positionNo = :new.positionNo;
+            where companyno = companyNo_v and departmentNo = :OLD.departmentNO and positionNo = :OLD.positionNo;
         else
             RAISE_APPLICATION_ERROR(-20000, 'Da nhan du so luong');
         end if;
@@ -537,7 +536,7 @@ BEGIN
 
     -------Khong tham gia 
     IF :NEW.status = 3 THEN
-        INSERT INTO EVALUATE_APL VALUES (companyNo_v, :NEW.APPLICANTNO, :NEW.interviewScheduleNo, 1, 'Khong tham gia');
+        INSERT INTO EVALUATE_APL VALUES (companyNo_v, :OLD.APPLICANTNO, :OLD.interviewScheduleNo, 1, 'Khong tham gia');
     END IF;
 
     --------Huy dang ky
@@ -553,13 +552,13 @@ BEGIN
         ELSE 
             select startTime into startTime_v
             from INTERVIEW_SCHEDULE
-            WHERE interviewScheduleNo = :NEW.interviewScheduleNo;
+            WHERE interviewScheduleNo = :OLD.interviewScheduleNo;
             
             IF TO_DATE(startTime_v,'dd/mm/yyyy') - TO_DATE(CURRENT_DATE,'dd/mm/yyyy') > 1
             THEN
                 UPDATE INTERVIEW_SCHEDULE S
                 SET slot = slot + 1
-                WHERE S.interviewScheduleNo = :NEW.interviewScheduleNo;
+                WHERE S.interviewScheduleNo = :OLD.interviewScheduleNo;
             ELSE
                 RAISE_APPLICATION_ERROR(-20000, 'UNG VIEN CHI CO THE HUY LICH TRUOC 1 NGAY');
             END IF;

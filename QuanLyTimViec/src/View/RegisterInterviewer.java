@@ -250,6 +250,9 @@ public class RegisterInterviewer extends javax.swing.JFrame {
         } else if (!txtPHONENUMBER.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Lỗi");
             return;
+        } else if (txtPHONENUMBER.getText().length() != 10) {
+            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Lỗi");
+            return;
         } else if (txtGMAIL.getText().equals("")) {
             MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
             return;

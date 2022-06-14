@@ -155,16 +155,15 @@ public class NotEvaluateCO extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtMARK, sb, "Điểm đánh giá không được để trống!");
-
-        if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+        int diem = Integer.parseInt(txtMARK.getText());
+        if (txtMARK.getText().equals("")) {
+            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Lỗi");
             return;
-        }
-
-        if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
+        } else if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có thể là số!");
+            return;
+        } else if (diem < 1 || diem > 5 ) {
+            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có giá trị từ 1 - 5!");
             return;
         }
 

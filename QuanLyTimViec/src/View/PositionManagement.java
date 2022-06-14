@@ -224,7 +224,7 @@ public class PositionManagement extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên vị trí không được để trống!", "Lỗi");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
             MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Lỗi");

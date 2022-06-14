@@ -166,6 +166,16 @@ public class HaveEvaluateCO extends javax.swing.JDialog {
         int mark_co = Integer.parseInt(txtMARK.getText());
         String comment_co = txaCOMMENT.getText();
         EvaluateDao dao = new EvaluateDao();
+        if (txtMARK.getText().equals("")) {
+            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Lỗi");
+            return;
+        } else if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
+            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có thể là số!");
+            return;
+        } else if (mark_co < 1 || mark_co > 5) {
+            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có giá trị từ 1 - 5!");
+            return;
+        }
 
         try {
             Evaluate ev = new Evaluate(mark_co, comment_co);

@@ -234,7 +234,10 @@ public class RegisterCompany extends javax.swing.JFrame {
         } else if (!txtHOTLINE.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Hotline chỉ có thể là dãy số!", "Lỗi");
             return;
-        } else if (txtGMAIL.getText().equals("")) {
+        } else if (txtHOTLINE.getText().length() != 10) {
+            MessageDialog.showErrorDialog(this, "Hotline phải có đúng 10 chữ số!", "Lỗi");
+            return;
+        }else if (txtGMAIL.getText().equals("")) {
             MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
             return;
         } else if (txtUSERNAME.getText().equals("")) {

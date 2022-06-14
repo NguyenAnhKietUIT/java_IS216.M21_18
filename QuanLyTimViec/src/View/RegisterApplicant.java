@@ -18,8 +18,6 @@ public class RegisterApplicant extends javax.swing.JFrame {
     /**
      * Creates new form RegisterApplicant
      */
-    private boolean isChoose = false;
-
     public RegisterApplicant() {
         initComponents();
         setResizable(false);
@@ -272,6 +270,9 @@ public class RegisterApplicant extends javax.swing.JFrame {
         } else if (!txtCITIZENID.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Căn cược công dân chỉ có thể là dãy số!", "Lỗi");
             return;
+        } else if (txtCITIZENID.getText().length() != 12) {
+            MessageDialog.showErrorDialog(this, "Căn cước công dân phải có đúng 12 chữ số!", "Lỗi");
+            return;
         } else if (!rdbMALE.isSelected() && !rdbFEMALE.isSelected()) {
             MessageDialog.showErrorDialog(this, "Vui lòng chọn giới tính!", "Lỗi");
             return;
@@ -283,6 +284,9 @@ public class RegisterApplicant extends javax.swing.JFrame {
             return;
         } else if (!txtPHONENUMBER.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Lỗi");
+            return;
+        } else if (txtPHONENUMBER.getText().length() != 10) {
+            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Lỗi");
             return;
         } else if (txtGMAIL.getText().equals("")) {
             MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
@@ -353,7 +357,6 @@ public class RegisterApplicant extends javax.swing.JFrame {
 
     private void dtDATEOFBIRTHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dtDATEOFBIRTHMouseClicked
         // TODO add your handling code here:
-        isChoose = true;
     }//GEN-LAST:event_dtDATEOFBIRTHMouseClicked
 
     /**
