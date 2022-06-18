@@ -220,6 +220,7 @@ public class CurriculumViate extends javax.swing.JFrame {
         txtSKILLNAME.setText("");
         txtYEARSOFEXPERIENCE.setText("");
         comboLEVEL_APL.setSelectedIndex(0);
+        LoadData();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void tblHaveSkillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHaveSkillMouseClicked
