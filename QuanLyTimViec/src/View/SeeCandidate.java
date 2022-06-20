@@ -35,18 +35,10 @@ public class SeeCandidate extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        try {
-            con = ConnectOracle.openConnection();
-            con.setAutoCommit(false);
-            con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-            System.out.println(con.getTransactionIsolation());
-            maUV = maApp;
-            model = (DefaultTableModel) tblSKILL.getModel();
-            InThongTin(maApp);
-            LoadData(maApp);
-        } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
-        }
+        maUV = maApp;
+        model = (DefaultTableModel) tblSKILL.getModel();
+        InThongTin(maApp);
+        LoadData(maApp);
 
     }
 
@@ -212,7 +204,7 @@ public class SeeCandidate extends javax.swing.JDialog {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(185, 185, 185)
+                .addGap(179, 179, 179)
                 .addComponent(jButton4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -233,7 +225,7 @@ public class SeeCandidate extends javax.swing.JDialog {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -242,7 +234,6 @@ public class SeeCandidate extends javax.swing.JDialog {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection con = ConnectOracle.openConnection();
             String s = "src/Resource/EvaluateApplicant.jrxml";
             JasperReport jr = JasperCompileManager.compileReport(s);
             HashMap hs = new HashMap();
@@ -256,7 +247,6 @@ public class SeeCandidate extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
         LoadData(maUV);
     }//GEN-LAST:event_jButton1ActionPerformed
 

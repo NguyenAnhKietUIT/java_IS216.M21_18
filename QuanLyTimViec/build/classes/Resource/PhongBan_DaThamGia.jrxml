@@ -17,7 +17,7 @@ join department d on r.departmentNo = d.departmentNo
 join applicant a on a.applicantNo = r.applicantNo
 join position p on p.positionNo = r.positionNo
 where i.companyNo = $P{maCongTy} and r.departmentNo = $P{maPhongBan} and r.status in (2,4)
-order by r.interviewscheduleNo, p.positionName,a.applicantNo	]]>
+order by r.interviewscheduleNo, p.positionName,a.applicantNo]]>
 	</queryString>
 	<field name="DEPARTMENTNO" class="java.math.BigDecimal"/>
 	<field name="DEPARTMENTNAME" class="java.lang.String"/>
@@ -58,7 +58,7 @@ order by r.interviewscheduleNo, p.positionName,a.applicantNo	]]>
 				<text><![CDATA[Mã phòng ban:]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="166" y="10" width="100" height="20" forecolor="#333333" backcolor="#FFFFFF" uuid="cba66e13-c9fc-474c-b098-b07794cf19a2"/>
+				<reportElement mode="Transparent" x="166" y="10" width="122" height="20" forecolor="#333333" backcolor="#FFFFFF" uuid="cba66e13-c9fc-474c-b098-b07794cf19a2"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 					<font fontName="DejaVu Sans" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -66,7 +66,7 @@ order by r.interviewscheduleNo, p.positionName,a.applicantNo	]]>
 				<textFieldExpression><![CDATA[$F{DEPARTMENTNO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="166" y="41" width="100" height="20" forecolor="#333333" backcolor="#FFFFFF" uuid="633960b5-0c1a-4797-9912-9cb7abd6d967"/>
+				<reportElement mode="Transparent" x="166" y="41" width="138" height="20" forecolor="#333333" backcolor="#FFFFFF" uuid="633960b5-0c1a-4797-9912-9cb7abd6d967"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 					<font fontName="DejaVu Sans" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -131,7 +131,7 @@ order by r.interviewscheduleNo, p.positionName,a.applicantNo	]]>
 				<textFieldExpression><![CDATA[$F{INTERVIEWSCHEDULENO}]]></textFieldExpression>
 			</textField>
 			<textField pattern="" isBlankWhenNull="false">
-				<reportElement mode="Transparent" x="174" y="6" width="100" height="20" forecolor="#333333" backcolor="#FFFFFF" uuid="fac0b9f4-74d6-4ae6-8649-1e11adfeecd2"/>
+				<reportElement mode="Transparent" x="174" y="6" width="114" height="20" forecolor="#333333" backcolor="#FFFFFF" uuid="fac0b9f4-74d6-4ae6-8649-1e11adfeecd2"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 					<font fontName="DejaVu Sans" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
