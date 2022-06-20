@@ -7,16 +7,18 @@ package Process;
 public class Account {
 
     private int ACCOUNTID;
-    private String USERNAME, PASSWORD, ROLE;
+    private String USERNAME, PASSWORD, ROLE, LINKIMAGE;
 
     public Account() {
     }
 
-    public Account(int ACCOUNTID, String USERNAME, String PASSWORD, String ROLE) {
+    public Account(int ACCOUNTID, String USERNAME, String PASSWORD, String ROLE,
+            String LINKIMAGE) {
         this.ACCOUNTID = ACCOUNTID;
         this.USERNAME = USERNAME;
         this.PASSWORD = PASSWORD;
         this.ROLE = ROLE;
+        this.LINKIMAGE = LINKIMAGE;
     }
 
     public int getACCOUNTID() {
@@ -49,5 +51,13 @@ public class Account {
 
     public void setROLE(String ROLE) {
         this.ROLE = ROLE;
+    }
+
+    public String getLINKIMAGE() {
+        return LINKIMAGE;
+    }
+
+    public void setLINKIMAGE(String LINKIMAGE) {
+        this.LINKIMAGE = LINKIMAGE;
     }
 }

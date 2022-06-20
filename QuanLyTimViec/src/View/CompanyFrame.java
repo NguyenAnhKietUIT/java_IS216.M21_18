@@ -1,8 +1,14 @@
 package View;
 
+import Process.AccountDao;
 import Process.MessageDialog;
 import Process.SharedData;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
 
 /**
  *
@@ -13,12 +19,14 @@ public class CompanyFrame extends javax.swing.JFrame {
     /**
      * Creates new form CompanyFrame
      */
+    AccountDao dao;
+    
     public CompanyFrame() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        lblUSERNAME.setText(SharedData.useraccount.getUSERNAME());
-        lblROLE.setText(SharedData.useraccount.getROLE());
+        
+        InThongTin();
     }
 
     /**
@@ -37,7 +45,7 @@ public class CompanyFrame extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         lblUSERNAME = new javax.swing.JLabel();
         lblROLE = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -82,7 +90,12 @@ public class CompanyFrame extends javax.swing.JFrame {
         lblROLE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblROLE.setText("jLabel5");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/Company.png"))); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/Company.png"))); // NOI18N
+        lblImage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblImageMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,14 +122,14 @@ public class CompanyFrame extends javax.swing.JFrame {
                                 .addComponent(lblROLE, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(lblImage)
                         .addGap(29, 29, 29))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(lblImage)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -292,6 +305,47 @@ public class CompanyFrame extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void lblImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImageMouseClicked
+        // TODO add your handling code here:
+        int selection = MessageDialog.showConfirmDialog(this, "Đổi ảnh đại diện?", "Xác nhận");
+        if (selection == JOptionPane.YES_OPTION) {
+            JFileChooser chooser = new JFileChooser();
+            chooser.setFileFilter(new FileFilter() {
+                @Override
+                public boolean accept(File f) {
+                    String extension = f.getName().toLowerCase();
+                    boolean jpg = extension.endsWith(".jpg");
+                    boolean png = extension.endsWith(".png");
+                    if (f.isDirectory()) {
+                        return true;
+                    } else {
+                        return (jpg || png);
+                    }
+                }
+
+                @Override
+                public String getDescription() {
+                    return "Image File (*.jpg, *.png)";
+                }
+            });
+
+            if (chooser.showOpenDialog(this) == JFileChooser.CANCEL_OPTION) {
+                return;
+            }
+
+            File file = chooser.getSelectedFile();
+            String path = file.getPath();
+            try {
+                if (dao.updateImage(path)) {
+
+                }
+            } catch (Exception e) {
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            }
+            showImage(path);
+        }
+    }//GEN-LAST:event_lblImageMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -337,10 +391,28 @@ public class CompanyFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblImage;
     private javax.swing.JLabel lblROLE;
     private javax.swing.JLabel lblUSERNAME;
     // End of variables declaration//GEN-END:variables
+
+    private void InThongTin() {
+        dao = new AccountDao();
+        lblUSERNAME.setText(SharedData.useraccount.getUSERNAME());
+        lblROLE.setText(SharedData.useraccount.getROLE());
+
+        if (SharedData.useraccount.getLINKIMAGE().equals("")) {
+        } else {
+            showImage(SharedData.useraccount.getLINKIMAGE());
+        }
+    }
+    
+    private void showImage(String path) {
+        ImageIcon icon = new ImageIcon(path);
+        Image img = icon.getImage().getScaledInstance(300, 240, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(img);
+        lblImage.setIcon(resizedIcon);
+    }
 }
