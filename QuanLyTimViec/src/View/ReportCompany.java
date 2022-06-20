@@ -20,6 +20,8 @@ public class ReportCompany extends javax.swing.JFrame {
     /**
      * Creates new form ReportCompany
      */
+    private Connection con;
+    
     public ReportCompany() {
         initComponents();
         setLocationRelativeTo(null);
@@ -126,7 +128,7 @@ public class ReportCompany extends javax.swing.JFrame {
         int companyno = SharedData.useraccount.getACCOUNTID();
 
         try {
-            Connection con = ConnectOracle.openConnection();
+            con = ConnectOracle.openConnection();
             String s = "src/Resource/SoLuongUngVienDaThamGia.jrxml";
             JasperReport jr = JasperCompileManager.compileReport(s);
             HashMap hs = new HashMap();
