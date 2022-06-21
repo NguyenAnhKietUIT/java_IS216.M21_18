@@ -29,16 +29,14 @@ public class ApplicantDao {
             }
         }
     }
-    
+
     public boolean insert(Applicant a) throws Exception {
         String sql = "BEGIN"
                 + " proc_insert_applicant(?, ?, ?, ?, ?, ?, ?, ?);"
                 + " END;";
-        
+
         try (
-                Connection con = ConnectOracle.openConnection();  
-                PreparedStatement pstmt = con.prepareStatement(sql);
-            ) {
+                 Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setString(1, a.getAPPLICANTNAME());
             pstmt.setString(2, a.getCITIZENID());
             pstmt.setDate(3, a.getDATEOFBIRTH());
@@ -51,16 +49,14 @@ public class ApplicantDao {
             return pstmt.executeUpdate() > 0;
         }
     }
-    
+
     public Applicant getInformationByAccountID() throws Exception {
         String sql = "SELECT A.*"
                 + " FROM APPLICANT A JOIN ACCOUNT AC ON A.ACCOUNTID = AC.ACCOUNTID "
                 + " WHERE AC.ACCOUNTID = ?";
 
         try (
-                Connection con = ConnectOracle.openConnection();  
-                PreparedStatement pstmt = con.prepareStatement(sql);) 
-        {
+                 Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setInt(1, SharedData.useraccount.getACCOUNTID());
 
             try ( ResultSet rs = pstmt.executeQuery();) {
@@ -80,16 +76,14 @@ public class ApplicantDao {
         }
         return null;
     }
-    
+
     public boolean update(Applicant a) throws Exception {
         String sql = "BEGIN"
                 + " proc_update_applicant(?, ?, ?, ?, ?, ?, ?, ?, ?);"
                 + " END;";
-        
+
         try (
-                Connection con = ConnectOracle.openConnection();  
-                PreparedStatement pstmt = con.prepareStatement(sql);
-            ) {
+                 Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setInt(1, takeAPPLICANTNO(SharedData.useraccount.getACCOUNTID()));
             pstmt.setString(2, a.getAPPLICANTNAME());
             pstmt.setString(3, a.getCITIZENID());
@@ -103,7 +97,7 @@ public class ApplicantDao {
             return pstmt.executeUpdate() > 0;
         }
     }
-    
+
     public Applicant getInformationAPL(int maApp) throws Exception {
         String sql = "SELECT *"
                 + " FROM APPLICANT"
