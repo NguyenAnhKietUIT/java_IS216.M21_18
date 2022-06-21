@@ -20,12 +20,12 @@ public class CompanyFrame extends javax.swing.JFrame {
      * Creates new form CompanyFrame
      */
     AccountDao dao;
-    
+
     public CompanyFrame() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        
+
         InThongTin();
     }
 
@@ -408,7 +408,7 @@ public class CompanyFrame extends javax.swing.JFrame {
             showImage(SharedData.useraccount.getLINKIMAGE());
         }
     }
-    
+
     private void showImage(String path) {
         ImageIcon icon = new ImageIcon(path);
         Image img = icon.getImage().getScaledInstance(300, 240, Image.SCALE_SMOOTH);

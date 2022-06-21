@@ -19,14 +19,13 @@ public class InterviewerFrame extends javax.swing.JFrame {
     /**
      * Creates new form InterviewerFrame
      */
-    
     AccountDao dao;
-    
+
     public InterviewerFrame() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        
+
         InThongTin();
     }
 
