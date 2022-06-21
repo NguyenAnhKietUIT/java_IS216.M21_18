@@ -50,7 +50,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Username");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
-        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 240, -1));
 
         jLabel4.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
@@ -58,7 +58,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setText("Password");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPASSWORD.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         txtPASSWORD.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtPASSWORDKeyPressed(evt);

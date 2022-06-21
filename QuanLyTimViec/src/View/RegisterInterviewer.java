@@ -33,7 +33,6 @@ public class RegisterInterviewer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtINTERVIEWERNAME = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -50,164 +49,102 @@ public class RegisterInterviewer extends javax.swing.JFrame {
         txtCONFIRM = new javax.swing.JPasswordField();
         btnRegister = new javax.swing.JButton();
         btnUndo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(460, 620));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("ĐĂNG KÝ");
+        jLabel2.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel2.setText("Full name");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 124, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Họ và tên:");
-
-        txtINTERVIEWERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtINTERVIEWERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         txtINTERVIEWERNAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtINTERVIEWERNAMEActionPerformed(evt);
             }
         });
+        getContentPane().add(txtINTERVIEWERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 200, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Số điện thoại:");
+        jLabel3.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel3.setText("Phone number");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 124, -1));
 
-        txtPHONENUMBER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPHONENUMBER.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtPHONENUMBER, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 200, -1));
 
-        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtGMAIL.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 200, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Gmail:");
+        jLabel4.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel4.setText("Gmail");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 124, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Tên công ty:");
+        jLabel5.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel5.setText("Company name");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 124, -1));
 
-        txtCOMPANYNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCOMPANYNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         txtCOMPANYNAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCOMPANYNAMEActionPerformed(evt);
             }
         });
+        getContentPane().add(txtCOMPANYNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 200, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Tên tài khoản:");
+        jLabel9.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel9.setText("Username");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 124, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Mật khẩu:");
+        jLabel10.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel10.setText("Password");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 124, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setText("Xác nhận mật khẩu:");
+        jLabel11.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel11.setText("Confirm password");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, -1, -1));
 
-        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 200, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPASSWORD.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         txtPASSWORD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPASSWORDActionPerformed(evt);
             }
         });
+        getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 200, -1));
 
-        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCONFIRM.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 200, -1));
 
-        btnRegister.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnRegister.setBackground(new java.awt.Color(79, 220, 194));
+        btnRegister.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_add_user_male_16px.png"))); // NOI18N
-        btnRegister.setText("Đăng ký");
+        btnRegister.setText("Sign Up");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, -1, -1));
 
-        btnUndo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnUndo.setBackground(new java.awt.Color(79, 220, 194));
+        btnUndo.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnUndo.setForeground(new java.awt.Color(255, 255, 255));
         btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
-        btnUndo.setText("Quay lại");
+        btnUndo.setText("Back");
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtPHONENUMBER, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                            .addComponent(txtINTERVIEWERNAME)
-                            .addComponent(txtGMAIL, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCONFIRM)
-                            .addComponent(txtPASSWORD)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUSERNAME, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                            .addComponent(txtCOMPANYNAME))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(btnRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(btnUndo)
-                .addGap(89, 89, 89))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(174, 174, 174))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtINTERVIEWERNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtPHONENUMBER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtGMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCOMPANYNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtUSERNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtPASSWORD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtCONFIRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUndo)
-                    .addComponent(btnRegister))
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/dangky2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
