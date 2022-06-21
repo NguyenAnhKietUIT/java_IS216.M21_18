@@ -65,81 +65,83 @@ public class RegisterApplicant extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel2.setText("Full name");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 124, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 124, -1));
 
         jLabel4.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel4.setText("Date of Birth");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 124, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 124, -1));
 
         jLabel5.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel5.setText("Gender");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 124, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 124, -1));
 
         jLabel6.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel6.setText("Address");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 124, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 124, -1));
 
         jLabel7.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel7.setText("Phone number");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 124, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 124, -1));
 
         jLabel8.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel8.setText("Gmail");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 124, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 124, -1));
 
         jLabel9.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel9.setText("Username");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 124, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 124, -1));
 
         jLabel10.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel10.setText("Password");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 124, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 124, -1));
 
         jLabel11.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel11.setText("Confirm Password\n");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 650, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
         jLabel12.setText("ID");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 124, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 124, -1));
 
-        txtAPPLICANTNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtAPPLICANTNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 220, -1));
+        txtAPPLICANTNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtAPPLICANTNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 220, -1));
 
-        txtCITIZENID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtCITIZENID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 220, -1));
+        txtCITIZENID.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtCITIZENID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 220, -1));
 
-        dtDATEOFBIRTH.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dtDATEOFBIRTH.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         dtDATEOFBIRTH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dtDATEOFBIRTHMouseClicked(evt);
             }
         });
-        getContentPane().add(dtDATEOFBIRTH, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 160, -1));
+        getContentPane().add(dtDATEOFBIRTH, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 160, -1));
 
         buttonGroup1.add(rdbMALE);
+        rdbMALE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         rdbMALE.setText("Male");
-        getContentPane().add(rdbMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, -1, -1));
+        getContentPane().add(rdbMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
 
         buttonGroup1.add(rdbFEMALE);
+        rdbFEMALE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         rdbFEMALE.setText("Female");
-        getContentPane().add(rdbFEMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
+        getContentPane().add(rdbFEMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
         txaADDRESS.setColumns(20);
         txaADDRESS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaADDRESS.setRows(5);
         jScrollPane1.setViewportView(txaADDRESS);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 220, 90));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 220, 90));
 
-        txtPHONENUMBER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtPHONENUMBER, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 220, -1));
+        txtPHONENUMBER.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtPHONENUMBER, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 220, -1));
 
-        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 220, -1));
+        txtGMAIL.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 220, -1));
 
-        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 220, -1));
+        txtUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 220, -1));
 
         btnRegister.setBackground(new java.awt.Color(79, 220, 194));
         btnRegister.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
@@ -151,7 +153,7 @@ public class RegisterApplicant extends javax.swing.JFrame {
                 btnRegisterActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 710, -1, -1));
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 690, -1, -1));
 
         btnUndo.setBackground(new java.awt.Color(79, 220, 194));
         btnUndo.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
@@ -163,16 +165,16 @@ public class RegisterApplicant extends javax.swing.JFrame {
                 btnUndoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 710, -1, -1));
+        getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 690, -1, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 220, -1));
+        txtPASSWORD.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 220, -1));
 
-        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 220, -1));
+        txtCONFIRM.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 220, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/dangky.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 450, 780));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
