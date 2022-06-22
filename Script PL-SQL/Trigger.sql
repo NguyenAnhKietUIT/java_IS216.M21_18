@@ -2,10 +2,10 @@
 /*									TRIGGER									 	 */
 /*=======================================================================================================================================================*/
 --------------------------------------------------------
---  DDL for Trigger CANCEL_SCHEDULE
+--  Trigger CANCEL_SCHEDULE
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "CANCEL_SCHEDULE" 
+CREATE OR REPLACE TRIGGER "CANCEL_SCHEDULE" 
 BEFORE UPDATE
 ON REGISTER
 FOR EACH ROW
@@ -25,12 +25,12 @@ BEGIN
 		END IF;
 	END IF;
 END;
-ALTER TRIGGER "CANCEL_SCHEDULE" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger INTERVIEW_SLOT
+--  Trigger INTERVIEW_SLOT
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "INTERVIEW_SLOT" 
+CREATE OR REPLACE TRIGGER "INTERVIEW_SLOT" 
 BEFORE INSERT OR UPDATE
 ON INTERVIEW_SCHEDULE
 FOR EACH ROW
@@ -40,12 +40,12 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20000, 'MOT LICH CHI CO TOI DA 20 UNG VIEN');
     END IF;
 END;
-ALTER TRIGGER "INTERVIEW_SLOT" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger REGISTINTERVIEW_CHECKDATE
+--  Trigger REGISTINTERVIEW_CHECKDATE
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "REGISTINTERVIEW_CHECKDATE" 
+CREATE OR REPLACE TRIGGER "REGISTINTERVIEW_CHECKDATE" 
 Before insert 
 on register
 for each row
@@ -78,12 +78,12 @@ begin
         RAISE_APPLICATION_ERROR(-20000, 'Ung vien khong the dang ky lich phong van cho nhieu cong ty tai mot thoi diem');
     end if;
 end;
-ALTER TRIGGER "REGISTINTERVIEW_CHECKDATE" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger REGISTINTERVIEW_CHECKPOINT
+--  Trigger REGISTINTERVIEW_CHECKPOINT
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "REGISTINTERVIEW_CHECKPOINT" 
+CREATE OR REPLACE TRIGGER "REGISTINTERVIEW_CHECKPOINT" 
 before insert
 on register
 for each row
@@ -105,12 +105,12 @@ begin
         RAISE_APPLICATION_ERROR(-20000, 'DIEM UY TIN NHO HON 3 KHONG THE DANG KY THEM');
 	end if;
 end;
-ALTER TRIGGER "REGISTINTERVIEW_CHECKPOINT" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger TRIGGER_INTERVIEW_TIME_INTERVIEWSHCEDULE
+--  Trigger TRIGGER_INTERVIEW_TIME_INTERVIEWSHCEDULE
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "TRIGGER_INTERVIEW_TIME_INTERVIEWSHCEDULE" 
+CREATE OR REPLACE TRIGGER "TRIGGER_INTERVIEW_TIME_INTERVIEWSHCEDULE" 
 AFTER INSERT OR UPDATE
 ON INTERVIEW_SCHEDULE
 FOR EACH ROW
@@ -119,12 +119,12 @@ BEGIN
         Raise_Application_Error(-20011, 'THOI GIAN KET THUC KHONG THE BE HON THOI GIAN BAT DAU');
     END IF;
 END;
-ALTER TRIGGER "TRIGGER_INTERVIEW_TIME_INTERVIEWSHCEDULE" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger TRIGGER_MINUS_REGIS_SLOT
+--  Trigger TRIGGER_MINUS_REGIS_SLOT
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "TRIGGER_MINUS_REGIS_SLOT" 
+CREATE OR REPLACE TRIGGER "TRIGGER_MINUS_REGIS_SLOT" 
 BEFORE INSERT
 ON REGISTER
 FOR EACH ROW
@@ -145,12 +145,12 @@ BEGIN
         WHERE S.interviewScheduleNo = :NEW.interviewScheduleNo;
     END IF;
 END;
-ALTER TRIGGER "TRIGGER_MINUS_REGIS_SLOT" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger TRIGGER_SCHEDULE_NOTSAME_INTERVIEWSCHEDULE
+--  Trigger TRIGGER_SCHEDULE_NOTSAME_INTERVIEWSCHEDULE
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "TRIGGER_SCHEDULE_NOTSAME_INTERVIEWSCHEDULE" 
+CREATE OR REPLACE TRIGGER "TRIGGER_SCHEDULE_NOTSAME_INTERVIEWSCHEDULE" 
 BEFORE INSERT 
 ON INTERVIEW_SCHEDULE
 for each row
@@ -174,12 +174,12 @@ BEGIN
 
 
 END;
-ALTER TRIGGER "TRIGGER_SCHEDULE_NOTSAME_INTERVIEWSCHEDULE" ENABLE
+
 --------------------------------------------------------
---  DDL for Trigger trigger_status_register
+--  Trigger trigger_status_register
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "trigger_status_register" 
+CREATE OR REPLACE TRIGGER "trigger_status_register" 
 BEFORE UPDATE
 ON REGISTER
 FOR EACH ROW
@@ -240,4 +240,3 @@ BEGIN
         END IF;
     END IF;
 END;
-ALTER TRIGGER "trigger_status_register" ENABLE
