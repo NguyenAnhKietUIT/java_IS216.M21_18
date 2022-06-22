@@ -1,9 +1,11 @@
---Tao bang DEPARTMENT va khoa chinh
+--Tao bang DEPARTMENT 
 CREATE TABLE DEPARTMENT
 (
 	departmentNo NUMBER NOT NULL,
 	departmentName VARCHAR2(30) NOT NULL UNIQUE,
 );
+
+--Khoa chinh
 ALTER TABLE DEPARTMENT ADD CONSTRAINT PK_DEPARTMENT PRIMARY KEY (departmentNo);
 
 --Du lieu
