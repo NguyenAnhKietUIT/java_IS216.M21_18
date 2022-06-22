@@ -2,7 +2,7 @@
 CREATE TABLE DEPARTMENT
 (
 	departmentNo NUMBER NOT NULL,
-	departmentName VARCHAR2(30) NOT NULL UNIQUE,
+	departmentName VARCHAR2(30) NOT NULL UNIQUE
 );
 
 --Khoa chinh
