@@ -1,4 +1,4 @@
---Tao bang REGISTER va khoa chinh
+--Tao bang REGISTER 
 CREATE TABLE REGISTER
 (
 	interviewScheduleNo NUMBER NOT NULL,
@@ -13,6 +13,8 @@ CREATE TABLE REGISTER
 		-- 3: Khong tham gia
 		-- 4: Da duoc nhan vao lam
 );
+
+--Khoa chinh
 ALTER TABLE REGISTER ADD CONSTRAINT PK_REGISTER PRIMARY KEY (interviewScheduleNo, applicantNo, departmentNo, positionNo);
 
 --Khoa ngoai
