@@ -1,4 +1,4 @@
---Tao bang INTERVIEW_SCHEDULE va khoa chinh
+--Tao bang INTERVIEW_SCHEDULE 
 CREATE TABLE INTERVIEW_SCHEDULE
 (
 	interviewScheduleNo NUMBER NOT NULL,
@@ -12,6 +12,8 @@ CREATE TABLE INTERVIEW_SCHEDULE
 		-- 0: Chua hoan thanh
 		-- 1: Da hoan thanh
 );
+
+--Khoa chinh
 ALTER TABLE INTERVIEW_SCHEDULE ADD CONSTRAINT PK_INTERVIEW_SCHEDULE PRIMARY KEY (interviewScheduleNo);
 
 --Khoa ngoai
