@@ -1,9 +1,10 @@
---Tao bang SKILL va khoa chinh
+--Tao bang SKILL
 create table SKILL (
 	skillNo NUMBER NOT NULL,
   	skillName VARCHAR2(50) NOT NULL UNIQUE
 );
 
+--Khoa chinh
 ALTER TABLE SKILL ADD CONSTRAINT PK_SKILL PRIMARY KEY (skillNo);
 
 --Du lieu
