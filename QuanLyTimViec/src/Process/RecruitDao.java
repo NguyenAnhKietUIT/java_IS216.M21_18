@@ -12,7 +12,8 @@ import java.util.List;
 public class RecruitDao {
 
     public List<Recruit> findAll() throws Exception {
-        String sql = "SELECT C.COMPANYNAME, D.DEPARTMENTNAME, P.POSITIONNAME, R.NUMBEROFPERSONNEL "
+        String sql = "SELECT C.COMPANYNAME, D.DEPARTMENTNAME, P.POSITIONNAME, "
+                + " R.NUMBEROFPERSONNEL"
                 + " FROM RECRUIT R JOIN COMPANY C ON R.COMPANYNO = C.COMPANYNO "
                 + " JOIN DEPARTMENT D ON R.DEPARTMENTNO = D.DEPARTMENTNO "
                 + " JOIN POSITION P ON P.POSITIONNO = R.POSITIONNO";
@@ -115,19 +116,20 @@ public class RecruitDao {
 
     public List<Require> findRequire(String tencty, String tenpban, String tenvt)
             throws Exception {
-        String sql = "SELECT RQ.REQUIREMENTNAME, R.LEVEL_RE, R.YEARSOFEXPERIENCE"
-                + " FROM REQUIRE R JOIN REQUIREMENT RQ ON R.REQUIREMENTNO = RQ.REQUIREMENTNO"
-                + "	JOIN POSITION P ON P.POSITIONNO = R.POSITIONNO"
-                + "	JOIN RECRUIT RE ON RE.POSITIONNO = P.POSITIONNO"
-                + "	JOIN DEPARTMENT D ON D.DEPARTMENTNO = RE.DEPARTMENTNO"
-                + "	JOIN COMPANY C ON C.COMPANYNO = RE.COMPANYNO"
-                + " WHERE POSITIONNAME = ? AND DEPARTMENTNAME = ? AND COMPANYNAME = ?";
+        String sql = "SELECT RQ.REQUIREMENTNAME, R.LEVEL_RE, R.YEARSOFEXPERIENCE "
+                + " FROM REQUIRE R JOIN REQUIREMENT RQ ON R.REQUIREMENTNO = RQ.REQUIREMENTNO "
+                + "	JOIN POSITION P ON P.POSITIONNO = R.POSITIONNO "
+                + "	JOIN RECRUIT RE ON RE.POSITIONNO = P.POSITIONNO "
+                + "	JOIN DEPARTMENT D ON D.DEPARTMENTNO = RE.DEPARTMENTNO "
+                + "	JOIN COMPANY C ON C.COMPANYNO = RE.COMPANYNO "
+                + " WHERE COMPANYNAME = ? AND DEPARTMENTNAME = ? AND POSITIONNAME = ?";
 
         try (
                  Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
-            pstmt.setString(1, tenvt);
+            
+            pstmt.setString(1, tencty);
             pstmt.setString(2, tenpban);
-            pstmt.setString(3, tencty);
+            pstmt.setString(3, tenvt);
 
             try ( ResultSet rs = pstmt.executeQuery();) {
                 List<Require> list = new ArrayList<>();

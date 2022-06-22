@@ -1,5 +1,7 @@
 package View;
 
+import ConnectDB.ConnectOracle;
+import java.sql.*;
 import Process.DataValidator;
 import Process.HaveSkill;
 import Process.HaveSkillDao;
@@ -18,6 +20,7 @@ public class CurriculumViate extends javax.swing.JFrame {
      * Creates new form CurriculumViate
      */
     private DefaultTableModel model;
+    private Connection con;
 
     public CurriculumViate() {
         initComponents();
@@ -220,6 +223,7 @@ public class CurriculumViate extends javax.swing.JFrame {
         txtSKILLNAME.setText("");
         txtYEARSOFEXPERIENCE.setText("");
         comboLEVEL_APL.setSelectedIndex(0);
+        LoadData();
     }//GEN-LAST:event_btnRefreshActionPerformed
 
     private void tblHaveSkillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHaveSkillMouseClicked
@@ -253,28 +257,35 @@ public class CurriculumViate extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUndoActionPerformed
 
     private void btnDltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDltActionPerformed
-        // TODO add your handling code here:
-        StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtSKILLNAME, sb, "Tên kỹ năng không được để trống!");
+        try {
+            // TODO add your handling code here:
+            con = ConnectOracle.openConnection();
+            con.setAutoCommit(false);
 
-        if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
-            return;
-        }
+            StringBuilder sb = new StringBuilder();
+            DataValidator.validateEmpty(txtSKILLNAME, sb, "Tên kỹ năng không được để trống!");
 
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa kỹ năng?", "Hỏi");
-        if (choose == JOptionPane.YES_OPTION) {
-            try {
-                HaveSkillDao dao = new HaveSkillDao();
-                if (dao.delete(txtSKILLNAME.getText())) {
-                    MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
-                    LoadData();
-                } else {
-                    MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
-                }
-            } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            if (sb.length() > 0) {
+                MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+                return;
             }
+
+            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa kỹ năng?", "Hỏi");
+            if (choose == JOptionPane.YES_OPTION) {
+                try {
+                    HaveSkillDao dao = new HaveSkillDao();
+                    if (dao.delete(txtSKILLNAME.getText())) {
+                        MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
+                        LoadData();
+                    } else {
+                        MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
+                    }
+                } catch (Exception e) {
+                    MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                }
+            }
+        } catch (Exception e) {
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_btnDltActionPerformed
 

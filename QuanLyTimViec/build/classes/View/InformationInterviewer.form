@@ -87,7 +87,7 @@
                       <Component id="lblINTERVIEWERNAME" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtPHONENUMBER" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtGMAIL" alignment="0" pref="299" max="32767" attributes="0"/>
-                      <Component id="lblCOMPANYNO" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCOMPANYNAME" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblINTERVIEWERNO" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -120,7 +120,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblCOMPANYNO" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblCOMPANYNAME" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -195,10 +195,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M&#xe3; c&#xf4;ng ty:"/>
+            <Property name="text" type="java.lang.String" value="T&#xea;n c&#xf4;ng ty:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblCOMPANYNO">
+        <Component class="javax.swing.JLabel" name="lblCOMPANYNAME">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>

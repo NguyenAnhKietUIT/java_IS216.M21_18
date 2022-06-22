@@ -14,7 +14,7 @@ public class ConnectOracle {
         String password = "HoaiLinh2304";
         Class.forName("oracle.jdbc.driver.OracleDriver");
         Connection conn = DriverManager.getConnection(url, username, password);
-
+        
         return conn;
     }
 }

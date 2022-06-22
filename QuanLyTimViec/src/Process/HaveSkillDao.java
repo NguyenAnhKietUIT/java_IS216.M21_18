@@ -90,9 +90,9 @@ public class HaveSkillDao {
 
         try (
                  Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
-
             pstmt.setString(1, skillname);
             pstmt.setInt(2, dao.takeAPPLICANTNO(SharedData.useraccount.getACCOUNTID()));
+
             return pstmt.executeUpdate() > 0;
         }
     }
@@ -111,11 +111,11 @@ public class HaveSkillDao {
             pstmt.setInt(2, dao.takeAPPLICANTNO(SharedData.useraccount.getACCOUNTID()));
             pstmt.setInt(3, hs.getLEVEL_APL());
             pstmt.setInt(4, hs.getYEARSOFEXPERIENCE());
-
+            
             return pstmt.executeUpdate() > 0;
         }
     }
-    
+
     public List<HaveSkill> findSkill(int maApp) throws Exception {
         String sql = "SELECT S.SKILLNAME, H.LEVEL_APL, H.YEARSOFEXPERIENCE "
                 + " FROM SKILL S JOIN HAVE H ON S.SKILLNO = H.SKILLNO"

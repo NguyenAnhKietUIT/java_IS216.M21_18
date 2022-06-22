@@ -18,8 +18,6 @@ public class RegisterApplicant extends javax.swing.JFrame {
     /**
      * Creates new form RegisterApplicant
      */
-    private boolean isChoose = false;
-
     public RegisterApplicant() {
         initComponents();
         setResizable(false);
@@ -36,7 +34,6 @@ public class RegisterApplicant extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -61,191 +58,123 @@ public class RegisterApplicant extends javax.swing.JFrame {
         btnUndo = new javax.swing.JButton();
         txtPASSWORD = new javax.swing.JPasswordField();
         txtCONFIRM = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("ĐĂNG KÝ");
+        jLabel2.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel2.setText("Full name");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 124, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Họ và tên:");
+        jLabel4.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel4.setText("Date of Birth");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 124, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Ngày sinh:");
+        jLabel5.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel5.setText("Gender");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 124, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setText("Giới tính:");
+        jLabel6.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel6.setText("Address");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 124, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Địa chỉ:");
+        jLabel7.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel7.setText("Phone number");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 124, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Số điện thoại:");
+        jLabel8.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel8.setText("Gmail");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 510, 124, -1));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Gmail:");
+        jLabel9.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel9.setText("Username");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 124, -1));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel9.setText("Tên tài khoản:");
+        jLabel10.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel10.setText("Password");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 124, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Mật khẩu:");
+        jLabel11.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel11.setText("Confirm Password\n");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setText("Xác nhận mật khẩu:");
+        jLabel12.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        jLabel12.setText("ID");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 124, -1));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setText("CMND/CCCD:");
+        txtAPPLICANTNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtAPPLICANTNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 220, -1));
 
-        txtAPPLICANTNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCITIZENID.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtCITIZENID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 220, -1));
 
-        txtCITIZENID.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        dtDATEOFBIRTH.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dtDATEOFBIRTH.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         dtDATEOFBIRTH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dtDATEOFBIRTHMouseClicked(evt);
             }
         });
+        getContentPane().add(dtDATEOFBIRTH, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 160, -1));
 
         buttonGroup1.add(rdbMALE);
-        rdbMALE.setText("Nam");
+        rdbMALE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        rdbMALE.setText("Male");
+        getContentPane().add(rdbMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, -1, -1));
 
         buttonGroup1.add(rdbFEMALE);
-        rdbFEMALE.setText("Nữ");
+        rdbFEMALE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        rdbFEMALE.setText("Female");
+        getContentPane().add(rdbFEMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, -1, -1));
 
         txaADDRESS.setColumns(20);
         txaADDRESS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaADDRESS.setRows(5);
         jScrollPane1.setViewportView(txaADDRESS);
 
-        txtPHONENUMBER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 220, 90));
 
-        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPHONENUMBER.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtPHONENUMBER, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 220, -1));
 
-        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtGMAIL.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 220, -1));
 
-        btnRegister.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 220, -1));
+
+        btnRegister.setBackground(new java.awt.Color(79, 220, 194));
+        btnRegister.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_add_user_male_16px.png"))); // NOI18N
-        btnRegister.setText("Đăng ký");
+        btnRegister.setText("Sign Up");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 690, -1, -1));
 
-        btnUndo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnUndo.setBackground(new java.awt.Color(79, 220, 194));
+        btnUndo.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnUndo.setForeground(new java.awt.Color(255, 255, 255));
         btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
-        btnUndo.setText("Quay lại");
+        btnUndo.setText("Back");
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 690, -1, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPASSWORD.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 590, 220, -1));
 
-        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCONFIRM.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, 220, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(174, 174, 174))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtAPPLICANTNAME)
-                    .addComponent(txtCITIZENID)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                    .addComponent(txtPHONENUMBER)
-                    .addComponent(txtGMAIL)
-                    .addComponent(txtUSERNAME)
-                    .addComponent(txtPASSWORD)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dtDATEOFBIRTH, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(rdbMALE)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbFEMALE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(txtCONFIRM))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(btnRegister)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnUndo)
-                .addGap(78, 78, 78))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtAPPLICANTNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(txtCITIZENID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(dtDATEOFBIRTH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(rdbMALE)
-                    .addComponent(rdbFEMALE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPHONENUMBER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtGMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtUSERNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtPASSWORD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtCONFIRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegister)
-                    .addComponent(btnUndo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/dangky.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -272,6 +201,9 @@ public class RegisterApplicant extends javax.swing.JFrame {
         } else if (!txtCITIZENID.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Căn cược công dân chỉ có thể là dãy số!", "Lỗi");
             return;
+        } else if (txtCITIZENID.getText().length() != 12) {
+            MessageDialog.showErrorDialog(this, "Căn cước công dân phải có đúng 12 chữ số!", "Lỗi");
+            return;
         } else if (!rdbMALE.isSelected() && !rdbFEMALE.isSelected()) {
             MessageDialog.showErrorDialog(this, "Vui lòng chọn giới tính!", "Lỗi");
             return;
@@ -283,6 +215,9 @@ public class RegisterApplicant extends javax.swing.JFrame {
             return;
         } else if (!txtPHONENUMBER.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Lỗi");
+            return;
+        } else if (txtPHONENUMBER.getText().length() != 10) {
+            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Lỗi");
             return;
         } else if (txtGMAIL.getText().equals("")) {
             MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
@@ -353,7 +288,6 @@ public class RegisterApplicant extends javax.swing.JFrame {
 
     private void dtDATEOFBIRTHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dtDATEOFBIRTHMouseClicked
         // TODO add your handling code here:
-        isChoose = true;
     }//GEN-LAST:event_dtDATEOFBIRTHMouseClicked
 
     /**
@@ -396,11 +330,11 @@ public class RegisterApplicant extends javax.swing.JFrame {
     private javax.swing.JButton btnUndo;
     private javax.swing.ButtonGroup buttonGroup1;
     private com.toedter.calendar.JDateChooser dtDATEOFBIRTH;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

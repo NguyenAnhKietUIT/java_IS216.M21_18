@@ -1,5 +1,6 @@
 package View;
 
+import Process.EvaluateDao;
 import Process.FirstPair;
 import Process.FirstPairDao;
 import Process.MessageDialog;
@@ -16,7 +17,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
     /**
      * Creates new form ApplicantSchedule
      */
-    private int malich;
+    private int maITS;
     private String trangthai;
 
     private DefaultTableModel model;
@@ -44,6 +45,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
         tblLPV = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +86,15 @@ public class ApplicantSchedule extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_rating_16px.png"))); // NOI18N
+        jButton3.setText("Đánh giá công ty");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,17 +105,18 @@ public class ApplicantSchedule extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(236, 236, 236)
-                                .addComponent(jButton1)
-                                .addGap(182, 182, 182)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(309, 309, 309)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 215, Short.MAX_VALUE)))
+                        .addGap(309, 309, 309)
+                        .addComponent(jLabel1)
+                        .addGap(0, 319, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jButton3)
+                .addGap(147, 147, 147)
+                .addComponent(jButton1)
+                .addGap(160, 160, 160)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +128,8 @@ public class ApplicantSchedule extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -129,7 +142,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
 
         if (row >= 0) {
             int id = (int) tblLPV.getValueAt(row, 0);
-            malich = id;
+            maITS = id;
 
             String status = (String) tblLPV.getValueAt(row, 5);
             trangthai = status;
@@ -143,7 +156,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
             try {
                 FirstPairDao dao = new FirstPairDao();
                 if (trangthai.equalsIgnoreCase("Đã đăng ký")) {
-                    if (dao.cancel(malich)) {
+                    if (dao.cancel(maITS)) {
                         MessageDialog.showMessageDialog(this, "Đã hủy lịch!", "Thông báo");
                         LoadData();
                     } else {
@@ -164,6 +177,28 @@ public class ApplicantSchedule extends javax.swing.JFrame {
         app.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if (trangthai.equals("Đã hoàn thành")) {
+            EvaluateDao dao = new EvaluateDao();
+
+            try {
+                int maCom = dao.getCompanynoByInterviewScheduleno(maITS);
+                if (dao.isEvaluateCO(maCom, maITS)) {
+                    HaveEvaluateCO dialog = new HaveEvaluateCO(new javax.swing.JFrame(), true, maCom, maITS);
+                    dialog.setVisible(true);
+                } else {
+                    NotEvaluateCO dialog = new NotEvaluateCO(new javax.swing.JFrame(), true, maCom, maITS);
+                    dialog.setVisible(true);
+                }
+            } catch (Exception e) {
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            }
+        } else {
+            MessageDialog.showMessageDialog(this, "Bạn cần hoàn thành phỏng vấn", "Thông báo");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,9 +236,9 @@ public class ApplicantSchedule extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnUndo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblLPV;

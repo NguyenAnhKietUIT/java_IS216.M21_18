@@ -1,10 +1,13 @@
 package View;
 
+import Process.CompanyDao;
 import Process.Complete;
 import Process.CompleteDao;
 import Process.EvaluateDao;
 import Process.MessageDialog;
+import Process.SharedData;
 import java.util.List;
+import java.util.Properties;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,6 +21,7 @@ public class CompleteInterview extends javax.swing.JFrame {
      */
     private DefaultTableModel model;
     private int maApp, maITS;
+    private String destinationmail;
 
     public CompleteInterview() {
         initComponents();
@@ -156,6 +160,9 @@ public class CompleteInterview extends javax.swing.JFrame {
 
             int idITS = (int) tblCOMPLETE.getValueAt(row, 5);
             maITS = idITS;
+
+            String mailreceive = (String) tblCOMPLETE.getValueAt(row, 3);
+            destinationmail = mailreceive;
         }
     }//GEN-LAST:event_tblCOMPLETEMouseClicked
 
@@ -169,11 +176,11 @@ public class CompleteInterview extends javax.swing.JFrame {
         // TODO add your handling code here:
         EvaluateDao dao = new EvaluateDao();
         try {
-            if (dao.isEvaluate(maApp, maITS)) {
-                HaveEvaluate dialog = new HaveEvaluate(new javax.swing.JFrame(), true, maApp, maITS);
+            if (dao.isEvaluateAPL(maApp, maITS)) {
+                HaveEvaluateAPL dialog = new HaveEvaluateAPL(new javax.swing.JFrame(), true, maApp, maITS);
                 dialog.setVisible(true);
             } else {
-                NotEvaluate dialog = new NotEvaluate(new javax.swing.JFrame(), true, maApp, maITS);
+                NotEvaluateAPL dialog = new NotEvaluateAPL(new javax.swing.JFrame(), true, maApp, maITS);
                 dialog.setVisible(true);
             }
         } catch (Exception e) {
@@ -185,6 +192,7 @@ public class CompleteInterview extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             CompleteDao dao = new CompleteDao();
+
             if (dao.confirmedToWork(maApp, maITS)) {
                 MessageDialog.showMessageDialog(this, "Xác nhận thành công!", "Thông báo");
             } else {
