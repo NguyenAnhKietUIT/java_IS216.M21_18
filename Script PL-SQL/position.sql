@@ -1,8 +1,10 @@
---Tao bang POSITION va khoa chinh
+--Tao bang POSITION 
 create table POSITION(
 	positionNo NUMBER NOT NULL,
   	positionName VARCHAR2(30) NOT NULL UNIQUE
 );
+
+--Khoa chinh
 ALTER TABLE POSITION ADD CONSTRAINT PK_POSITION PRIMARY KEY (positionNo);
 
 --Du lieu
