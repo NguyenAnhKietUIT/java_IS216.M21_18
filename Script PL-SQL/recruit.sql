@@ -1,10 +1,12 @@
---Tao bang RECRUIT va khoa chinh
+--Tao bang RECRUIT 
 create table RECRUIT (
 	companyNo NUMBER NOT NULL,
 	departmentNo NUMBER NOT NULL,
   	positionNo NUMBER NOT NULL,
   	numberOfPersonnel NUMBER
 );
+
+--Khoa chinh
 ALTER TABLE RECRUIT ADD CONSTRAINT PK_RECRUIT PRIMARY KEY (companyNo, departmentNo, positionNo);
 
 --Khoa ngoai
