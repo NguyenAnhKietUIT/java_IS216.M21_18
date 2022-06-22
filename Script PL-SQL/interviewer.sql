@@ -1,4 +1,4 @@
---Tao bang INTERVIEWER va khoa chinh
+--Tao bang INTERVIEWER 
 CREATE TABLE INTERVIEWER
 (
 	interviewerNo NUMBER NOT NULL,
@@ -9,6 +9,7 @@ CREATE TABLE INTERVIEWER
 	accountID NUMBER
 );
 
+--Khoa chinh
 ALTER TABLE INTERVIEWER ADD CONSTRAINT PK_INTERVIEWER PRIMARY KEY (interviewerNo);
 
 --Khoa ngoai
