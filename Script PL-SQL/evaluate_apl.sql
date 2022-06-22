@@ -1,4 +1,4 @@
---Tao bang EVALUATE_APL va khoa chinh
+--Tao bang EVALUATE_APL 
 CREATE TABLE EVALUATE_APL
 (
 	companyNo NUMBER NOT NULL,
@@ -13,6 +13,8 @@ CREATE TABLE EVALUATE_APL
 		 --4: Hai long,
 		 --5: Rat hai long
 );
+
+--Khoa chinh
 ALTER TABLE EVALUATE_APL ADD CONSTRAINT PK_EVALUATE_APL PRIMARY KEY (companyNo, applicantNo, interviewScheduleNo);
 
 --Khoa ngoai
