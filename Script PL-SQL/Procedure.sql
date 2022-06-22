@@ -2,7 +2,7 @@
 /*									PROCEDURE								 	 */
 /*=======================================================================================================================================================*/
 --------------------------------------------------------
---  DDL for Procedure FIND_APPLICANT
+--  Procedure FIND_APPLICANT
 --------------------------------------------------------
 set define off;
 
@@ -20,7 +20,7 @@ BEGIN
                             '. Gmail: ' || v_apl.gmail || '. So tai khoan: ' || v_apl.accountid);
 END;
 --------------------------------------------------------
---  DDL for Procedure FIND_COMPANY
+--  Procedure FIND_COMPANY
 --------------------------------------------------------
 set define off;
 
@@ -71,7 +71,7 @@ BEGIN
     CLOSE c_company;
 END;
 --------------------------------------------------------
---  DDL for Procedure FIND_EVALUATE_APPLICANT
+--  Procedure FIND_EVALUATE_APPLICANT
 --------------------------------------------------------
 set define off;
 
@@ -111,7 +111,7 @@ BEGIN
     CLOSE c_applicant;
 END;
 --------------------------------------------------------
---  DDL for Procedure FIND_EVALUATE_COMPANY
+--  Procedure FIND_EVALUATE_COMPANY
 --------------------------------------------------------
 set define off;
 
@@ -151,7 +151,7 @@ BEGIN
     CLOSE c_company;
 END;
 --------------------------------------------------------
---  DDL for Procedure FIND_INTERVIEWER
+--  Procedure FIND_INTERVIEWER
 --------------------------------------------------------
 set define off;
 
@@ -177,7 +177,7 @@ BEGIN
     CLOSE c_interviewer;
 END;
 --------------------------------------------------------
---  DDL for Procedure HUY_LICH
+--  Procedure HUY_LICH
 --------------------------------------------------------
 set define off;
 
@@ -190,7 +190,7 @@ begin
     where applicantNo = applicantNo_in and interviewScheduleNo = interviewScheduleNo_in and status = 0;
 end;
 --------------------------------------------------------
---  DDL for Procedure PROC_APPLICANT_SKILL
+--  Procedure PROC_APPLICANT_SKILL
 --------------------------------------------------------
 set define off;
 
@@ -233,7 +233,7 @@ BEGIN
     CLOSE C_APPLICANT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_COMPANY_RECRUIT
+--  Procedure PROC_COMPANY_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -279,7 +279,7 @@ BEGIN
     CLOSE C_COMPANY;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_ACCOUNT
+--  Procedure PROC_DELETE_ACCOUNT
 --------------------------------------------------------
 set define off;
 
@@ -304,7 +304,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_APPLICANT
+--  Procedure PROC_DELETE_APPLICANT
 --------------------------------------------------------
 set define off;
 
@@ -316,7 +316,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_COMP
+--  Procedure PROC_DELETE_COMP
 --------------------------------------------------------
 set define off;
 
@@ -341,7 +341,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_DEP
+--  Procedure PROC_DELETE_DEP
 --------------------------------------------------------
 set define off;
 
@@ -366,7 +366,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_DEPARTMENT_OF_RECRUIT
+--  Procedure PROC_DELETE_DEPARTMENT_OF_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -385,7 +385,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_EVALUATE_APL
+--  Procedure PROC_DELETE_EVALUATE_APL
 --------------------------------------------------------
 set define off;
 
@@ -400,7 +400,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_EVALUATE_CO
+--  Procedure PROC_DELETE_EVALUATE_CO
 --------------------------------------------------------
 set define off;
 
@@ -415,7 +415,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_HAVE
+--  Procedure PROC_DELETE_HAVE
 --------------------------------------------------------
 set define off;
 
@@ -433,7 +433,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_INTERVIEWER
+--  Procedure PROC_DELETE_INTERVIEWER
 --------------------------------------------------------
 set define off;
 
@@ -445,7 +445,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_INTERVIEW_SCHEDULE
+--  Procedure PROC_DELETE_INTERVIEW_SCHEDULE
 --------------------------------------------------------
 set define off;
 
@@ -457,7 +457,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_POSITION
+--  Procedure PROC_DELETE_POSITION
 --------------------------------------------------------
 set define off;
 
@@ -471,7 +471,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_POSITION_OF_RECRUIT
+--  Procedure PROC_DELETE_POSITION_OF_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -489,7 +489,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_RECRUIT
+--  Procedure PROC_DELETE_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -508,7 +508,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_REGISTER
+--  Procedure PROC_DELETE_REGISTER
 --------------------------------------------------------
 set define off;
 
@@ -525,7 +525,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_REQUIRE
+--  Procedure PROC_DELETE_REQUIRE
 --------------------------------------------------------
 set define off;
 
@@ -539,7 +539,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_REQUIREMENT
+--  Procedure PROC_DELETE_REQUIREMENT
 --------------------------------------------------------
 set define off;
 
@@ -556,7 +556,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_SKILL
+--  Procedure PROC_DELETE_SKILL
 --------------------------------------------------------
 set define off;
 
@@ -568,7 +568,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_DELETE_SKILLT
+--  Procedure PROC_DELETE_SKILLT
 --------------------------------------------------------
 set define off;
 
@@ -580,7 +580,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_ACCOUNT
+--  Procedure PROC_INSERT_ACCOUNT
 --------------------------------------------------------
 set define off;
 
@@ -596,7 +596,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_APPLICANT
+--  Procedure PROC_INSERT_APPLICANT
 --------------------------------------------------------
 set define off;
 
@@ -614,7 +614,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_BELONG
+--  Procedure PROC_INSERT_BELONG
 --------------------------------------------------------
 set define off;
 
@@ -629,7 +629,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_COMP
+--  Procedure PROC_INSERT_COMP
 --------------------------------------------------------
 set define off;
 
@@ -648,7 +648,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_DEP
+--  Procedure PROC_INSERT_DEP
 --------------------------------------------------------
 set define off;
 
@@ -662,7 +662,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_DEPARTMENT_OF_RECRUIT
+--  Procedure PROC_INSERT_DEPARTMENT_OF_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -716,7 +716,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_EVALUATE_APL
+--  Procedure PROC_INSERT_EVALUATE_APL
 --------------------------------------------------------
 set define off;
 
@@ -733,7 +733,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_EVALUATE_CO
+--  Procedure PROC_INSERT_EVALUATE_CO
 --------------------------------------------------------
 set define off;
 
@@ -750,7 +750,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_HAVE
+--  Procedure PROC_INSERT_HAVE
 --------------------------------------------------------
 set define off;
 
@@ -786,7 +786,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_INTERVIEWER
+--  Procedure PROC_INSERT_INTERVIEWER
 --------------------------------------------------------
 set define off;
 
@@ -806,7 +806,7 @@ BEGIN
 	COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_INTERVIEW_SCHEDULE
+--  Procedure PROC_INSERT_INTERVIEW_SCHEDULE
 --------------------------------------------------------
 set define off;
 
@@ -822,7 +822,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_POSITION
+--  Procedure PROC_INSERT_POSITION
 --------------------------------------------------------
 set define off;
 
@@ -836,7 +836,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_POSITION_OF_RECRUIT
+--  Procedure PROC_INSERT_POSITION_OF_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -870,7 +870,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_RECRUIT
+--  Procedure PROC_INSERT_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -886,7 +886,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_REGISTER
+--  Procedure PROC_INSERT_REGISTER
 --------------------------------------------------------
 set define off;
 
@@ -903,7 +903,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_REQUIRE
+--  Procedure PROC_INSERT_REQUIRE
 --------------------------------------------------------
 set define off;
 
@@ -919,7 +919,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_REQUIREMENT
+--  Procedure PROC_INSERT_REQUIREMENT
 --------------------------------------------------------
 set define off;
 
@@ -932,7 +932,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_INSERT_SKILL
+--  Procedure PROC_INSERT_SKILL
 --------------------------------------------------------
 set define off;
 
@@ -943,7 +943,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_ACCOUNT
+--  Procedure PROC_UPDATE_ACCOUNT
 --------------------------------------------------------
 set define off;
 
@@ -960,7 +960,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_APPLICANT
+--  Procedure PROC_UPDATE_APPLICANT
 --------------------------------------------------------
 set define off;
 
@@ -988,7 +988,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_BELONG
+--  Procedure PROC_UPDATE_BELONG
 --------------------------------------------------------
 set define off;
 
@@ -1004,7 +1004,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_COMP
+--  Procedure PROC_UPDATE_COMP
 --------------------------------------------------------
 set define off;
 
@@ -1024,7 +1024,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_DEP
+--  Procedure PROC_UPDATE_DEP
 --------------------------------------------------------
 set define off;
 
@@ -1039,7 +1039,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_EVALUATE_APL
+--  Procedure PROC_UPDATE_EVALUATE_APL
 --------------------------------------------------------
 set define off;
 
@@ -1057,7 +1057,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_EVALUATE_CO
+--  Procedure PROC_UPDATE_EVALUATE_CO
 --------------------------------------------------------
 set define off;
 
@@ -1075,7 +1075,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_HAVE
+--  Procedure PROC_UPDATE_HAVE
 --------------------------------------------------------
 set define off;
 
@@ -1097,7 +1097,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_INTERVIEWER
+--  Procedure PROC_UPDATE_INTERVIEWER
 --------------------------------------------------------
 set define off;
 
@@ -1119,7 +1119,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_INTERVIEW_SCHEDULE
+--  Procedure PROC_UPDATE_INTERVIEW_SCHEDULE
 --------------------------------------------------------
 set define off;
 
@@ -1143,7 +1143,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_POSITION
+--  Procedure PROC_UPDATE_POSITION
 --------------------------------------------------------
 set define off;
 
@@ -1160,7 +1160,7 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('Ma vi tri khong ton tai');
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_POSITION_OF_RECRUIT
+--  Procedure PROC_UPDATE_POSITION_OF_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -1180,7 +1180,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_RECRUIT
+--  Procedure PROC_UPDATE_RECRUIT
 --------------------------------------------------------
 set define off;
 
@@ -1198,7 +1198,7 @@ BEGIN
    DBMS_OUTPUT.PUT_LINE('Cap nhat thanh cong');
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_REGISTER
+--  Procedure PROC_UPDATE_REGISTER
 --------------------------------------------------------
 set define off;
 
@@ -1217,7 +1217,7 @@ BEGIN
         COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_REQUIRE
+--  Procedure PROC_UPDATE_REQUIRE
 --------------------------------------------------------
 set define off;
 
@@ -1238,7 +1238,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_REQUIREMENT
+--  Procedure PROC_UPDATE_REQUIREMENT
 --------------------------------------------------------
 set define off;
 
@@ -1253,7 +1253,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PROC_UPDATE_SKILL
+--  Procedure PROC_UPDATE_SKILL
 --------------------------------------------------------
 set define off;
 
@@ -1266,7 +1266,7 @@ BEGIN
     COMMIT;
 END;
 --------------------------------------------------------
---  DDL for Procedure PRO_BELONG_COMPANY
+--  Procedure PRO_BELONG_COMPANY
 --------------------------------------------------------
 set define off;
 
