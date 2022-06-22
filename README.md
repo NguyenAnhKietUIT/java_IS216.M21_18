@@ -4,9 +4,9 @@
 ### Các thành viên tham gia project ###
 |STT|Họ Tên|MSSV|SĐT|Nhiệm vụ|Đánh giá %|
 |---|------|----|---|--------|----------|
-|1|Vũ Thị Phương Linh|20521541|trống|Nhóm Trưởng|trống|
-|2|Nguyễn Anh Kiệt|20521498|trống|trống|trống|
-|3|Nguyễn Hoài Linh|20521534|trống|trống|trống|
+|1|Vũ Thị Phương Linh|20521541|0988116001|Nhóm Trưởng|trống|
+|2|Nguyễn Anh Kiệt|20521498|0348630164|trống|trống|
+|3|Nguyễn Hoài Linh|20521534|0707868084|trống|trống|
 |4|Trần Quốc Trung|20520947|trống|trống|trống|
 
 ### Mô tả đề tài đồ án ###
