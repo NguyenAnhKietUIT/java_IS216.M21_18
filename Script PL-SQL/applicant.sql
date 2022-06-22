@@ -1,4 +1,4 @@
---Tao bang APPLICANT va khoa chinh
+--Tao bang APPLICANT 
 CREATE TABLE APPLICANT
 (
 	applicantNo NUMBER NOT NULL,
@@ -14,6 +14,8 @@ CREATE TABLE APPLICANT
 		--0 : Nam 
 		--1 : Nu
 );
+
+--Khoa chinh
 ALTER TABLE APPLICANT ADD CONSTRAINT PK_APPLICANT PRIMARY KEY (applicantNo);
 
 --Khoa ngoai
