@@ -1,4 +1,4 @@
---Tao bang COMPANY va khoa chinh
+--Tao bang COMPANY 
 CREATE TABLE COMPANY
 (
 	companyNo NUMBER NOT NULL,
@@ -9,6 +9,8 @@ CREATE TABLE COMPANY
 	startDate DATE,
 	accountID NUMBER
 );
+
+--Khoa chinh
 ALTER TABLE COMPANY ADD CONSTRAINT PK_COMPANY PRIMARY KEY (companyNo);
 
 --Khoa ngoai
