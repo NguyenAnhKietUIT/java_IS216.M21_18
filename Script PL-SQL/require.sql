@@ -1,4 +1,4 @@
---Tao bang REQUIRE va khoa chinh
+--Tao bang REQUIRE 
 create table REQUIRE (
 	positionNo NUMBER NOT NULL,
   	requirementNo NUMBER NOT NULL,
@@ -12,6 +12,8 @@ create table REQUIRE (
 		 --5: Gioi,
 		 --6: Chuyen sau
 );
+
+--Khoa chinh
 ALTER TABLE REQUIRE ADD CONSTRAINT PK_REQUIRE PRIMARY KEY (positionNo, requirementNo);
 
 --Khoa ngoai
