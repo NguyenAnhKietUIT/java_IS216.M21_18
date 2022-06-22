@@ -87,7 +87,7 @@ public class ChooseRole extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 224, 300, 104));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/White.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 460));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
