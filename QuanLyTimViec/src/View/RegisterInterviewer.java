@@ -144,7 +144,7 @@ public class RegisterInterviewer extends javax.swing.JFrame {
         getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/dangky2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 620));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
