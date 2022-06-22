@@ -1,9 +1,10 @@
---Tao bang REQUIREMENT va khoa chinh
+--Tao bang REQUIREMENT
 create table REQUIREMENT (
 	requirementNo NUMBER NOT NULL,
   	requirementName VARCHAR2(50) NOT NULL UNIQUE
 );
 
+--Khoa chinh
 ALTER TABLE REQUIREMENT ADD CONSTRAINT PK_REQUIREMENT PRIMARY KEY (requirementNo);
 
 --Du lieu
