@@ -142,7 +142,6 @@ public class InterviewerFrame extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(255, 255, 153));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_person_64px.png"))); // NOI18N
         jButton3.setText("Thông tin cá nhân");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
