@@ -1,4 +1,4 @@
---Tao bang HAVE va khoa chinh
+--Tao bang HAVE 
 CREATE TABLE HAVE
 (
 	skillNo NUMBER NOT NULL,
@@ -13,6 +13,8 @@ CREATE TABLE HAVE
 		 --5: Gioi,
 		 --6: Chuyen sau
 );
+
+--Khoa chinh
 ALTER TABLE HAVE ADD CONSTRAINT PK_HAVE PRIMARY KEY (skillNo, applicantNo);
 
 --Khoa ngoai
