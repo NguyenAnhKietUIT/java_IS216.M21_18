@@ -4,10 +4,10 @@
 ### Các thành viên tham gia project ###
 |STT|Họ Tên|MSSV|SĐT|Nhiệm vụ|Đánh giá %|
 |---|------|----|---|--------|----------|
-|1|Vũ Thị Phương Linh|20521541|trống|Nhóm Trưởng|trống|
-|2|Nguyễn Anh Kiệt|20521498|trống|trống|trống|
-|3|Nguyễn Hoài Linh|20521534|trống|trống|trống|
-|4|Trần Quốc Trung|20520947|trống|trống|trống|
+|1|Vũ Thị Phương Linh|20521541|0988116001|Nhóm Trưởng|trống|
+|2|Nguyễn Anh Kiệt|20521498|0348630164|Coder|trống|
+|3|Nguyễn Hoài Linh|20521534|0707868084|Coder|trống|
+|4|Trần Quốc Trung|20520947|0336844652|Tester|trống|
 
 ### Mô tả đề tài đồ án ###
 Ứng dụng được xây dựng hoàn thiện nhằm giúp mọi người có thể tiếp cận được công ty mà mình mong muốn làm việc một cách nhanh nhất. Thông qua ứng dụng, ứng viên có thể tìm kiếm được các công ty phù hợp với ngành nghề mình mong muốn hoặc đáp ứng được các nhu cầu của bản thân về địa điểm, môi trường làm việc. Song song với điều đó, phía công ty cũng có thêm một nền tảng mới để tiếp cận dễ dàng hơn với các ứng viên, không cần mất quá nhiều chi phí và thời gian cho việc quảng cáo. Nhờ thế, giữa công ty và ứng viên dễ dàng trao đổi, nắm bắt thông tin của nhau và tạo lịch hẹn để hai bên gặp gỡ, trao đổi và phỏng vấn. Việc tạo CV sẽ không còn khó khăn nữa đối với những người đi tìm việc làm vì ứng dụng sẽ hỗ trợ tạo giúp họ. Ngoài ra ứng dụng còn hỗ trợ tìm kiếm các công việc làm tại nhà chứ không chỉ có các công việc phải làm tại công ty, hỗ trợ được phần nào việc di chuyển khó khăn của nhân viên.
