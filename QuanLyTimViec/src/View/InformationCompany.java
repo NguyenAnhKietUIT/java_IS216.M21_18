@@ -56,14 +56,13 @@ public class InformationCompany extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("COMPANY'S PROFILE");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         jButton2.setText("Profile Update");
-        jButton2.setPreferredSize(new java.awt.Dimension(113, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -73,7 +72,6 @@ public class InformationCompany extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         jButton3.setText("Back");
-        jButton3.setPreferredSize(new java.awt.Dimension(72, 30));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
