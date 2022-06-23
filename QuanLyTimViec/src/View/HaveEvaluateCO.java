@@ -81,7 +81,6 @@ public class HaveEvaluateCO extends javax.swing.JDialog {
         jScrollPane1.setViewportView(txaCOMMENT);
 
         btnAlt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAlt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_maintenance_16px.png"))); // NOI18N
         btnAlt.setText("Sửa đánh giá");
         btnAlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +89,6 @@ public class HaveEvaluateCO extends javax.swing.JDialog {
         });
 
         btnDlt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnDlt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_Delete_16px.png"))); // NOI18N
         btnDlt.setText("Xóa đánh giá");
         btnDlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

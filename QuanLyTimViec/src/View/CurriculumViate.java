@@ -98,7 +98,6 @@ public class CurriculumViate extends javax.swing.JFrame {
         });
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_plus_16px.png"))); // NOI18N
         btnAdd.setText("Thêm kỹ năng");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +106,6 @@ public class CurriculumViate extends javax.swing.JFrame {
         });
 
         btnDlt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnDlt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_Delete_16px.png"))); // NOI18N
         btnDlt.setText("Xóa kỹ năng");
         btnDlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +114,6 @@ public class CurriculumViate extends javax.swing.JFrame {
         });
 
         btnAlt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAlt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_maintenance_16px.png"))); // NOI18N
         btnAlt.setText("Sửa kỹ năng");
         btnAlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,7 +122,6 @@ public class CurriculumViate extends javax.swing.JFrame {
         });
 
         btnRefresh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_refresh_16px.png"))); // NOI18N
         btnRefresh.setText("Làm mới");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +130,6 @@ public class CurriculumViate extends javax.swing.JFrame {
         });
 
         btnUndo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
         btnUndo.setText("Quay lại");
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +177,7 @@ public class CurriculumViate extends javax.swing.JFrame {
                 .addComponent(btnRefresh)
                 .addGap(18, 18, 18)
                 .addComponent(btnUndo)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

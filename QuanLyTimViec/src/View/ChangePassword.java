@@ -5,8 +5,6 @@ import Process.AccountDao;
 import Process.DataValidator;
 import Process.MessageDialog;
 import Process.SharedData;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -43,95 +41,65 @@ public class ChangePassword extends javax.swing.JFrame {
         txtPASSWORD = new javax.swing.JPasswordField();
         btnChange = new javax.swing.JButton();
         btnUNDO = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("ĐỔI MẬT KHẨU");
+        jLabel1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("CHANGE PASSWORD");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 6, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Mật khẩu:");
+        jLabel10.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("New Password");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 138, -1));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel11.setText("Xác nhận mật khẩu:");
+        jLabel11.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Confirm New Password");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 170, -1));
 
-        txtNEWPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNEWPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtNEWPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 210, -1));
 
-        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Mật khẩu hiện tại:");
+        jLabel2.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Current Password");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 138, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtPASSWORD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPASSWORDActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 210, -1));
 
-        btnChange.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_password_reset_16px.png"))); // NOI18N
-        btnChange.setText("Đổi mật khẩu");
+        btnChange.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnChange.setText("Change Password");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChangeActionPerformed(evt);
             }
         });
+        getContentPane().add(btnChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        btnUNDO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
-        btnUNDO.setText("Quay lại");
+        btnUNDO.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnUNDO.setText("Back");
         btnUNDO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUNDOActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(btnChange)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addComponent(btnUNDO)
-                .addGap(48, 48, 48))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNEWPASSWORD)
-                    .addComponent(txtCONFIRM)
-                    .addComponent(txtPASSWORD, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(129, 129, 129))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPASSWORD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtNEWPASSWORD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtCONFIRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnChange)
-                    .addComponent(btnUNDO))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -211,6 +179,10 @@ public class ChangePassword extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnUNDOActionPerformed
 
+    private void txtPASSWORDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPASSWORDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPASSWORDActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +233,7 @@ public class ChangePassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField txtCONFIRM;
     private javax.swing.JPasswordField txtNEWPASSWORD;
     private javax.swing.JPasswordField txtPASSWORD;

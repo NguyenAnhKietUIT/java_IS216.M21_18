@@ -149,9 +149,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resource/icons8_search_16px.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Xem &#x1ee9;ng vi&#xea;n"/>
       </Properties>
       <Events>
@@ -162,9 +159,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resource/icons8_rating_16px.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x110;&#xe1;nh gi&#xe1; &#x1ee9;ng vi&#xea;n"/>
       </Properties>
@@ -177,9 +171,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resource/icons8_double_tick_16px.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Nh&#x1ead;n v&#xe0;o l&#xe0;m"/>
       </Properties>
       <Events>
@@ -190,9 +181,6 @@
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
-        </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Resource/icons8_undo_16px.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
       </Properties>

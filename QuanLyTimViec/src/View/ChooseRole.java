@@ -55,7 +55,6 @@ public class ChooseRole extends javax.swing.JFrame {
         btnUndo.setBackground(new java.awt.Color(79, 220, 194));
         btnUndo.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         btnUndo.setForeground(new java.awt.Color(255, 255, 255));
-        btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
         btnUndo.setText("Back");
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

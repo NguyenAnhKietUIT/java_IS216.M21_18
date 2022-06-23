@@ -129,21 +129,19 @@ public class ApplicantFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 153, -1));
 
-        lblROLE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        lblROLE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblROLE.setText("jLabel5");
         getContentPane().add(lblROLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 152, -1));
 
         jLabel3.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_people_16px.png"))); // NOI18N
         jLabel3.setText("Role");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 78, -1));
 
         jLabel2.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_name_16px.png"))); // NOI18N
         jLabel2.setText("Username");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
-        lblUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        lblUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblUSERNAME.setText("jLabel4");
         getContentPane().add(lblUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 152, -1));
 

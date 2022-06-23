@@ -87,7 +87,6 @@ public class NotEvaluateCO extends javax.swing.JDialog {
         jScrollPane1.setViewportView(txaCOMMENT);
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_plus_16px.png"))); // NOI18N
         jButton1.setText("Thêm đánh giá");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

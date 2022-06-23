@@ -61,7 +61,6 @@ public class InterviewerFrame extends javax.swing.JFrame {
         getContentPane().add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 25, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_name_16px.png"))); // NOI18N
         jLabel2.setText("Username");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 215, -1, -1));
 
@@ -74,7 +73,6 @@ public class InterviewerFrame extends javax.swing.JFrame {
         getContentPane().add(lblROLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 257, 152, -1));
 
         jLabel3.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_people_16px.png"))); // NOI18N
         jLabel3.setText("Role");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 257, 82, -1));
 
@@ -122,7 +120,7 @@ public class InterviewerFrame extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 157, 205, 82));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/White2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 380));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
