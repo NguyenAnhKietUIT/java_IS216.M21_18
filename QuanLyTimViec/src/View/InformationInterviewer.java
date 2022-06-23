@@ -33,150 +33,96 @@ public class InformationInterviewer extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        btnUndo1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         lblINTERVIEWERNO = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblINTERVIEWERNAME = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         txtPHONENUMBER = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtGMAIL = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         lblCOMPANYNAME = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        btnUndo1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("THÔNG TIN CÁ NHÂN");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Mã nhà tuyển dụng:");
-
-        lblINTERVIEWERNO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblINTERVIEWERNO.setText("jLabel3");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Tên nhà tuyển dụng:");
-
-        lblINTERVIEWERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblINTERVIEWERNAME.setText("jLabel5");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Số điện thoại:");
-
-        txtPHONENUMBER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Gmail:");
-
-        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setText("Tên công ty:");
-
-        lblCOMPANYNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblCOMPANYNAME.setText("jLabel9");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblINTERVIEWERNAME, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPHONENUMBER)
-                    .addComponent(txtGMAIL, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
-                    .addComponent(lblCOMPANYNAME, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblINTERVIEWERNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(lblINTERVIEWERNO))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(lblINTERVIEWERNAME))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtPHONENUMBER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtGMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(lblCOMPANYNAME))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("RECRUITER'S PROFILE");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_update_16px.png"))); // NOI18N
-        jButton1.setText("Cập nhật thông tin");
+        jButton1.setText("Profile Update");
+        jButton1.setPreferredSize(new java.awt.Dimension(120, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
         btnUndo1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUndo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
-        btnUndo1.setText("Quay lại");
+        btnUndo1.setText("Back");
+        btnUndo1.setPreferredSize(new java.awt.Dimension(72, 30));
         btnUndo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndo1ActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUndo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(btnUndo1)
-                .addGap(45, 45, 45))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(btnUndo1))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Recruiter ID");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, -1));
+
+        lblINTERVIEWERNO.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblINTERVIEWERNO.setForeground(new java.awt.Color(255, 255, 255));
+        lblINTERVIEWERNO.setText("jLabel3");
+        getContentPane().add(lblINTERVIEWERNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 220, -1));
+
+        jLabel4.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Name");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        lblINTERVIEWERNAME.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblINTERVIEWERNAME.setForeground(new java.awt.Color(255, 255, 255));
+        lblINTERVIEWERNAME.setText("jLabel5");
+        getContentPane().add(lblINTERVIEWERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 220, -1));
+
+        txtPHONENUMBER.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtPHONENUMBER, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 220, -1));
+
+        jLabel6.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Phone Number");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
+
+        jLabel7.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Email");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+
+        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 220, -1));
+
+        lblCOMPANYNAME.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblCOMPANYNAME.setForeground(new java.awt.Color(255, 255, 255));
+        lblCOMPANYNAME.setText("jLabel9");
+        getContentPane().add(lblCOMPANYNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 220, -1));
+
+        jLabel8.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Company's name");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 130, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -276,11 +222,11 @@ public class InformationInterviewer extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCOMPANYNAME;
     private javax.swing.JLabel lblINTERVIEWERNAME;
     private javax.swing.JLabel lblINTERVIEWERNO;
