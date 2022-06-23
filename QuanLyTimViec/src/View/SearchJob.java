@@ -40,6 +40,7 @@ public class SearchJob extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTKCV = new javax.swing.JTable();
@@ -48,6 +49,8 @@ public class SearchJob extends javax.swing.JFrame {
         btnRefresh = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,7 +81,6 @@ public class SearchJob extends javax.swing.JFrame {
         });
 
         btnFind.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnFind.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_search_16px.png"))); // NOI18N
         btnFind.setText("Tìm kiếm");
         btnFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,6 +257,7 @@ public class SearchJob extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTable tblTKCV;
     private javax.swing.JTextField txtFIND;
     // End of variables declaration//GEN-END:variables

@@ -45,6 +45,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         txtCONFIRM = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -55,142 +56,93 @@ public class ForgotPassword extends javax.swing.JFrame {
                 formWindowClosing(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnChange.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_password_reset_16px.png"))); // NOI18N
-        btnChange.setText("Đổi mật khẩu");
+        btnChange.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnChange.setText("Change Password");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChangeActionPerformed(evt);
             }
         });
+        getContentPane().add(btnChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
 
-        btnUndo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_undo_16px.png"))); // NOI18N
-        btnUndo.setText("Quay lại");
+        btnUndo.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnUndo.setText("Back");
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_name_16px.png"))); // NOI18N
-        jLabel3.setText("Tên tài khoản:");
+        jLabel3.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Username");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 162, -1));
 
-        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 220, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_people_16px.png"))); // NOI18N
-        jLabel2.setText("Vai trò");
+        jLabel2.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Role");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 144, -1));
 
         buttonGroup1.add(rdbCOMPANY);
-        rdbCOMPANY.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        rdbCOMPANY.setText("Công ty");
+        rdbCOMPANY.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        rdbCOMPANY.setForeground(new java.awt.Color(255, 255, 255));
+        rdbCOMPANY.setText("Company");
+        getContentPane().add(rdbCOMPANY, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
 
         buttonGroup1.add(rdbINTERVIEWER);
-        rdbINTERVIEWER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        rdbINTERVIEWER.setText("Nhà tuyển dụng");
+        rdbINTERVIEWER.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        rdbINTERVIEWER.setForeground(new java.awt.Color(255, 255, 255));
+        rdbINTERVIEWER.setText("Recruiter");
+        rdbINTERVIEWER.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbINTERVIEWERActionPerformed(evt);
+            }
+        });
+        getContentPane().add(rdbINTERVIEWER, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
 
         buttonGroup1.add(rdbAPPLICANT);
-        rdbAPPLICANT.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        rdbAPPLICANT.setText("Ứng viên");
+        rdbAPPLICANT.setFont(new java.awt.Font("Dubai", 0, 16)); // NOI18N
+        rdbAPPLICANT.setForeground(new java.awt.Color(255, 255, 255));
+        rdbAPPLICANT.setText("Candidate");
+        getContentPane().add(rdbAPPLICANT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 90, -1));
 
-        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 220, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_gmail_16px_3.png"))); // NOI18N
-        jLabel4.setText("Gmail:");
+        jLabel4.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Email");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 162, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_password_16px.png"))); // NOI18N
-        jLabel7.setText("Mật khẩu mới:");
+        jLabel7.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("New Password");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 162, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 220, -1));
 
-        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 220, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/icons8_good_pincode_16px.png"))); // NOI18N
-        jLabel6.setText("Xác nhận mật khẩu:");
+        jLabel6.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Confirm New Password");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Forgot Password");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(btnChange)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                        .addComponent(btnUndo)
-                        .addGap(73, 73, 73))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(rdbCOMPANY)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbINTERVIEWER)
-                                .addGap(18, 18, 18)
-                                .addComponent(rdbAPPLICANT, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                                .addGap(2, 2, 2))
-                            .addComponent(txtUSERNAME, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtGMAIL, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtPASSWORD)
-                            .addComponent(txtCONFIRM, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(113, 113, 113)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUSERNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(rdbCOMPANY))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rdbINTERVIEWER)
-                        .addComponent(rdbAPPLICANT)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtGMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtPASSWORD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtCONFIRM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnChange)
-                    .addComponent(btnUndo))
-                .addContainerGap(174, Short.MAX_VALUE))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -232,11 +184,11 @@ public class ForgotPassword extends javax.swing.JFrame {
 
         String role;
         if (rdbCOMPANY.isSelected()) {
-            role = "Cong ty";
+            role = "Công ty";
         } else if (rdbINTERVIEWER.isSelected()) {
-            role = "Nha tuyen dung";
+            role = "Nhà tuyển dụng";
         } else {
-            role = "Ung vien";
+            role = "Ứng viên";
         }
 
         AccountDao dao = new AccountDao();
@@ -268,6 +220,10 @@ public class ForgotPassword extends javax.swing.JFrame {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
         }
     }//GEN-LAST:event_btnChangeActionPerformed
+
+    private void rdbINTERVIEWERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbINTERVIEWERActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdbINTERVIEWERActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,6 +268,7 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JRadioButton rdbAPPLICANT;

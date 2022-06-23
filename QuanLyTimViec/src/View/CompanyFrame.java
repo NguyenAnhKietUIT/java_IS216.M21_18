@@ -89,7 +89,7 @@ public class CompanyFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 201, 80));
 
-        lblROLE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        lblROLE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblROLE.setText("jLabel5");
         getContentPane().add(lblROLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 372, 152, -1));
 
@@ -97,7 +97,7 @@ public class CompanyFrame extends javax.swing.JFrame {
         jLabel3.setText("Role");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 372, 82, -1));
 
-        lblUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        lblUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblUSERNAME.setText("jLabel4");
         getContentPane().add(lblUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 330, 152, -1));
 
