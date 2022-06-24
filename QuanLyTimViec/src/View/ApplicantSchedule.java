@@ -137,7 +137,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
                     MessageDialog.showConfirmDialog(this, "Không thể hủy lịch!", "Thông báo");
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -164,7 +164,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
                     dialog.setVisible(true);
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         } else {
             MessageDialog.showMessageDialog(this, "Bạn cần hoàn thành phỏng vấn", "Thông báo");
@@ -242,7 +242,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblLPV.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

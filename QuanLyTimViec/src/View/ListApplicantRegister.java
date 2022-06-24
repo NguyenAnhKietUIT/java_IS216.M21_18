@@ -124,7 +124,7 @@ public class ListApplicantRegister extends javax.swing.JFrame {
                 MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -138,7 +138,7 @@ public class ListApplicantRegister extends javax.swing.JFrame {
                 MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -175,7 +175,7 @@ public class ListApplicantRegister extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblREGISTER.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Loi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

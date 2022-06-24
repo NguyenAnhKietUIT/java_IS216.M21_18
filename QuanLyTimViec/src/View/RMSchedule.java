@@ -107,7 +107,7 @@ public class RMSchedule extends javax.swing.JDialog {
             model.fireTableDataChanged();
             tblSCHEDULE.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

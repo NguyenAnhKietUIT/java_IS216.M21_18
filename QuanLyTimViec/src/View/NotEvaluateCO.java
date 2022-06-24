@@ -1,6 +1,5 @@
 package View;
 
-import Process.DataValidator;
 import Process.Evaluate;
 import Process.EvaluateDao;
 import Process.MessageDialog;
@@ -124,7 +123,7 @@ public class NotEvaluateCO extends javax.swing.JDialog {
         // TODO add your handling code here:
         int diem = Integer.parseInt(txtMARK.getText());
         if (txtMARK.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Error");
             return;
         } else if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có thể là số!");
@@ -147,7 +146,7 @@ public class NotEvaluateCO extends javax.swing.JDialog {
                 MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

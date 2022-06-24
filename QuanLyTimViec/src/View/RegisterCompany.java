@@ -161,28 +161,28 @@ public class RegisterCompany extends javax.swing.JFrame {
         String confirm = new String(txtCONFIRM.getPassword());
 
         if (txtCOMPANYNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên công ty không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên công ty không được để trống!", "Error");
             return;
         } else if (txaADDRESS.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Địa chỉ không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Địa chỉ không được để trống!", "Error");
             return;
         } else if (txtHOTLINE.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Hotline không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Hotline không được để trống!", "Error");
             return;
         } else if (!txtHOTLINE.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Hotline chỉ có thể là dãy số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Hotline chỉ có thể là dãy số!", "Error");
             return;
         } else if (txtHOTLINE.getText().length() != 10) {
-            MessageDialog.showErrorDialog(this, "Hotline phải có đúng 10 chữ số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Hotline phải có đúng 10 chữ số!", "Error");
             return;
         }else if (txtGMAIL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Error");
             return;
         } else if (txtUSERNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên tài khoản không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên tài khoản không được để trống!", "Error");
             return;
         } else if (password.length() < 8) {
-            MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Error");
             return;
         }
 
@@ -228,11 +228,11 @@ public class RegisterCompany extends javax.swing.JFrame {
                         MessageDialog.showConfirmDialog(this, "Tạo tài khoản thất bại!", "Thông báo");
                     }
                 } catch (Exception e) {
-                    MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                    MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
                 }
             }
         } else {
-            MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Error");
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
 

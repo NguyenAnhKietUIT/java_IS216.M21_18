@@ -170,7 +170,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         DataValidator.validateEmpty(txtCONFIRM, sb, "Bạn cần xác nhận mật khẩu!");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return;
         }
 
@@ -178,7 +178,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         String confirm = new String(txtCONFIRM.getPassword());
 
         if (password.length() < 8) {
-            MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Error");
             return;
         }
 
@@ -208,16 +208,16 @@ public class ForgotPassword extends javax.swing.JFrame {
                             MessageDialog.showMessageDialog(this, "Cập nhật thất bại!", "Thông báo");
                         }
                     } catch (Exception e) {
-                        MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                        MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
                     }
                 } else {
-                    MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Lỗi");
+                    MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Error");
                 }
             } else {
                 MessageDialog.showMessageDialog(this, "Thông tin không chính xác", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnChangeActionPerformed
 

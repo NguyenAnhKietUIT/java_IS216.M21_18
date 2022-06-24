@@ -167,7 +167,7 @@ public class PositionManagement extends javax.swing.JFrame {
             try {
                 sp = dao.findByID(mapban, mavt);
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
 
             if (sp != null) {
@@ -180,13 +180,13 @@ public class PositionManagement extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên vị trí không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên vị trí không được để trống!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
             return;
         }
 
@@ -207,20 +207,20 @@ public class PositionManagement extends javax.swing.JFrame {
                 MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
             return;
         }
 
@@ -244,20 +244,20 @@ public class PositionManagement extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnAltActionPerformed
 
     private void btnDltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDltActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
             return;
         }
 
@@ -281,7 +281,7 @@ public class PositionManagement extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnDltActionPerformed
 
@@ -323,7 +323,7 @@ public class PositionManagement extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblPOSITION.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

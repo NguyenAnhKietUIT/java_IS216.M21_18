@@ -200,7 +200,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
                 txtSLOT.setText(String.valueOf(result.getSLOT()));
                 txaLOCATION.setText(result.getLOCATION());
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         }
     }//GEN-LAST:event_tblSCHEDULEMouseClicked
@@ -218,7 +218,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
                     MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -230,7 +230,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
         DataValidator.validateEmpty(txaLOCATION, sb, "Địa điểm không được để trống");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return;
         }
 
@@ -265,7 +265,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
                 MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -276,7 +276,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
         DataValidator.validateEmpty(txaLOCATION, sb, "Địa điểm không được để trống");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return;
         }
 
@@ -310,7 +310,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -409,7 +409,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblSCHEDULE.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

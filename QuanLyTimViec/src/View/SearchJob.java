@@ -242,7 +242,7 @@ public class SearchJob extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblTKCV.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 
@@ -265,7 +265,7 @@ public class SearchJob extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblTKCV.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 
