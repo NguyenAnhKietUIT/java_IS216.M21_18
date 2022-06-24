@@ -166,13 +166,9 @@ public class SearchJob extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (soLuong > 0) {
-            RegisterSchedule rs = new RegisterSchedule(tencty, tenpban, tenvt);
-            rs.setVisible(true);
-            dispose();
-        } else {
-            MessageDialog.showErrorDialog(this, "Công ty hiện đang không cần tuyển nhân viên!", "Lỗi");
-        }
+        RegisterSchedule rs = new RegisterSchedule(tencty, tenpban, tenvt);
+        rs.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -237,9 +233,11 @@ public class SearchJob extends javax.swing.JFrame {
             sortByName(list);
             model.setRowCount(0);
             for (Recruit x : list) {
-                model.addRow(new Object[]{
-                    x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
-                    x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
+                if (x.getNUMBEROFPERSONNEL() > 0) {
+                    model.addRow(new Object[]{
+                        x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
+                        x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
+                }
             }
             model.fireTableDataChanged();
             tblTKCV.setModel(model);
@@ -257,9 +255,11 @@ public class SearchJob extends javax.swing.JFrame {
             for (Recruit x : list) {
                 if (x.getC().getCOMPANYNAME().equals(txtFIND.getText())
                         || x.getP().getPOSITIONNAME().equals(txtFIND.getText())) {
-                    model.addRow(new Object[]{
-                        x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
-                        x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
+                    if (x.getNUMBEROFPERSONNEL() > 0) {
+                        model.addRow(new Object[]{
+                            x.getC().getCOMPANYNAME(), x.getD().getDEPARTMENTNAME(),
+                            x.getP().getPOSITIONNAME(), x.getNUMBEROFPERSONNEL()});
+                    }
                 }
             }
             model.fireTableDataChanged();
