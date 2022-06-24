@@ -54,11 +54,15 @@ public class CurriculumViate extends javax.swing.JFrame {
         btnAlt = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
         btnUndo = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("THÔNG TIN KỸ NĂNG");
+        jLabel1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("CV DESCRIPTION");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
 
         tblHaveSkill.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblHaveSkill.setModel(new javax.swing.table.DefaultTableModel(
@@ -66,7 +70,7 @@ public class CurriculumViate extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Tên kỹ năng", "Trình độ chuyên môn", "Số năm kinh nghiệm"
+                "Skills", "Expertise Level", "Years Of Experience"
             }
         ));
         tblHaveSkill.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,135 +80,85 @@ public class CurriculumViate extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblHaveSkill);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Tên kỹ năng:");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 670, 296));
 
-        txtSKILLNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Skills");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 110, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Số năm kinh nghiệm:");
+        txtSKILLNAME.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtSKILLNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 190, -1));
 
-        txtYEARSOFEXPERIENCE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Years Of Experience");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Trình độ chuyên môn:");
+        txtYEARSOFEXPERIENCE.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtYEARSOFEXPERIENCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 190, -1));
 
-        comboLEVEL_APL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        comboLEVEL_APL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kém", "Yếu", "Trung bình", "Khá", "Giỏi", "Chuyên sâu" }));
+        jLabel4.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Expertise Level");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, -1, -1));
+
+        comboLEVEL_APL.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        comboLEVEL_APL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Experience", "Beginner", "Familiar", "Intermediate", "Advance", "Expert" }));
         comboLEVEL_APL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboLEVEL_APLActionPerformed(evt);
             }
         });
+        getContentPane().add(comboLEVEL_APL, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, -1, -1));
 
-        btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAdd.setText("Thêm kỹ năng");
+        btnAdd.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnAdd.setText("Add Skills");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
 
-        btnDlt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnDlt.setText("Xóa kỹ năng");
+        btnDlt.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnDlt.setText("Delete Skills");
         btnDlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDltActionPerformed(evt);
             }
         });
+        getContentPane().add(btnDlt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
 
-        btnAlt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnAlt.setText("Sửa kỹ năng");
+        btnAlt.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnAlt.setText("Change Skills");
         btnAlt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAltActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAlt, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, -1, -1));
 
-        btnRefresh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnRefresh.setText("Làm mới");
+        btnRefresh.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefreshActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, -1, -1));
 
-        btnUndo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUndo.setText("Quay lại");
+        btnUndo.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        btnUndo.setText("Back");
         btnUndo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUndoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(263, 263, 263))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtYEARSOFEXPERIENCE, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(txtSKILLNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(comboLEVEL_APL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(btnAdd)
-                .addGap(18, 18, 18)
-                .addComponent(btnDlt)
-                .addGap(18, 18, 18)
-                .addComponent(btnAlt)
-                .addGap(18, 18, 18)
-                .addComponent(btnRefresh)
-                .addGap(18, 18, 18)
-                .addComponent(btnUndo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSKILLNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(comboLEVEL_APL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtYEARSOFEXPERIENCE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnDlt)
-                    .addComponent(btnAlt)
-                    .addComponent(btnRefresh)
-                    .addComponent(btnUndo))
-                .addGap(34, 34, 34))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg2.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -393,6 +347,7 @@ public class CurriculumViate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblHaveSkill;
     private javax.swing.JTextField txtSKILLNAME;
@@ -408,17 +363,17 @@ public class CurriculumViate extends javax.swing.JFrame {
                 String trinhdo;
                 trinhdo = switch (x.getLEVEL_APL()) {
                     case 1 ->
-                        "Kém";
+                        "No Experience";
                     case 2 ->
-                        "Yếu";
+                        "Beginner";
                     case 3 ->
-                        "Trung bình";
+                        "Familiar";
                     case 4 ->
-                        "Khá";
+                        "Intermediate";
                     case 5 ->
-                        "Giỏi";
+                        "Advance";
                     default ->
-                        "Chuyên sâu";
+                        "Expert";
                 };
 
                 model.addRow(new Object[]{

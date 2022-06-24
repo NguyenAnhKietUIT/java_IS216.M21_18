@@ -159,7 +159,7 @@ public class InformationApplicant extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Email:");
+        jLabel12.setText("Email");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 78, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg.png"))); // NOI18N

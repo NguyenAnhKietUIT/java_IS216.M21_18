@@ -42,110 +42,78 @@ public class NotEvaluateAPL extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        lblINTERVIEWSCHEDULE = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblAPPLICANTNO = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtMARK = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        txtMARK = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txaCOMMENT = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        lblAPPLICANTNO = new javax.swing.JLabel();
+        lblINTERVIEWSCHEDULE = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setText("ĐÁNH GIÁ ỨNG VIÊN");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setText("Mã lịch:");
-
-        lblINTERVIEWSCHEDULE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblINTERVIEWSCHEDULE.setText("jLabel6");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Mã ứng viên:");
-
-        lblAPPLICANTNO.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblAPPLICANTNO.setText("jLabel5");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Điểm đánh giá:");
-
-        txtMARK.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Nhận xét:");
-
-        txaCOMMENT.setColumns(20);
-        txaCOMMENT.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txaCOMMENT.setRows(5);
-        jScrollPane1.setViewportView(txaCOMMENT);
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setText("Thêm đánh giá");
+        jButton1.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        jButton1.setText("Done");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-                            .addComponent(txtMARK)
-                            .addComponent(lblAPPLICANTNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblINTERVIEWSCHEDULE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(106, 106, 106))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(lblINTERVIEWSCHEDULE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(lblAPPLICANTNO))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtMARK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(jButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Rate Candidate");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Interview ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 129, -1));
+
+        jLabel2.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Candidate ID");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 129, -1));
+
+        jLabel3.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Rating");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 129, -1));
+
+        jLabel4.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Review");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 129, -1));
+
+        txtMARK.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        getContentPane().add(txtMARK, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 250, -1));
+
+        txaCOMMENT.setColumns(20);
+        txaCOMMENT.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txaCOMMENT.setRows(5);
+        jScrollPane1.setViewportView(txaCOMMENT);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 250, -1));
+
+        lblAPPLICANTNO.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblAPPLICANTNO.setForeground(new java.awt.Color(255, 255, 255));
+        lblAPPLICANTNO.setText("jLabel5");
+        getContentPane().add(lblAPPLICANTNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 250, -1));
+
+        lblINTERVIEWSCHEDULE.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblINTERVIEWSCHEDULE.setForeground(new java.awt.Color(255, 255, 255));
+        lblINTERVIEWSCHEDULE.setText("jLabel6");
+        getContentPane().add(lblINTERVIEWSCHEDULE, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 250, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -191,6 +159,7 @@ public class NotEvaluateAPL extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAPPLICANTNO;
     private javax.swing.JLabel lblINTERVIEWSCHEDULE;

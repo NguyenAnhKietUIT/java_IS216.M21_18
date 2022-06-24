@@ -1,7 +1,6 @@
 package View;
 
 import java.sql.*;
-import ConnectDB.ConnectOracle;
 import Process.Applicant;
 import Process.ApplicantDao;
 import Process.HaveSkill;
@@ -280,17 +279,17 @@ public class SeeCandidate extends javax.swing.JDialog {
                 String trinhdo;
                 trinhdo = switch (x.getLEVEL_APL()) {
                     case 1 ->
-                        "Kém";
+                        "No Experience";
                     case 2 ->
-                        "Yếu";
+                        "Beginner";
                     case 3 ->
-                        "Trung bình";
+                        "Familiar";
                     case 4 ->
-                        "Khá";
+                        "Intermediate";
                     case 5 ->
-                        "Giỏi";
+                        "Advance";
                     default ->
-                        "Chuyên sâu";
+                        "Expert";
                 };
 
                 model.addRow(new Object[]{
