@@ -12,7 +12,7 @@ import javax.swing.filechooser.FileFilter;
 
 /**
  *
- * @author acer
+ * @author Nguyen Anh Kiet
  */
 public class ApplicantFrame extends javax.swing.JFrame {
 
