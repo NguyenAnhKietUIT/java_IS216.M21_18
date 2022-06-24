@@ -113,7 +113,7 @@ public class ChangePassword extends javax.swing.JFrame {
         DataValidator.validateEmpty(txtCONFIRM, sb, "Bạn cần xác nhận mật khẩu!");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return;
         }
 
@@ -123,14 +123,14 @@ public class ChangePassword extends javax.swing.JFrame {
 
         try {
             if (!current.equals(dao.getPasswordByAccountID())) {
-                MessageDialog.showErrorDialog(this, "Mật khẩu hiện tại không chính xác!", "Lỗi");
+                MessageDialog.showErrorDialog(this, "Mật khẩu hiện tại không chính xác!", "Error");
                 return;
             } else if (newpassword.length() < 8) {
-                MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Lỗi");
+                MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Error");
                 return;
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
 
         if (newpassword.equals(confirm)) {
@@ -149,12 +149,12 @@ public class ChangePassword extends javax.swing.JFrame {
                         MessageDialog.showMessageDialog(this, "Cập nhật thất bại!", "Thông báo");
                     }
                 } catch (Exception e) {
-                    MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                    MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
                 }
             }
 
         } else {
-            MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Error");
         }
     }//GEN-LAST:event_btnChangeActionPerformed
 

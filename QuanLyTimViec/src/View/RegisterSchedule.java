@@ -274,7 +274,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
                     MessageDialog.showConfirmDialog(this, "Đăng ký thất bại!", "Thông báo");
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -286,7 +286,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
         try {
             companyno = dao.getCompanyNoByCompanyName(tenCty);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
 
         try {
@@ -298,7 +298,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
             JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
             JasperViewer.viewReport(jp, false);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -360,7 +360,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
 
             tenCty = c.getCOMPANYNAME();
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 
@@ -372,7 +372,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
 
             maPhong = d.getDEPARTMENTNO();
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 
@@ -385,7 +385,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
 
             maViTri = p.getPOSITIONNO();
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
         try {
             List<Require> list = dao.findRequire(COMPANYNAME, DEPARTMENTNAME, POSITIONNAME);
@@ -412,7 +412,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
             modelRequire.fireTableDataChanged();
             tblREQUIRE.setModel(modelRequire);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 
@@ -430,7 +430,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
             modelLPV.fireTableDataChanged();
             tblINTERVIEW_SCHEDULE.setModel(modelLPV);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

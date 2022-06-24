@@ -245,7 +245,7 @@ public class CompanyFrame extends javax.swing.JFrame {
 
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
             showImage(path);
         }

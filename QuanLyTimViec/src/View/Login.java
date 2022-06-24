@@ -205,7 +205,7 @@ public class Login extends javax.swing.JFrame {
         DataValidator.validateEmpty(txtPASSWORD, sb, "Mật khẩu không được để trống!");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return true;
         }
 
@@ -213,13 +213,13 @@ public class Login extends javax.swing.JFrame {
         try {
             Account a = dao.checkLogin(txtUSERNAME.getText(), new String(txtPASSWORD.getPassword()));
             if (a == null) {
-                MessageDialog.showErrorDialog(this, "Tên tài khoản hoặc mật khẩu không chính xác!", "Lỗi");
+                MessageDialog.showErrorDialog(this, "Tên tài khoản hoặc mật khẩu không chính xác!", "Error");
                 return true;
             } else {
                 SharedData.useraccount = a;
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
         return false;
     }

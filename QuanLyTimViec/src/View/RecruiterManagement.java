@@ -173,7 +173,7 @@ public class RecruiterManagement extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblINTERVIEWER.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

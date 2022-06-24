@@ -116,23 +116,23 @@ public class AddDepartment extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if (txtDEPARTMENTNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên phòng ban không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên phòng ban không được để trống!", "Error");
             return;
         } else if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
             return;
         }
 
         try {
             RecruitDao dao = new RecruitDao();
             if (dao.checkDuplicate(txtDEPARTMENTNAME.getText())) {
-                MessageDialog.showErrorDialog(this, "Phòng ban đã tồn tại!", "Lỗi");
+                MessageDialog.showErrorDialog(this, "Phòng ban đã tồn tại!", "Error");
                 return;
             }
 
@@ -153,7 +153,7 @@ public class AddDepartment extends javax.swing.JFrame {
                 MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

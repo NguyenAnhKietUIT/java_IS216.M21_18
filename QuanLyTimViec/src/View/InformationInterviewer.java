@@ -131,16 +131,16 @@ public class InformationInterviewer extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         if (txtPHONENUMBER.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số điện thoại không được để trống!", "Error");
             return;
         } else if (!txtPHONENUMBER.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Error");
             return;
         } else if (txtPHONENUMBER.getText().length() != 10) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Error");
             return;
         } else if (txtGMAIL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Error");
             return;
         }
 
@@ -170,7 +170,7 @@ public class InformationInterviewer extends javax.swing.JFrame {
                     MessageDialog.showConfirmDialog(this, "Cập nhật thất bại!", "Thông báo");
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -244,7 +244,7 @@ public class InformationInterviewer extends javax.swing.JFrame {
             i = idao.getInformationByAccountID();
             companyName = cdao.getCompanyNameByCompanyNo(i.getCOMPANYNO());
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
 
         lblINTERVIEWERNO.setText(String.valueOf(i.getINTERVIEWERNO()));

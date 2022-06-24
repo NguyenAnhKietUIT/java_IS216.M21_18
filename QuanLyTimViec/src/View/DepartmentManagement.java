@@ -128,7 +128,7 @@ public class DepartmentManagement extends javax.swing.JFrame {
             try {
                 d = dao.findByID(id);
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
 
             if (d != null) {
@@ -235,7 +235,7 @@ public class DepartmentManagement extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblDEPARTMENT.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

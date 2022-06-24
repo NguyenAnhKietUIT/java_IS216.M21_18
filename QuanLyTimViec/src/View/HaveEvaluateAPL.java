@@ -132,7 +132,7 @@ public class HaveEvaluateAPL extends javax.swing.JDialog {
         String comment_apl = txaCOMMENT.getText();
         EvaluateDao dao = new EvaluateDao();
         if (txtMARK.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Error");
             return;
         } else if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
             JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có thể là số!");
@@ -154,7 +154,7 @@ public class HaveEvaluateAPL extends javax.swing.JDialog {
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnAltActionPerformed
 
@@ -172,7 +172,7 @@ public class HaveEvaluateAPL extends javax.swing.JDialog {
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnDltActionPerformed
 
@@ -202,7 +202,7 @@ public class HaveEvaluateAPL extends javax.swing.JDialog {
         try {
             e = dao.getInformationAPL(APPLICANTNO, INTERVIEWSCHEDULENO);
         } catch (Exception ex) {
-            MessageDialog.showErrorDialog(this, ex.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, ex.getMessage(), "Error");
         }
         lblINTERVIEWSCHEDULE.setText(String.valueOf(INTERVIEWSCHEDULENO));
         lblAPPLICANTNO.setText(String.valueOf(APPLICANTNO));

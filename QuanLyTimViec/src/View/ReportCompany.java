@@ -110,7 +110,7 @@ public class ReportCompany extends javax.swing.JFrame {
             JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
             JasperViewer.viewReport(jp, false);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -134,7 +134,7 @@ public class ReportCompany extends javax.swing.JFrame {
             JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
             JasperViewer.viewReport(jp, false);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

@@ -164,7 +164,7 @@ public class SeeCandidate extends javax.swing.JDialog {
             JasperPrint jp = JasperFillManager.fillReport(jr, hs, con);
             JasperViewer.viewReport(jp, false);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -197,7 +197,7 @@ public class SeeCandidate extends javax.swing.JDialog {
         try {
             a = dao.getInformationAPL(maApp);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
 
         lblAPPLICANTNO.setText(String.valueOf(a.getAPPLICANTNO()));
@@ -234,7 +234,7 @@ public class SeeCandidate extends javax.swing.JDialog {
             model.fireTableDataChanged();
             tblSKILL.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }

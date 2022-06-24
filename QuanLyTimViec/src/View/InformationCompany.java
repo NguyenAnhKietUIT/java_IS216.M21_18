@@ -147,19 +147,19 @@ public class InformationCompany extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         if (txaADDRESS.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Địa chỉ không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Địa chỉ không được để trống!", "Error");
             return;
         } else if (txtHOTLINE.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Hotline không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Hotline không được để trống!", "Error");
             return;
         } else if (!txtHOTLINE.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Hotline chỉ có thể là dãy số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Hotline chỉ có thể là dãy số!", "Error");
             return;
         } else if (txtHOTLINE.getText().length() != 10) {
-            MessageDialog.showErrorDialog(this, "Hotline phải có đúng 10 chữ số!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Hotline phải có đúng 10 chữ số!", "Error");
             return;
         } else if (txtGMAIL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Lỗi");
+            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Error");
             return;
         }
 
@@ -189,7 +189,7 @@ public class InformationCompany extends javax.swing.JFrame {
                     MessageDialog.showConfirmDialog(this, "Cập nhật thất bại!", "Thông báo");
                 }
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -263,7 +263,7 @@ public class InformationCompany extends javax.swing.JFrame {
         try {
             c = dao.getInformationByAccountID();
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
 
         lblCOMPANYNO.setText(String.valueOf(c.getCOMPANYNO()));

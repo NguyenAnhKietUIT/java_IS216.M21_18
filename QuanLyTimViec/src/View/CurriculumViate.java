@@ -186,7 +186,7 @@ public class CurriculumViate extends javax.swing.JFrame {
             try {
                 hs = dao.findBySkillName(name);
             } catch (Exception e) {
-                MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
 
             if (hs != null) {
@@ -215,7 +215,7 @@ public class CurriculumViate extends javax.swing.JFrame {
             DataValidator.validateEmpty(txtSKILLNAME, sb, "Tên kỹ năng không được để trống!");
 
             if (sb.length() > 0) {
-                MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+                MessageDialog.showErrorDialog(this, sb.toString(), "Error");
                 return;
             }
 
@@ -230,11 +230,11 @@ public class CurriculumViate extends javax.swing.JFrame {
                         MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
                     }
                 } catch (Exception e) {
-                    MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+                    MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnDltActionPerformed
 
@@ -245,7 +245,7 @@ public class CurriculumViate extends javax.swing.JFrame {
         DataValidator.validateEmpty(txtYEARSOFEXPERIENCE, sb, "Số năm kinh nghiệm không được để trống!");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return;
         }
 
@@ -271,7 +271,7 @@ public class CurriculumViate extends javax.swing.JFrame {
                 MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -297,7 +297,7 @@ public class CurriculumViate extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }//GEN-LAST:event_btnAltActionPerformed
 
@@ -382,7 +382,7 @@ public class CurriculumViate extends javax.swing.JFrame {
             model.fireTableDataChanged();
             tblHaveSkill.setModel(model);
         } catch (Exception e) {
-            MessageDialog.showErrorDialog(this, e.getMessage(), "Lỗi");
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
         }
     }
 }
