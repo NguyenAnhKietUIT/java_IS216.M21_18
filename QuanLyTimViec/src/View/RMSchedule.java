@@ -43,7 +43,7 @@ public class RMSchedule extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("DANH SÁCH LỊCH PHỎNG VẤN");
+        jLabel1.setText("List Interview Schedule");
 
         tblSCHEDULE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblSCHEDULE.setModel(new javax.swing.table.DefaultTableModel(
@@ -51,7 +51,7 @@ public class RMSchedule extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Mã lịch phỏng vấn", "Ngày bắt đầu", "Ngày kết thúc", "Địa điểm", "Trạng thái", "Số lượng tối đa"
+                "ID", "Start Date", "End Date", "Location", "Status", "Maximum quantity"
             }
         ));
         tblSCHEDULE.addMouseListener(new java.awt.event.MouseAdapter() {
