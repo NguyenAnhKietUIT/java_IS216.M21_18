@@ -177,45 +177,45 @@ public class RegisterInterviewer extends javax.swing.JFrame {
         }
 
         if (txtINTERVIEWERNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Họ và tên không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Full name cannot be blank!", "Error");
             return;
         } else if (txtPHONENUMBER.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Phone number cannot be blank!", "Error");
             return;
         } else if (!txtPHONENUMBER.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Error");
+            MessageDialog.showErrorDialog(this, "Phone number are numberous only!", "Error");
             return;
         } else if (txtPHONENUMBER.getText().length() != 10) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Error");
+            MessageDialog.showErrorDialog(this, "Phone number must be exactly 10 numbers!", "Error");
             return;
         } else if (txtGMAIL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Email cannot be blank!", "Error");
             return;
         } else if (txtCOMPANYNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên công ty không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Company name cannot be blank!", "Error");
             return;
         } else if (!txtCOMPANYNAME.getText().equalsIgnoreCase("") && companyno == 0) {
-            MessageDialog.showErrorDialog(this, "Không tìm thấy công ty!", "Error");
+            MessageDialog.showErrorDialog(this, "Company does not exist!", "Error");
             return;
         } else if (txtUSERNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên tài khoản không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Username cannot be blank!", "Error");
             return;
         } else if (password.length() < 8) {
-            MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Error");
+            MessageDialog.showErrorDialog(this, "Password cannot be less than 8 characters!", "Error");
             return;
         }
 
-        DataValidator.validateEmpty(txtPASSWORD, sb, "Mật khẩu không được để trống!");
-        DataValidator.validateEmpty(txtCONFIRM, sb, "Bạn cần xác nhận mật khẩu!");
-        DataValidator.validateGmail(txtGMAIL, sb, "Gmail phải có định dạng XXX@gmail.com");
+        DataValidator.validateEmpty(txtPASSWORD, sb, "Password cannot be blank!");
+        DataValidator.validateEmpty(txtCONFIRM, sb, "You need to confirm password!");
+        DataValidator.validateGmail(txtGMAIL, sb, "Email must be formatted XXX@gmail.com");
 
         if (sb.length() > 0) {
-            MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
+            MessageDialog.showErrorDialog(this, sb.toString(), "Error");
             return;
         }
 
         if (password.equals(confirm)) {
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn đăng ký tài khoản?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you want to create new account?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 try {
                     Account a = new Account();
@@ -238,19 +238,19 @@ public class RegisterInterviewer extends javax.swing.JFrame {
 
                         InterviewerDao idao = new InterviewerDao();
                         if (idao.insert(i)) {
-                            MessageDialog.showMessageDialog(this, "Tạo tài khoản thành công!", "Thông báo");
+                            MessageDialog.showMessageDialog(this, "Created successfully!", "Notification");
                         } else {
-                            MessageDialog.showConfirmDialog(this, "Tạo tài khoản thất bại!", "Thông báo");
+                            MessageDialog.showConfirmDialog(this, "Create unsuccessfully!", "Notification");
                         }
                     } else {
-                        MessageDialog.showConfirmDialog(this, "Tạo tài khoản thất bại!", "Thông báo");
+                        MessageDialog.showConfirmDialog(this, "Create unsuccessfully!", "Notification");
                     }
                 } catch (Exception e) {
                     MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
                 }
             }
         } else {
-            MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Error");
+            MessageDialog.showErrorDialog(this, "Those passwords did not match. Try again!", "Error");
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
 

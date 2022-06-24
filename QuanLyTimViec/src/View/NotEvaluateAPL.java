@@ -122,13 +122,13 @@ public class NotEvaluateAPL extends javax.swing.JDialog {
         // TODO add your handling code here:
         int diem = Integer.parseInt(txtMARK.getText());
         if (txtMARK.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Rating cannot be blank!", "Error");
             return;
         } else if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có thể là số!");
+            JOptionPane.showMessageDialog(this, "Rating are numberous only!");
             return;
         } else if (diem < 1 || diem > 5 ) {
-            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có giá trị từ 1 - 5!");
+            JOptionPane.showMessageDialog(this, "Rating can only be on the scale 1 - 5!");
             return;
         }
 
@@ -139,10 +139,10 @@ public class NotEvaluateAPL extends javax.swing.JDialog {
             Evaluate ev = new Evaluate(mark_apl, comment_apl);
 
             if (dao.insertEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, ev)) {
-                MessageDialog.showMessageDialog(this, "Thêm thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Added successfully!", "Notification");
                 this.dispose();
             } else {
-                MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Add unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

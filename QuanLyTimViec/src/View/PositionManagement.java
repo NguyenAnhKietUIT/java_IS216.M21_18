@@ -180,13 +180,13 @@ public class PositionManagement extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên vị trí không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Position name cannot be blank!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Numbers of vacancies cannot be blank!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
+            MessageDialog.showErrorDialog(this, "Numbers of vacancies are numberous only!", "Error");
             return;
         }
 
@@ -201,10 +201,10 @@ public class PositionManagement extends javax.swing.JFrame {
 
             SecondPairDao dao = new SecondPairDao();
             if (dao.insert(sp, mapban)) {
-                MessageDialog.showMessageDialog(this, "Thêm thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Added successfully!", "Notification");
                 LoadData(mapban);
             } else {
-                MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Add unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -214,13 +214,13 @@ public class PositionManagement extends javax.swing.JFrame {
     private void btnAltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Position name cannot be blank!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Numbers of vacancies cannot be blank!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
+            MessageDialog.showErrorDialog(this, "Numbers of vacancies are numberous only!", "Error");
             return;
         }
 
@@ -234,13 +234,13 @@ public class PositionManagement extends javax.swing.JFrame {
             sp.setNUMBEROFPERSONNEL(Integer.parseInt(txtNUMBEROFPERSONNEL.getText()));
 
             SecondPairDao dao = new SecondPairDao();
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn sửa vị trí?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to change position?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 if (dao.update(sp, mapban)) {
-                    MessageDialog.showMessageDialog(this, "Sửa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Changed successfully!", "Notification");
                     LoadData(mapban);
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Sửa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Change unsuccessfully!", "Notification");
                 }
             }
         } catch (Exception e) {
@@ -251,13 +251,13 @@ public class PositionManagement extends javax.swing.JFrame {
     private void btnDltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDltActionPerformed
         // TODO add your handling code here:
         if (txtPOSITIONNAME.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Tên kỹ năng không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Position name cannot be blank!", "Error");
             return;
         } else if (txtNUMBEROFPERSONNEL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Numbers of vacancies cannot be blank!", "Error");
             return;
         } else if (!txtNUMBEROFPERSONNEL.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Số lượng nhân viên cần tuyển chỉ có thể là số!", "Error");
+            MessageDialog.showErrorDialog(this, "Numbers of vacancies are numberous only!", "Error");
             return;
         }
 
@@ -271,13 +271,13 @@ public class PositionManagement extends javax.swing.JFrame {
             sp.setNUMBEROFPERSONNEL(Integer.parseInt(txtNUMBEROFPERSONNEL.getText()));
 
             SecondPairDao dao = new SecondPairDao();
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa vị trí?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to delete position?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 if (dao.delete(sp, mapban)) {
-                    MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Deleted successfully!", "Notification");
                     LoadData(mapban);
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Delete unsuccessfully!", "Notification");
                 }
             }
         } catch (Exception e) {

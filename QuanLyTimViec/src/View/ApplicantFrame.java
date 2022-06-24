@@ -162,7 +162,7 @@ public class ApplicantFrame extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn đăng xuất?", "Hỏi");
+        int choose = MessageDialog.showConfirmDialog(this, "Do you want to log out?", "Question");
         if (choose == JOptionPane.YES_OPTION) {
             Login login = new Login();
             login.setVisible(true);
@@ -207,7 +207,7 @@ public class ApplicantFrame extends javax.swing.JFrame {
 
     private void lblImageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImageMouseClicked
         // TODO add your handling code here:
-        int selection = MessageDialog.showConfirmDialog(this, "Đổi ảnh đại diện?", "Xác nhận");
+        int selection = MessageDialog.showConfirmDialog(this, "Change profile picture?", "Confirm");
         if (selection == JOptionPane.YES_OPTION) {
             JFileChooser chooser = new JFileChooser();
             chooser.setFileFilter(new FileFilter() {

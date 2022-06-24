@@ -263,15 +263,15 @@ public class RegisterSchedule extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn đăng ký lịch phỏng vấn?", "Hỏi");
+        int choose = MessageDialog.showConfirmDialog(this, "Do you want to register interview schedule?", "Confirm");
         if (choose == JOptionPane.YES_OPTION) {
             try {
                 RecruitDao dao = new RecruitDao();
                 if (dao.Register(maLich, maPhong, maViTri)) {
-                    MessageDialog.showMessageDialog(this, "Đăng ký thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Registered successfully!", "Notification");
                     LoadSchedule(dao, tenCty);
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Đăng ký thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Register unsuccessfully!", "Notification");
                 }
             } catch (Exception e) {
                 MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

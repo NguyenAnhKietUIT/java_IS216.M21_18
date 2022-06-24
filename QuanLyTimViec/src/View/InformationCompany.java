@@ -147,30 +147,30 @@ public class InformationCompany extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         if (txaADDRESS.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Địa chỉ không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Address cannot be blank!", "Error");
             return;
         } else if (txtHOTLINE.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Hotline không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Hotline cannot be blank!", "Error");
             return;
         } else if (!txtHOTLINE.getText().matches("\\d+")) {
-            MessageDialog.showErrorDialog(this, "Hotline chỉ có thể là dãy số!", "Error");
+            MessageDialog.showErrorDialog(this, "Hotline are numberous only!", "Error");
             return;
         } else if (txtHOTLINE.getText().length() != 10) {
-            MessageDialog.showErrorDialog(this, "Hotline phải có đúng 10 chữ số!", "Error");
+            MessageDialog.showErrorDialog(this, "Hotline must be exactly 10 numbers!", "Error");
             return;
         } else if (txtGMAIL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Email cannot be blank!", "Error");
             return;
         }
 
-        DataValidator.validateGmail(txtGMAIL, sb, "Gmail phải có định dạng XXX@gmail.com");
+        DataValidator.validateGmail(txtGMAIL, sb, "Email must be formatted XXX@gmail.com");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
             return;
         }
 
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn cập nhật thông tin?", "Hỏi");
+        int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to update profile?", "Confirm");
         if (choose == JOptionPane.YES_OPTION) {
             try {
                 c = new Company();
@@ -184,9 +184,9 @@ public class InformationCompany extends javax.swing.JFrame {
                 c.setSTARTDATE(date);
 
                 if (dao.update(c)) {
-                    MessageDialog.showMessageDialog(this, "Cập nhật thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Changed successfully!", "Notification");
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Cập nhật thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Change unsuccessfully!", "Notification");
                 }
             } catch (Exception e) {
                 MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

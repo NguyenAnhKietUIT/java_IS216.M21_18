@@ -201,8 +201,8 @@ public class Login extends javax.swing.JFrame {
 
     private boolean Login() {
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtUSERNAME, sb, "Tên tài khoản không được để trống!");
-        DataValidator.validateEmpty(txtPASSWORD, sb, "Mật khẩu không được để trống!");
+        DataValidator.validateEmpty(txtUSERNAME, sb, "Username cannot be blank!");
+        DataValidator.validateEmpty(txtPASSWORD, sb, "Password cannot be blank!");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Error");
@@ -213,7 +213,7 @@ public class Login extends javax.swing.JFrame {
         try {
             Account a = dao.checkLogin(txtUSERNAME.getText(), new String(txtPASSWORD.getPassword()));
             if (a == null) {
-                MessageDialog.showErrorDialog(this, "Tên tài khoản hoặc mật khẩu không chính xác!", "Error");
+                MessageDialog.showErrorDialog(this, "Username or password is invalid!", "Error");
                 return true;
             } else {
                 SharedData.useraccount = a;
