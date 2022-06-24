@@ -119,9 +119,9 @@ public class ListApplicantRegister extends javax.swing.JFrame {
         try {
             RegisterDao dao = new RegisterDao();
             if (dao.confirmComplete(maUngVien, maLich)) {
-                MessageDialog.showMessageDialog(this, "Xác nhận thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Confirmed successfully!", "Notification");
             } else {
-                MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Confirme unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -133,9 +133,9 @@ public class ListApplicantRegister extends javax.swing.JFrame {
         try {
             RegisterDao dao = new RegisterDao();
             if (dao.confirmNotEngaged(maUngVien, maLich)) {
-                MessageDialog.showMessageDialog(this, "Xác nhận thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Confirmed successfully!", "Notification");
             } else {
-                MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Confirme unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

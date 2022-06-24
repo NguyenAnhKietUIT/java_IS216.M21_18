@@ -155,13 +155,13 @@ public class DepartmentManagement extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             DepartmentDao dao = new DepartmentDao();
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa phòng ban?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to delete department?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 if (dao.delete(tenPhong)) {
-                    MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Deleted successfully!", "Notification");
                     LoadData();
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Delete successfully!", "Notification");
                 }
             }
         } catch (Exception e) {

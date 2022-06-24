@@ -155,9 +155,9 @@ public class CompleteInterview extends javax.swing.JFrame {
             CompleteDao dao = new CompleteDao();
 
             if (dao.confirmedToWork(maApp, maITS)) {
-                MessageDialog.showMessageDialog(this, "Xác nhận thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Confirmed successfully!", "Notification");
             } else {
-                MessageDialog.showConfirmDialog(this, "Xác nhận thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Confirmed unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

@@ -122,19 +122,19 @@ public class ApplicantSchedule extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn hủy lịch?", "Hỏi");
+        int choose = MessageDialog.showConfirmDialog(this, "Do you want to cancel schedule?", "Question");
         if (choose == JOptionPane.YES_OPTION) {
             try {
                 FirstPairDao dao = new FirstPairDao();
-                if (trangthai.equalsIgnoreCase("Đã đăng ký")) {
+                if (trangthai.equalsIgnoreCase("Registered")) {
                     if (dao.cancel(maITS)) {
-                        MessageDialog.showMessageDialog(this, "Đã hủy lịch!", "Thông báo");
+                            MessageDialog.showMessageDialog(this, "Schedule canceled!", "Notification");
                         LoadData();
                     } else {
-                        MessageDialog.showConfirmDialog(this, "Hủy lịch thất bại!", "Thông báo");
+                        MessageDialog.showConfirmDialog(this, "Unsuccessfully cancel schedule!", "Notification");
                     }
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Không thể hủy lịch!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "This schedule cannot be canceled!", "Notification");
                 }
             } catch (Exception e) {
                 MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -167,7 +167,7 @@ public class ApplicantSchedule extends javax.swing.JFrame {
                 MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
             }
         } else {
-            MessageDialog.showMessageDialog(this, "Bạn cần hoàn thành phỏng vấn", "Thông báo");
+            MessageDialog.showMessageDialog(this, "You need to complete the interview", "Notification");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

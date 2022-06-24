@@ -108,9 +108,9 @@ public class ChangePassword extends javax.swing.JFrame {
         // TODO add your handling code here:
         AccountDao dao = new AccountDao();
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtPASSWORD, sb, "Mật khẩu không được để trống!");
-        DataValidator.validateEmpty(txtNEWPASSWORD, sb, "Mật khẩu mới không được để trống!");
-        DataValidator.validateEmpty(txtCONFIRM, sb, "Bạn cần xác nhận mật khẩu!");
+        DataValidator.validateEmpty(txtPASSWORD, sb, "Password cannot be blank!");
+        DataValidator.validateEmpty(txtNEWPASSWORD, sb, "New password cannot be blank!");
+        DataValidator.validateEmpty(txtCONFIRM, sb, "You need to confirm password!");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Error");
@@ -123,10 +123,10 @@ public class ChangePassword extends javax.swing.JFrame {
 
         try {
             if (!current.equals(dao.getPasswordByAccountID())) {
-                MessageDialog.showErrorDialog(this, "Mật khẩu hiện tại không chính xác!", "Error");
+                MessageDialog.showErrorDialog(this, "The current password is invalid!", "Error");
                 return;
             } else if (newpassword.length() < 8) {
-                MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Error");
+                MessageDialog.showErrorDialog(this, "Password cannot be less than 8 characters!", "Error");
                 return;
             }
         } catch (Exception e) {
@@ -134,7 +134,7 @@ public class ChangePassword extends javax.swing.JFrame {
         }
 
         if (newpassword.equals(confirm)) {
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn đổi mật khẩu?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to change password?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 try {
                     Account a = new Account();
@@ -144,9 +144,9 @@ public class ChangePassword extends javax.swing.JFrame {
                     a.setROLE(SharedData.useraccount.getROLE());
 
                     if (dao.update(a)) {
-                        MessageDialog.showMessageDialog(this, "Mật khẩu đã được thay đổi!", "Thông báo");
+                        MessageDialog.showMessageDialog(this, "Password changed!", "Notification");
                     } else {
-                        MessageDialog.showMessageDialog(this, "Cập nhật thất bại!", "Thông báo");
+                        MessageDialog.showMessageDialog(this, "Update unsuccessfully!", "Notification");
                     }
                 } catch (Exception e) {
                     MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -154,7 +154,7 @@ public class ChangePassword extends javax.swing.JFrame {
             }
 
         } else {
-            MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Error");
+            MessageDialog.showErrorDialog(this, "Those passwords did not match. Try again!", "Error");
         }
     }//GEN-LAST:event_btnChangeActionPerformed
 

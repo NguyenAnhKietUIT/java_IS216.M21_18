@@ -105,11 +105,11 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Dubai", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Status");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 78, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 78, -1));
 
         comboSTATUS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         comboSTATUS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Incompleted", "Completed" }));
-        getContentPane().add(comboSTATUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 140, -1));
+        getContentPane().add(comboSTATUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 140, -1));
 
         txtSLOT.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtSLOT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 140, -1));
@@ -207,15 +207,15 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa lịch phỏng vấn?", "Hỏi");
+        int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to delete interview schedule?", "Confirm");
         if (choose == JOptionPane.YES_OPTION) {
             try {
                 InterviewScheduleDao dao = new InterviewScheduleDao();
                 if (dao.delete(maLich)) {
-                    MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Deleted successfully!", "Notification");
                     LoadData();
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Delete unsuccessfull!", "Notification");
                 }
             } catch (Exception e) {
                 MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -226,8 +226,8 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtSLOT, sb, "Số lượng tối đa không được để trống!");
-        DataValidator.validateEmpty(txaLOCATION, sb, "Địa điểm không được để trống");
+        DataValidator.validateEmpty(txtSLOT, sb, "Maximum candidate cannot be blank!");
+        DataValidator.validateEmpty(txaLOCATION, sb, "Location cannot be blank");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Error");
@@ -235,7 +235,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
         }
 
         if (txtSLOT.getText().length() > 0 && !txtSLOT.getText().matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Số năm kinh nghiệm chỉ có thể là số!");
+            JOptionPane.showMessageDialog(this, "Maximum candidate are numberous only!");
             return;
         }
 
@@ -247,7 +247,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
             int status = comboSTATUS.getSelectedIndex();
 
             if (startdate.compareTo(enddate) > 0) {
-                JOptionPane.showMessageDialog(this, "Ngày bắt đầu không thể lớn hơn ngày kết thúc!");
+                JOptionPane.showMessageDialog(this, "Starting date cannot be later than ending date!");
                 return;
             }
 
@@ -259,10 +259,10 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
 
             InterviewScheduleDao dao = new InterviewScheduleDao();
             if (dao.insert(is)) {
-                MessageDialog.showMessageDialog(this, "Thêm thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Added successfully!", "Notification");
                 LoadData();
             } else {
-                MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Add unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -272,8 +272,8 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtSLOT, sb, "Số lượng tối đa không được để trống!");
-        DataValidator.validateEmpty(txaLOCATION, sb, "Địa điểm không được để trống");
+        DataValidator.validateEmpty(txtSLOT, sb, "Maximum candidate cannot be blank!");
+        DataValidator.validateEmpty(txaLOCATION, sb, "Location cannot be blank");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Error");
@@ -281,7 +281,7 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
         }
 
         if (txtSLOT.getText().length() > 0 && !txtSLOT.getText().matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Số năm kinh nghiệm chỉ có thể là số!");
+            JOptionPane.showMessageDialog(this, "Maximum candidate are numberous only!");
             return;
         }
 
@@ -300,13 +300,13 @@ public class ListInterviewSchedule extends javax.swing.JFrame {
             is.setSLOT(Integer.parseInt(txtSLOT.getText()));
 
             InterviewScheduleDao dao = new InterviewScheduleDao();
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn sửa lịch phỏng vấn?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to change interview schedule?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 if (dao.update(is)) {
-                    MessageDialog.showMessageDialog(this, "Sửa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Changed successfully!", "Notification");
                     LoadData();
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Sửa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Change unsuccessfully!", "Notification");
                 }
             }
         } catch (Exception e) {

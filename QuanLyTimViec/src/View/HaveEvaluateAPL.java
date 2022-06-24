@@ -132,25 +132,25 @@ public class HaveEvaluateAPL extends javax.swing.JDialog {
         String comment_apl = txaCOMMENT.getText();
         EvaluateDao dao = new EvaluateDao();
         if (txtMARK.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Điểm đánh giá không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Rating cannot be blank!", "Error");
             return;
         } else if (txtMARK.getText().length() > 0 && !txtMARK.getText().matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có thể là số!");
+            JOptionPane.showMessageDialog(this, "Rating are numberous only!");
             return;
         } else if (mark_apl < 1 || mark_apl > 5) {
-            JOptionPane.showMessageDialog(this, "Điểm đánh giá chỉ có giá trị từ 1 - 5!");
+            JOptionPane.showMessageDialog(this, "Rating can only be on the scale 1 - 5!");
             return;
         }
 
         try {
             Evaluate ev = new Evaluate(mark_apl, comment_apl);
 
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn sửa đánh giá?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to change rating?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 if (dao.updateEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO, ev)) {
-                    MessageDialog.showMessageDialog(this, "Sửa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Changed successfully!", "Notification");
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Sửa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Change unsuccessfully!", "Notification");
                 }
             }
         } catch (Exception e) {
@@ -162,13 +162,13 @@ public class HaveEvaluateAPL extends javax.swing.JDialog {
         // TODO add your handling code here:
         EvaluateDao dao = new EvaluateDao();
         try {
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa đánh giá?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to delete rating?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 if (dao.deleteEvaluateAPL(APPLICANTNO, INTERVIEWSCHEDULENO)) {
-                    MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Deleted successfully!", "Notification");
                     this.dispose();
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Xoa that bai!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Delete unsuccessfully!", "Notification");
                 }
             }
         } catch (Exception e) {

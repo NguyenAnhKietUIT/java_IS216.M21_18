@@ -131,27 +131,27 @@ public class InformationInterviewer extends javax.swing.JFrame {
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
         if (txtPHONENUMBER.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Phone number cannot be blank!", "Error");
             return;
         } else if (!txtPHONENUMBER.getText().matches("\\d+")) {
             MessageDialog.showErrorDialog(this, "Số điện thoại chỉ có thể là dãy số!", "Error");
             return;
         } else if (txtPHONENUMBER.getText().length() != 10) {
-            MessageDialog.showErrorDialog(this, "Số điện thoại phải có đúng 10 chữ số!", "Error");
+            MessageDialog.showErrorDialog(this, "Phone number are numberous only!", "Error");
             return;
         } else if (txtGMAIL.getText().equals("")) {
-            MessageDialog.showErrorDialog(this, "Gmail không được để trống!", "Error");
+            MessageDialog.showErrorDialog(this, "Email cannot be blank!", "Error");
             return;
         }
 
-        DataValidator.validateGmail(txtGMAIL, sb, "Gmail phải có định dạng XXX@gmail.com");
+        DataValidator.validateGmail(txtGMAIL, sb, "Email must be formatted XXX@gmail.com");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Lỗi");
             return;
         }
 
-        int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn cập nhật thông tin?", "Hỏi");
+        int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to update profile?", "Confirm");
         if (choose == JOptionPane.YES_OPTION) {
             try {
                 Interviewer i = new Interviewer();
@@ -165,9 +165,9 @@ public class InformationInterviewer extends javax.swing.JFrame {
                 i.setCOMPANYNO(companyno);
 
                 if (dao.update(i)) {
-                    MessageDialog.showMessageDialog(this, "Cập nhật thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Changed successfully!", "Notification");
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Cập nhật thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Change unsuccessfully!", "Notification");
                 }
             } catch (Exception e) {
                 MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

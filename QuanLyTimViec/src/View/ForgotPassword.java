@@ -165,9 +165,9 @@ public class ForgotPassword extends javax.swing.JFrame {
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtUSERNAME, sb, "Tên tài khoản không được để trống!");
-        DataValidator.validateEmpty(txtPASSWORD, sb, "Mật khẩu không được để trống!");
-        DataValidator.validateEmpty(txtCONFIRM, sb, "Bạn cần xác nhận mật khẩu!");
+        DataValidator.validateEmpty(txtUSERNAME, sb, "Username cannot be blank!");
+        DataValidator.validateEmpty(txtPASSWORD, sb, "Password cannot be blank!");
+        DataValidator.validateEmpty(txtCONFIRM, sb, "You need to confirm password!");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Error");
@@ -178,7 +178,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         String confirm = new String(txtCONFIRM.getPassword());
 
         if (password.length() < 8) {
-            MessageDialog.showErrorDialog(this, "Mật khẩu không thể ít hơn 8 ký tự!", "Error");
+            MessageDialog.showErrorDialog(this, "Password cannot be less than 8 characters!", "Error");
             return;
         }
 
@@ -203,18 +203,18 @@ public class ForgotPassword extends javax.swing.JFrame {
                         a.setROLE(role);
 
                         if (dao.update(a)) {
-                            MessageDialog.showMessageDialog(this, "Mật khẩu đã được thay đổi!", "Thông báo");
+                            MessageDialog.showMessageDialog(this, "Password changed!", "Notification");
                         } else {
-                            MessageDialog.showMessageDialog(this, "Cập nhật thất bại!", "Thông báo");
+                            MessageDialog.showMessageDialog(this, "Changed unsuccesfully!", "Notification");
                         }
                     } catch (Exception e) {
                         MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
                     }
                 } else {
-                    MessageDialog.showErrorDialog(this, "Bạn đã nhập mật khẩu không trùng nhau!", "Error");
+                    MessageDialog.showErrorDialog(this, "Those passwords did not match. Try again.!", "Error");
                 }
             } else {
-                MessageDialog.showMessageDialog(this, "Thông tin không chính xác", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Information is invalid", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");

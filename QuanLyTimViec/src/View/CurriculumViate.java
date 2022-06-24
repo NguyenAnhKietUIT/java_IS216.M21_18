@@ -212,22 +212,22 @@ public class CurriculumViate extends javax.swing.JFrame {
             con.setAutoCommit(false);
 
             StringBuilder sb = new StringBuilder();
-            DataValidator.validateEmpty(txtSKILLNAME, sb, "Tên kỹ năng không được để trống!");
+            DataValidator.validateEmpty(txtSKILLNAME, sb, "Skills name cannot be blank!");
 
             if (sb.length() > 0) {
                 MessageDialog.showErrorDialog(this, sb.toString(), "Error");
                 return;
             }
 
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn xóa kỹ năng?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to delete skills?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 try {
                     HaveSkillDao dao = new HaveSkillDao();
                     if (dao.delete(txtSKILLNAME.getText())) {
-                        MessageDialog.showMessageDialog(this, "Xóa thành công!", "Thông báo");
+                        MessageDialog.showMessageDialog(this, "Deleted successfully!", "Notification");
                         LoadData();
                     } else {
-                        MessageDialog.showConfirmDialog(this, "Xóa thất bại!", "Thông báo");
+                        MessageDialog.showConfirmDialog(this, "Delete unsuccessfully!", "Notification");
                     }
                 } catch (Exception e) {
                     MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -241,8 +241,8 @@ public class CurriculumViate extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         StringBuilder sb = new StringBuilder();
-        DataValidator.validateEmpty(txtSKILLNAME, sb, "Tên kỹ năng không được để trống!");
-        DataValidator.validateEmpty(txtYEARSOFEXPERIENCE, sb, "Số năm kinh nghiệm không được để trống!");
+        DataValidator.validateEmpty(txtSKILLNAME, sb, "Skills name cannot be blank!");
+        DataValidator.validateEmpty(txtYEARSOFEXPERIENCE, sb, "Years of experience cannot be blank!");
 
         if (sb.length() > 0) {
             MessageDialog.showErrorDialog(this, sb.toString(), "Error");
@@ -250,7 +250,7 @@ public class CurriculumViate extends javax.swing.JFrame {
         }
 
         if (txtYEARSOFEXPERIENCE.getText().length() > 0 && !txtYEARSOFEXPERIENCE.getText().matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Số năm kinh nghiệm chỉ có thể là số!");
+            JOptionPane.showMessageDialog(this, "Years of experience are numberous only!");
             return;
         }
 
@@ -265,10 +265,10 @@ public class CurriculumViate extends javax.swing.JFrame {
 
             HaveSkillDao dao = new HaveSkillDao();
             if (dao.insert(hs)) {
-                MessageDialog.showMessageDialog(this, "Thêm thành công!", "Thông báo");
+                MessageDialog.showMessageDialog(this, "Added succesfully!", "Notification");
                 LoadData();
             } else {
-                MessageDialog.showConfirmDialog(this, "Thêm thất bại!", "Thông báo");
+                MessageDialog.showConfirmDialog(this, "Adde unsuccesfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
@@ -286,14 +286,14 @@ public class CurriculumViate extends javax.swing.JFrame {
             hs.setLEVEL_APL(level_apl);
             hs.setYEARSOFEXPERIENCE(Integer.parseInt(txtYEARSOFEXPERIENCE.getText()));
 
-            int choose = MessageDialog.showConfirmDialog(this, "Bạn có chắc muốn sửa kỹ năng?", "Hỏi");
+            int choose = MessageDialog.showConfirmDialog(this, "Do you sure want to change skills?", "Confirm");
             if (choose == JOptionPane.YES_OPTION) {
                 HaveSkillDao dao = new HaveSkillDao();
                 if (dao.update(hs)) {
-                    MessageDialog.showMessageDialog(this, "Sửa thành công!", "Thông báo");
+                    MessageDialog.showMessageDialog(this, "Changed successfully!", "Notification");
                     LoadData();
                 } else {
-                    MessageDialog.showConfirmDialog(this, "Sửa thất bại!", "Thông báo");
+                    MessageDialog.showConfirmDialog(this, "Change unsuccessfully!", "Notification");
                 }
             }
         } catch (Exception e) {
