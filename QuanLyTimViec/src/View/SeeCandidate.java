@@ -100,7 +100,7 @@ public class SeeCandidate extends javax.swing.JDialog {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dubai", 3, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 153));
@@ -148,7 +148,7 @@ public class SeeCandidate extends javax.swing.JDialog {
         getContentPane().add(lblAPPLICANTNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 300, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg2.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-360, 0, 840, 600));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-360, 0, 840, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

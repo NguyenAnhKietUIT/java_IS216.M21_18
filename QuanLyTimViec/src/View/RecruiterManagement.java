@@ -48,7 +48,7 @@ public class RecruiterManagement extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("List Interviewer");
+        jLabel1.setText("Interviewers List");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
 
         tblINTERVIEWER.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

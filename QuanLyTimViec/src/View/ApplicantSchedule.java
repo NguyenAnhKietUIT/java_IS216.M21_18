@@ -222,18 +222,17 @@ public class ApplicantSchedule extends javax.swing.JFrame {
             List<FirstPair> list = dao.findByAccountID();
             model.setRowCount(0);
             for (FirstPair x : list) {
-                String trangthai;
                 trangthai = switch (x.getIs().getSTATUS()) {
                     case 0 ->
-                        "Đã đăng ký";
+                        "Registered";
                     case 1 ->
-                        "Đã hủy đăng ký";
+                        "Register Canceled";
                     case 2 ->
-                        "Đã hoàn thành";
+                        "Completed";
                     case 3 ->
-                        "Không tham gia";
+                        "Absent";
                     default ->
-                        "Xác nhận vào làm";
+                        "Offered";
                 };
                 model.addRow(new Object[]{
                     x.getIs().getINTERVIEWSCHEDULENO(), x.getIs().getSTARTTIME(),

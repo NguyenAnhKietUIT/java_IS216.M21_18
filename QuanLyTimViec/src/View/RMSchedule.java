@@ -39,11 +39,15 @@ public class RMSchedule extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSCHEDULE = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("List Interview Schedule");
+        jLabel1.setFont(new java.awt.Font("Dubai", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Interview Schedule List");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 6, -1, -1));
 
         tblSCHEDULE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblSCHEDULE.setModel(new javax.swing.table.DefaultTableModel(
@@ -51,7 +55,7 @@ public class RMSchedule extends javax.swing.JDialog {
 
             },
             new String [] {
-                "ID", "Start Date", "End Date", "Location", "Status", "Maximum quantity"
+                "ID", "Start Date", "End Date", "Location", "Status", "Maximum Candidate"
             }
         ));
         tblSCHEDULE.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -61,28 +65,10 @@ public class RMSchedule extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblSCHEDULE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 988, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(317, 317, 317))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 701, 323));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/profilebg2.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,6 +82,7 @@ public class RMSchedule extends javax.swing.JDialog {
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblSCHEDULE;
     // End of variables declaration//GEN-END:variables
@@ -108,9 +95,9 @@ public class RMSchedule extends javax.swing.JDialog {
             for (InterviewSchedule x : list) {
                 String trangthai;
                 if (x.getSTATUS() == 0) {
-                    trangthai = "Chưa hoàn thành";
+                    trangthai = "Incompleted";
                 } else {
-                    trangthai = "Đã hoàn thành";
+                    trangthai = "Completed";
                 }
 
                 model.addRow(new Object[]{
