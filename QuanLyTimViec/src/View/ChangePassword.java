@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author acer
+ * @author Nguyen Anh Kiet
  */
 public class ChangePassword extends javax.swing.JFrame {
 
