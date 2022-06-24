@@ -8,7 +8,7 @@ import Process.RecruitDao;
 
 /**
  *
- * @author acer
+ * @author Nguyen Anh Kiet
  */
 public class AddDepartment extends javax.swing.JFrame {
 
