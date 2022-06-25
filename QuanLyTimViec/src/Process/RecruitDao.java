@@ -146,7 +146,7 @@ public class RecruitDao {
     }
 
     public List<InterviewSchedule> findSchedule(String tencty) throws Exception {
-        String sql = "SELECT ITS.INTERVIEWSCHEDULENO, ITS.STARTTIME, ITS.ENDTIME, ITS.LOCATION, ITS.SLOT"
+        String sql = "SELECT ITS.INTERVIEWSCHEDULENO, ITS.STARTTIME, ITS.ENDTIME, ITS.LOCATION, ITS.SLOT, ITS.STATUS"
                 + " FROM INTERVIEW_SCHEDULE ITS JOIN INTERVIEWER I ON ITS.INTERVIEWERNO = I. INTERVIEWERNO"
                 + "	JOIN COMPANY C ON C.COMPANYNO  = I.COMPANYNO"
                 + " WHERE C.COMPANYNAME = ?";
@@ -164,6 +164,7 @@ public class RecruitDao {
                     is.setENDTIME(rs.getDate("ENDTIME"));
                     is.setLOCATION(rs.getString("LOCATION"));
                     is.setSLOT(rs.getInt("SLOT"));
+                    is.setSTATUS(rs.getInt("STATUS"));
                     list.add(is);
                 }
                 return list;

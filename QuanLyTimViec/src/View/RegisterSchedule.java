@@ -421,7 +421,7 @@ public class RegisterSchedule extends javax.swing.JFrame {
             List<InterviewSchedule> list = dao.findSchedule(COMPANYNAME);
             modelLPV.setRowCount(0);
             for (InterviewSchedule x : list) {
-                if (x.getSLOT() > 0) {
+                if (x.getSLOT() > 0 && x.getSTATUS() == 0) {
                     modelLPV.addRow(new Object[]{
                         x.getINTERVIEWSCHEDULENO(), x.getSTARTTIME(), x.getENDTIME(),
                         x.getLOCATION(), x.getSLOT()});

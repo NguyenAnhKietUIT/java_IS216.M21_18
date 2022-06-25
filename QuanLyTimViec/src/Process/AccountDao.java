@@ -146,4 +146,26 @@ public class AccountDao {
             return pstmt.executeUpdate() > 0;
         }
     }
+    
+    
+    
+    public boolean checkUsername(String name) throws Exception {
+        String sql = "SELECT *"
+                + " FROM ACCOUNT"
+                + " WHERE USERNAME = ?";
+        
+        try (
+                 Connection con = ConnectOracle.openConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
+            
+            pstmt.setString(1, name);
+            
+            try ( ResultSet rs = pstmt.executeQuery();) {
+                
+                while (rs.next()) {
+                    return true;
+                }
+                return false;
+            }
+        }
+    }
 }
