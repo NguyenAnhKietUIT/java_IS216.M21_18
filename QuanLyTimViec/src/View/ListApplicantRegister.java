@@ -121,7 +121,7 @@ public class ListApplicantRegister extends javax.swing.JFrame {
             if (dao.confirmComplete(maUngVien, maLich)) {
                 MessageDialog.showMessageDialog(this, "Confirmed successfully!", "Notification");
             } else {
-                MessageDialog.showConfirmDialog(this, "Confirme unsuccessfully!", "Notification");
+                MessageDialog.showConfirmDialog(this, "Confirm unsuccessfully!", "Notification");
             }
         } catch (Exception e) {
             MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
