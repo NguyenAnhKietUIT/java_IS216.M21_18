@@ -89,28 +89,33 @@ public class RegisterCompany extends javax.swing.JFrame {
         jLabel11.setText("Confirm password");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, -1, -1));
 
-        txtCOMPANYNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txtCOMPANYNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtCOMPANYNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 220, -1));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(272, 104));
 
         txaADDRESS.setColumns(20);
-        txaADDRESS.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txaADDRESS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaADDRESS.setRows(5);
         jScrollPane1.setViewportView(txaADDRESS);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 220, -1));
 
-        txtHOTLINE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txtHOTLINE.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtHOTLINE, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 220, -1));
 
-        txtGMAIL.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txtGMAIL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtGMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 220, -1));
 
         dtSTARTDATE.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         getContentPane().add(dtSTARTDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 150, -1));
 
-        txtUSERNAME.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txtUSERNAME.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUSERNAME.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtUSERNAMEFocusLost(evt);
+            }
+        });
         getContentPane().add(txtUSERNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 220, -1));
 
         btnRegister.setBackground(new java.awt.Color(79, 220, 194));
@@ -135,10 +140,10 @@ public class RegisterCompany extends javax.swing.JFrame {
         });
         getContentPane().add(btnUndo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 630, -1, -1));
 
-        txtPASSWORD.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txtPASSWORD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtPASSWORD, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 220, -1));
 
-        txtCONFIRM.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        txtCONFIRM.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         getContentPane().add(txtCONFIRM, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, 220, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/dangky.png"))); // NOI18N
@@ -235,6 +240,18 @@ public class RegisterCompany extends javax.swing.JFrame {
             MessageDialog.showErrorDialog(this, "Those passwords did not match. Try again!", "Error");
         }
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void txtUSERNAMEFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUSERNAMEFocusLost
+        // TODO add your handling code here:
+        AccountDao dao = new AccountDao();
+        try {
+            if(dao.checkUsername(txtUSERNAME.getText())) {
+                MessageDialog.showErrorDialog(this, "Username available", "Error");
+            }
+        } catch (Exception e) {
+            MessageDialog.showErrorDialog(this, e.getMessage(), "Error");
+        }
+    }//GEN-LAST:event_txtUSERNAMEFocusLost
 
     /**
      * @param args the command line arguments

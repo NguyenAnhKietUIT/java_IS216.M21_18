@@ -162,7 +162,7 @@
     <Component class="javax.swing.JTextField" name="txtAPPLICANTNAME">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
       <Constraints>
@@ -174,7 +174,7 @@
     <Component class="javax.swing.JTextField" name="txtCITIZENID">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
       <Constraints>
@@ -256,7 +256,7 @@
     <Component class="javax.swing.JTextField" name="txtPHONENUMBER">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
       <Constraints>
@@ -268,7 +268,7 @@
     <Component class="javax.swing.JTextField" name="txtGMAIL">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
       <Constraints>
@@ -280,9 +280,12 @@
     <Component class="javax.swing.JTextField" name="txtUSERNAME">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtUSERNAMEFocusLost"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="180" y="550" width="220" height="-1"/>
@@ -336,7 +339,7 @@
     <Component class="javax.swing.JPasswordField" name="txtPASSWORD">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
       <Constraints>
@@ -348,7 +351,7 @@
     <Component class="javax.swing.JPasswordField" name="txtCONFIRM">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dubai" size="14" style="0"/>
+          <Font name="Segoe UI" size="14" style="0"/>
         </Property>
       </Properties>
       <Constraints>
